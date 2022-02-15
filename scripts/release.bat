@@ -12,7 +12,8 @@ rmdir "%modpath%\release\mods\%modName%\content\" /s /q
 
 @REM pack everything into a single a file and put the file in the release folder
 mkdir "%modpath%\release\mods\%modname%\content\scripts\local\
-> "%modpath%\release\mods\%modname%\content\scripts\local\ga_scripts.min.ws" (for /r "%modpath%\src\" %%F in (*.ws) do @type "%%F")
+XCOPY "%modPath%\src\vanilla\" "%modpath%\release\mods\%modname%\content\scripts\" /e /s /y
+> "%modpath%\release\mods\%modname%\content\scripts\local\ga_scripts.min.ws" (for /r "%modpath%\src\local" %%F in (*.ws) do @type "%%F")
 
 XCOPY "%modpath%\wolvenkit-project\packed\" "%modpath%\release\dlc\dlc%modname%\" /e /s /y
 XCOPY "%modpath%\strings" "%modpath%\release\mods\%modName%\content\" /e /s /y

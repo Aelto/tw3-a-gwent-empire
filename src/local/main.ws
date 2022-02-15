@@ -1,4 +1,8 @@
 
+enum GA_CONSTANTS_ENUM {
+  GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX = 4304 // random number
+}
+
 state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandler extends GlobalEventListener {
   event OnEnterState(previous_state_name: name) {
     super.OnEnterState(previous_state_name);
@@ -25,6 +29,8 @@ state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandl
         ", activator: " + parent.activator.ToString() +
         ", receptor: " + parent.receptor.ToString()
       );
+
+    thePlayer.OnGwintGameRequested('GwentAddictCustomDeck', GwintFaction_NothernKingdom);
 
     // when our job is done, we MUST call the finish method. Not doing so will
     // block the global event listener and it won't work for the rest of the
