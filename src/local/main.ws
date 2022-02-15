@@ -16,9 +16,10 @@ state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandl
    * names, using the state name is a good solution.
    */
   entry function MyGlobalEventListener_main() {
+    var gwintManager:CR4GwintManager;
+    var receptor: CPeristentEntity;
     var actionName: string;
     var activator: CEntity;
-    var receptor: CPeristentEntity;
 
     // now here you can do anything you want, here we print all the information
     // we have about the interaction.
@@ -29,6 +30,9 @@ state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandl
         ", activator: " + parent.activator.ToString() +
         ", receptor: " + parent.receptor.ToString()
       );
+
+    gwintManager = theGame.GetGwintManager();
+    gwintManager.testMatch = true;
 
     thePlayer.OnGwintGameRequested('GwentAddictCustomDeck', GwintFaction_NothernKingdom);
 
