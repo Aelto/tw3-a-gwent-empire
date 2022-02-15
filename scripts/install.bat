@@ -18,6 +18,9 @@ XCOPY "%modPath%\sharedutils\mod_sharedutils_npcInteraction" "%gamePath%\mods\mo
 rmdir "%gamePath%\mods\mod_sharedutils_dialogChoices" /s /q
 XCOPY "%modPath%\sharedutils\mod_sharedutils_dialogChoices" "%gamePath%\mods\mod_sharedutils_dialogChoices\" /e /s /y
 
+rmdir "%gamePath%\mods\mod_sharedutils_helpers" /s /q
+XCOPY "%modPath%\sharedutils\mod_sharedutils_helpers" "%gamePath%\mods\mod_sharedutils_helpers\" /e /s /y
+
 if "%1"=="-dlc" (
   echo "copying DLC"
   rmdir "%gamePath%\dlc\dlc%modName%" /s /q
