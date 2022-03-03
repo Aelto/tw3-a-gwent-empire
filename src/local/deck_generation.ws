@@ -64,6 +64,48 @@ function GA_generateRandomDeck(manager: CR4GwintManager): SDeckDefinition {
 }
 
 /**
+ * Generate a unique DeckIdentifier from the NPC, calling this function 
+ * twice using the same NPC should result in the same identifier. calling
+ * it with two different NPCs should result in two completely different
+ * identifiers.
+ */
+function GA_getDeckIdentifierFromNpc(npc: CNewNpc): GA_DeckIdentifier {
+  var monster_category: EMonsterCategory;
+  var can_be_hit_by_fists: bool;
+  var can_be_targeted: bool;
+  var is_teleporting: bool;
+  var monster_name: name;
+
+  var identifier: string;
+
+  theGame.GetMonsterParamsForActor(
+    npc,
+    monster_category,
+    monster_name,
+    is_teleporting,
+    can_be_targeted,
+    can_be_hit_by_fists
+  );
+
+  // we add dashes between all numbers and things to make it more
+  // readable. It is not a problem since the function that transforms
+  // identifiers to seeds is capable of translating all sorts of characters.
+  //
+  // Some of the segments may seem redundant, be the more data we have
+  // about a NPC the better it is.
+  idenfitier += monster_name + "-";
+  identifier += npc.GetName() + "-";
+  identifier += np.I_GetDisplayName() + "-";
+  idenfitier += monster_category + "-";
+  idenfitier += is_teleporting + "-";
+  idenfitier += can_be_targeted + "-";
+  idenfitier += can_be_hit_by_fists + "-";
+
+}
+
+
+
+/**
  * return the amount of points given for the supplied seed.
  * Points are used when generating a deck of cards, each card
  * has a cost and the points determine how many cards can be
@@ -80,27 +122,4 @@ function GA_getDeckPointsFromSeed(seed: GA_DeckSeed): GA_DeckPoints {
 
 function GA_getSeedFromDeckIdentifier(identifier: GA_DeckIdentifier): GA_DeckSeed {
   
-}
-
-/**
- * Transform an identifier into a number.
- * An identifier is a string following the given syntax:
- * Numbers seperated by dashes (-), 
- */
-function GA_identifierToInt(identifier: string): int {
-  var segment: string;
-  var sub: string;
-  var output: int;
-
-  segment = identifier;
-
-  while (StrLen(segment) > 0) {
-    sub = StrBeforeFirst(segment, "-");
-    output += StringToInt(sub);
-
-    // the +1 is there to exclude the "-"
-    segment = StrMid(segment, StrLen(sub) + 1);
-  };
-
-  return output;
 }
