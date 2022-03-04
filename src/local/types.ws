@@ -16,6 +16,16 @@ struct GA_GeneralDataCurrentMatch {
   var identifier: GA_DeckIdentifier;
 }
 
+/**
+ * A number that is generated from the seed which should be in
+ * the [0;inf[ range. It will use high numbers for good precision
+ * when generating the difficulty, a common range is [0;10000[
+ * where 0 is the easiest and 10000 is the hardest.
+ */
+struct GA_MatchDifficulty {
+  var value: int;
+}
+
 struct GA_DeckIdentifier {
   var value: string;
 }
