@@ -101,6 +101,7 @@ function GA_getDeckIdentifierFromNpc(npc: CNewNpc): GA_DeckIdentifier {
   idenfitier += can_be_targeted + "-";
   idenfitier += can_be_hit_by_fists + "-";
 
+  return identifier;
 }
 
 

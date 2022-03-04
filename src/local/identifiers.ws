@@ -16,6 +16,8 @@ function GA_identifierToInt(identifier: string): int {
     // everything except the first character.
     segment = StrMid(segment, 1);
   }
+
+  return output;
 }
 
 function GA_alphaToInt(letter: string): int {
@@ -121,5 +123,5 @@ function GA_alphaToInt(letter: string): int {
       break;
   }
 
-  return output;
+  return charcode;
 }
