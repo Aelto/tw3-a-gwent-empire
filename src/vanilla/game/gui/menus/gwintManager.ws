@@ -258,6 +258,10 @@ import class CR4GwintManager extends IGameSystem
 	private var difficulty : int;
 
 	// modGwentAddict - BEGIN
+	public var GA_generalData: Ga_GeneralData;
+	// modGwentAddict - END
+
+	// modGwentAddict - BEGIN
 	public var diff1 : int;
 	public var diff2 : int;
 	public var diff3 : int;

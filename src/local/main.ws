@@ -1,6 +1,8 @@
 
 enum GA_CONSTANTS_ENUM {
   GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX = 4304 // random number
+
+  GA_CONSTANTS_ENUM_POINTS_FROM_SEED_ROLL = 10
 }
 
 state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandler extends GlobalEventListener {
@@ -16,7 +18,7 @@ state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandl
    * names, using the state name is a good solution.
    */
   entry function MyGlobalEventListener_main() {
-    var gwintManager:CR4GwintManager;
+    var gwintManager: CR4GwintManager;
     var receptor: CPeristentEntity;
     var actionName: string;
     var activator: CEntity;
@@ -33,6 +35,12 @@ state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandl
 
     gwintManager = theGame.GetGwintManager();
     gwintManager.testMatch = true;
+
+    if (!gwintManager.GA_generalData) {
+      gwintManager.GA_generalData = GA_GeneralData();
+    }
+
+    gwintManager.GA_generalData.opponent = (CNewNpc)parent.receptor;
 
     thePlayer.OnGwintGameRequested('GwentAddictCustomDeck', GwintFaction_NothernKingdom);
 

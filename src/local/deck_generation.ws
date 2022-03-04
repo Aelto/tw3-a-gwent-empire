@@ -1,6 +1,13 @@
 
 function GA_generateRandomDeck(manager: CR4GwintManager): SDeckDefinition {
+  var general_data: GA_GeneralData;
   var deck: SDeckDefinition;
+
+  manager.GA_generalData.current_match = GA_GeneralDataCurrentMatch(
+    // identifier:
+    GA_getDeckIdentifierFromNpc(manager.GA_generalData.opponent)
+  );
+  
 
   deck.cardIndices.PushBack(236); // Black Archer [10]
   deck.cardIndices.PushBack(236); // Black Archer [10]
@@ -101,7 +108,7 @@ function GA_getDeckIdentifierFromNpc(npc: CNewNpc): GA_DeckIdentifier {
   idenfitier += can_be_targeted + "-";
   idenfitier += can_be_hit_by_fists + "-";
 
-  return identifier;
+  return GA_DeckIdentifier(identifier);
 }
 
 
@@ -118,9 +125,10 @@ function GA_getDeckPointsFromSeed(seed: GA_DeckSeed): GA_DeckPoints {
   rng = (new RandomNumberGenerator in thePlayer).setSeed(seed.value)
     .useSeed(true);
 
-  return GA_DeckPoints((int)rng.nextRange(100, 10));
-}
-
-function GA_getSeedFromDeckIdentifier(identifier: GA_DeckIdentifier): GA_DeckSeed {
-  
+  return GA_DeckPoints((int)GA_rngRolls(
+    GA_CONSTANTS_ENUM_POINTS_FROM_SEED_ROLL,
+    rng,
+    100,
+    10
+  ));
 }
