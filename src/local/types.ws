@@ -26,16 +26,18 @@ struct GA_MatchDifficulty {
   var value: int;
 }
 
-struct GA_DeckIdentifier {
-  var value: string;
-}
-
+/**
+ * The available points for the deck.
+ * This is mostly used when generating the deck to know how many
+ * cards it can have. Each card has a cost and this controls how
+ * much it can insert into the deck.
+ */
 struct GA_DeckPoints {
   var value: int;
 }
 
-struct GA_DeckSeed {
-  var value: int;
+struct GA_DeckIdentifier {
+  var value: string;
 }
 
 struct GA_deckGenerationData {

@@ -119,7 +119,7 @@ function GA_getDeckIdentifierFromNpc(npc: CNewNpc): GA_DeckIdentifier {
  * has a cost and the points determine how many cards can be
  * in the decks.
  */
-function GA_getDeckPointsFromSeed(seed: GA_DeckSeed): GA_DeckPoints {
+function GA_getDeckPointsFromSeed(seed: int): GA_DeckPoints {
   var rng: RandomNumberGenerator;
 
   rng = (new RandomNumberGenerator in thePlayer).setSeed(seed.value)

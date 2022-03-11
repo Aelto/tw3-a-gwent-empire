@@ -18,12 +18,60 @@ abstract class GA_CardsDictionnary {
    */
   public var factions: array<GA_FactionCardDictionnary>;
 
-  public function populate(difficulty: GA_MatchDifficulty) {
+  /**
+   * the main place where the `factions` array is filled. This is where all the
+   * data about the generating functions are placed into the dictionnary.
+   */
+  public function init() {
+
+  }
+
+  public function populate(difficulty: GA_MatchDifficulty, points: GA_DeckPoints): array<GA_CardEntry> {
+    var deck: array<Ga_CardEntry>;
+
     // ...
     // add your generation code here.
     // Do whatever you want to generate more or less balanced decks
     // based on the received difficulty.
     // ...
+
+    return deck;
+  }
+
+  /**
+   * Return all the cards that are smaller than the given difficulty
+   */
+  private function getAvailableCardEntriesForDifficulty(cards: array<GA_CardEntry>, difficulty: GA_MatchDifficulty): array<GA_CardEntry> {
+    var filtered_cards: array<GA_CardEntry>;
+    var i: int;
+
+    for (i = 0; i < cards.Size(); i += 1) {
+      if (cards[i].required_difficulty > difficulty) {
+        continue;
+      }
+
+      filtered_cards.PushBack(cards[i]);
+    }
+
+    return filtered_cards;
+  }
+
+  /**
+   * Return all the cards whose cost is lower than the given deck points
+   */
+  private function getAvailableCardEntriesForDeckPoints(cards: array<GA_CardEntry>, points: GA_DeckPoints): array<GA_CardEntry> {
+    var filtered_cards: array<GA_CardEntry>;
+    var i: int;
+
+    for (i = 0; i < cards.Size(); i += 1) {
+      if (cards[i].cost > points) {
+        continue;
+      }
+
+      filtered_cards.PushBack(cards[i]);
+    }
+
+    return filtered_cards;
   }
 }
 
@@ -31,26 +79,15 @@ abstract class GA_CardsDictionnary {
  * A dictionnary of cards for a specific faction
  */
 struct GA_FactionCardDictionnary {
-  var hero_cards: array<GA_CardsDictionnaryEntry>;
-  var leader_cards: array<GA_CardsDictionnaryEntry>;
-  var unit_cards: array<GA_CardsDictionnaryEntry>;
-}
-
-/**
- * An dictionnary of cards for a specific role.
- *
- * It contains 
- */
-struct GA_CardsDictionnaryEntry {
-  var easy_cards: array<Ga_CardEntry>;
-  var medium_cards: array<Ga_CardEntry>;
-  var hard_cards: array<Ga_CardEntry>;
+  var hero_cards: array<GA_CardEntry>;
+  var leader_cards: array<GA_CardEntry>;
+  var unit_cards: array<GA_CardEntry>;
 }
 
 /**
  * A dictionnary entry for one specific card
  */
-struct Ga_CardEntry {
+struct GA_CardEntry {
   /**
    * The index for the card
    */
@@ -67,4 +104,16 @@ struct Ga_CardEntry {
    * to the deck if it is picked by the generator once.
    */
   var minimum: int;
+
+  /**
+   * Defines how many points in the GA_DeckPoints adding
+   * this card will cost.
+   */
+  var cost: GA_DeckPoints;
+
+  /**
+   * Defines after what difficulty the card should start
+   * appearing in decks
+   */
+  var required_difficulty: GA_MatchDifficulty;
 }
