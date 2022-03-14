@@ -41,7 +41,7 @@ abstract class GA_CardsDictionnary {
   /**
    * Return all the cards that are smaller than the given difficulty
    */
-  private function getAvailableCardEntriesForDifficulty(cards: array<GA_CardEntry>, difficulty: GA_MatchDifficulty): array<GA_CardEntry> {
+  public function getAvailableCardEntriesForDifficulty(cards: array<GA_CardEntry>, difficulty: GA_MatchDifficulty): array<GA_CardEntry> {
     var filtered_cards: array<GA_CardEntry>;
     var i: int;
 
@@ -59,7 +59,7 @@ abstract class GA_CardsDictionnary {
   /**
    * Return all the cards whose cost is lower than the given deck points
    */
-  private function getAvailableCardEntriesForDeckPoints(cards: array<GA_CardEntry>, points: GA_DeckPoints): array<GA_CardEntry> {
+  public function getAvailableCardEntriesForDeckPoints(cards: array<GA_CardEntry>, points: GA_DeckPoints): array<GA_CardEntry> {
     var filtered_cards: array<GA_CardEntry>;
     var i: int;
 
