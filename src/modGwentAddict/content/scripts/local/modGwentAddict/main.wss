@@ -1,6 +1,6 @@
 
 enum GA_CONSTANTS_ENUM {
-  GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX = 4304 // random number
+  GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX = 4304, // random number
 
   GA_CONSTANTS_ENUM_POINTS_FROM_SEED_ROLL = 10
 }
@@ -40,7 +40,7 @@ state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandl
       gwintManager.GA_generalData = GA_GeneralData();
     }
 
-    gwintManager.GA_generalData.opponent = (CNewNpc)parent.receptor;
+    gwintManager.GA_generalData.opponent = parent.receptor as CNewNpc;
 
     thePlayer.OnGwintGameRequested('GwentAddictCustomDeck', GwintFaction_NothernKingdom);
 

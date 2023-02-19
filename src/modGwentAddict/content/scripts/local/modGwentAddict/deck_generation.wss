@@ -1,4 +1,3 @@
-
 function GA_generateRandomDeck(manager: CR4GwintManager): SDeckDefinition {
   var general_data: GA_GeneralData;
   var deck: SDeckDefinition;
@@ -7,7 +6,6 @@ function GA_generateRandomDeck(manager: CR4GwintManager): SDeckDefinition {
     // identifier:
     GA_getDeckIdentifierFromNpc(manager.GA_generalData.opponent)
   );
-  
 
   deck.cardIndices.PushBack(236); // Black Archer [10]
   deck.cardIndices.PushBack(236); // Black Archer [10]
@@ -50,28 +48,28 @@ function GA_generateRandomDeck(manager: CR4GwintManager): SDeckDefinition {
   deck.cardIndices.PushBack(236); // Black Archer [10]
 
   deck.dynamicCardRequirements.PushBack(manager.diff5);
-  deck.dynamicCards.PushBack(2); 
+  deck.dynamicCards.PushBack(2);
   deck.dynamicCardRequirements.PushBack(manager.diff7);
-  deck.dynamicCards.PushBack(2); 
+  deck.dynamicCards.PushBack(2);
   deck.dynamicCardRequirements.PushBack(manager.diff9);
-  deck.dynamicCards.PushBack(103); 
+  deck.dynamicCards.PushBack(103);
   deck.dynamicCardRequirements.PushBack(manager.diff11);
-  deck.dynamicCards.PushBack(102); 
+  deck.dynamicCards.PushBack(102);
   deck.dynamicCardRequirements.PushBack(manager.diff11);
-  deck.dynamicCards.PushBack(109); 
+  deck.dynamicCards.PushBack(109);
   deck.dynamicCardRequirements.PushBack(manager.diff14);
-  deck.dynamicCards.PushBack(101); 
+  deck.dynamicCards.PushBack(101);
   deck.dynamicCardRequirements.PushBack(manager.diff14);
   deck.dynamicCards.PushBack(12);
 
-  deck.specialCard = 100; 
+  deck.specialCard = 100;
   deck.leaderIndex = 1001;
 
   return deck;
 }
 
 /**
- * Generate a unique DeckIdentifier from the NPC, calling this function 
+ * Generate a unique DeckIdentifier from the NPC, calling this function
  * twice using the same NPC should result in the same identifier. calling
  * it with two different NPCs should result in two completely different
  * identifiers.
@@ -111,8 +109,6 @@ function GA_getDeckIdentifierFromNpc(npc: CNewNpc): GA_DeckIdentifier {
   return GA_DeckIdentifier(identifier);
 }
 
-
-
 /**
  * return the amount of points given for the supplied seed.
  * Points are used when generating a deck of cards, each card
@@ -122,13 +118,11 @@ function GA_getDeckIdentifierFromNpc(npc: CNewNpc): GA_DeckIdentifier {
 function GA_getDeckPointsFromSeed(seed: int): GA_DeckPoints {
   var rng: RandomNumberGenerator;
 
-  rng = (new RandomNumberGenerator in thePlayer).setSeed(seed.value)
+  rng = (new RandomNumberGenerator in thePlayer)
+    .setSeed(seed.value)
     .useSeed(true);
 
-  return GA_DeckPoints((int)GA_rngRolls(
-    GA_CONSTANTS_ENUM_POINTS_FROM_SEED_ROLL,
-    rng,
-    100,
-    10
-  ));
+  return GA_DeckPoints(
+    GA_rngRolls(GA_CONSTANTS_ENUM_POINTS_FROM_SEED_ROLL, rng, 100, 10) as int
+  );
 }
