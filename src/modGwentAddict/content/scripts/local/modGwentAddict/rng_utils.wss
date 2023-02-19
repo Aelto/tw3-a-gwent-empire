@@ -16,10 +16,10 @@
  * somewhat unique roll number.
  */
 function GA_rngRolls(roll: int, out rng: RandomNumberGenerator, max: float, min: float): float {
-  while (i > 1) {
+  while (roll > 1) {
     rng.next();
 
-    i -= 1;
+    roll -= 1;
   }
 
   return rng.nextRange(max, min);

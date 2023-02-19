@@ -2,51 +2,38 @@
 enum GA_CONSTANTS_ENUM {
   GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX = 4304, // random number
 
-  GA_CONSTANTS_ENUM_POINTS_FROM_SEED_ROLL = 10
+  GA_CONSTANTS_ENUM_POINTS_FROM_SEED_ROLL = 10,
+  GA_CONSTANTS_ENUM_DIFFCULTY_FROM_SEED_ROLL = 9,
+  GA_CONSTANTS_ENUM_FACTION_FROM_SEED_ROLL = 8,
+  GA_CONSTANTS_ENUM_LEADER_FROM_SEED_ROLL = 7,
 }
 
-state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandler extends GlobalEventListener {
-  event OnEnterState(previous_state_name: name) {
-    super.OnEnterState(previous_state_name);
-
-    this.GwentAddictGlobalInteractionListener_main();
-  }
-
-  /**
-   * states can have undefined behaviors when two states have methods with the
-   * same name. For this reason it is recommend to use a prefix on your function
-   * names, using the state name is a good solution.
-   */
-  entry function GwentAddictGlobalInteractionListener_main() {
-    var gwintManager:CR4GwintManager;
-    var receptor: CPeristentEntity;
-    var actionName: string;
-    var activator: CEntity;
-
-    // now here you can do anything you want, here we print all the information
-    // we have about the interaction.
-    theGame
+function GA_npcOnInteraction(actionName: string, activator: CEntity, npc: CNewNPC) {
+  theGame
       .GetGuiManager()
       .ShowNotification(
-        "received interaction: " + parent.actionName +
-        ", activator: " + parent.activator.ToString() +
-        ", receptor: " + parent.receptor.ToString()
+        "received interaction: " + actionName +
+        ", activator: " + activator.ToString() +
+        ", receptor: " + npc.ToString()
       );
 
-    gwintManager = theGame.GetGwintManager();
-    gwintManager.testMatch = true;
+  GA_startGwentMatch(npc);
+}
 
-    if (!gwintManager.GA_generalData) {
-      gwintManager.GA_generalData = GA_GeneralData();
-    }
 
-    gwintManager.GA_generalData.opponent = parent.receptor as CNewNpc;
+function GA_startGwentMatch(opponent: CNewNPC) {
+  var storage: GA_Storage = GA_getStorage();
+  storage.opponent = opponent;
 
-    thePlayer.OnGwintGameRequested('GwentAddictCustomDeck', GwintFaction_NothernKingdom);
+  storage.GotoState('Idle');
+  storage.GotoState('Start');
+}
 
-    // when our job is done, we MUST call the finish method. Not doing so will
-    // block the global event listener and it won't work for the rest of the
-    // session until the player gets a loading screen.
-    this.finish();
-  }
+
+function GA_onCustomGwentStarted(manager: CR4GwintManager): SDeckDefinition {
+  return GA_generateRandomDeck(manager);
+}
+
+function GALOG(message: string) {
+  LogChannel('GwentAddict', message);
 }

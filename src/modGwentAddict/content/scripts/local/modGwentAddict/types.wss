@@ -1,13 +1,4 @@
 
-// the struct storing the general data for the mod. It is stored in the
-// GwintManager for easy & global access.
-struct GA_GeneralData {
-  // The opponent for the next/ongoing match of gwent
-  var opponent: CNewNpc;
-
-  var current_match: GA_GeneralDataCurrentMatch;
-}
-
 struct GA_GeneralDataCurrentMatch {
   var identifier: GA_DeckIdentifier;
 }

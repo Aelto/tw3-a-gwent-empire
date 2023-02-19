@@ -1,0 +1,232 @@
+use lalrpop_util::ParseError;
+
+use crate::DictionaryError;
+use crate::ProgramInformation;
+use crate::SpanMaker;
+use crate::Spanned as SpannedNode;
+use crate::ast::*;
+
+grammar(program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>);
+
+extern {
+  type Error = DictionaryError;
+}
+
+pub Program: Program = {
+    <definitions:(<Spanned<Definition>>)*> => Program { definitions }
+}
+
+Definition: Definition = {
+  Spanned<DefinitionVariables> => Definition::Variables(<>),
+  Spanned<DefinitionFaction> => Definition::Faction(<>)
+}
+
+// -----------------------------------------------------------------------------
+
+DefinitionVariables: Vec<DefinitionVariable> = {
+  KeywordVariables "{" <variables:TrailingComma<DefinitionVariable>> "}"
+    => variables
+}
+
+// -----------------------------------------------------------------------------
+
+DefinitionFaction: DefinitionFaction = {
+  KeywordFaction <name:Spanned<Identifier>>
+  "{"
+  KeywordLeaders "{" <leaders:Spanned<TrailingComma<CardEntry>>> "}"
+  KeywordHeroes "{" <heroes:Spanned<TrailingComma<CardEntry>>> "}"
+  KeywordUnits "{" <units:Spanned<TrailingComma<CardEntry>>> "}"
+  "}"
+    => DefinitionFaction { name, leaders, heroes, units }
+}
+
+// -----------------------------------------------------------------------------
+
+CardEntry: CardEntry = {
+  <count:Spanned<NumberOrVariable>> <index:Spanned<NumberOrVariable>>
+  <points:CardEntryPoints?>
+  <difficulty:CardEntryDifficulty?>
+    => CardEntry { index, count, points, difficulty }
+}
+
+CardEntryPoints: SpannedNode<NumberOrVariable> = {
+  Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> => <>
+}
+
+CardEntryDifficulty: SpannedNode<NumberOrVariable> = {
+  Spanned<(KeywordDifficulty "(" <NumberOrVariable> ")")> => <>
+}
+
+// -----------------------------------------------------------------------------
+
+NumberOrVariable: NumberOrVariable = {
+  Integer => NumberOrVariable::Number(<>),
+  Spanned<Identifier> =>? match program_information.get_variable(&<>) {
+    Some(value) => Ok(NumberOrVariable::Number(value)),
+    None => Err(ParseError::User { error: DictionaryError::UnknownVariable(<>) }),
+  }
+}
+
+// -----------------------------------------------------------------------------
+
+DefinitionVariable: DefinitionVariable = {
+  <name:Spanned<Identifier>>
+  "="
+  <value:Spanned<Integer>>
+     => program_information.register_variable(name, value)
+}
+
+// -----------------------------------------------------------------------------
+
+Float: String = {
+    <int:Integer> <n:r"\.[0-9]*"> => format!("{int}{n}"),
+};
+
+Integer: u64 = {
+    r"[0-9]+" => <>.parse().expect("integer parsing error"),
+};
+
+Boolean: bool = {
+    "true" => true,
+    "false" => false
+}
+
+Identifier: String = {
+    IdentifierRegex => String::from(<>)
+}
+
+// -----------------------------------------------------------------------------
+
+OptionalTrailingComma<T>: Vec<Option<T>> = {
+    <v:(<ElAndCommas<T>>)*> <e:T?> => match e {
+        // for anyone, or future me, reading this:
+        // This is the equivalent of: v.flatmap(|x| x.clone()).collect();
+        // 
+        // basically to convert [[Some(T), None, None], [None, Some(T)]]
+        // into [Some(T), None, None, None, Some(T)]
+        // All of this because it needs type annotation and i couldn't figure
+        // how to access the `T` from the macro in lalrpop syntax, and the doc
+        // is lacking a little i must say.
+        None => {
+            let mut o = Vec::new();
+
+            for x in v {
+                for y in x {
+                    o.push(y.clone());
+                }
+            }
+
+            o
+        },
+
+        Some(e) => {
+            let mut o = Vec::new();
+
+            for x in v {
+                for y in x {
+                    o.push(y.clone());
+                }
+            }
+
+            o.push(Some(e));
+
+            o
+        }
+    },
+}
+
+ElAndCommas<T>: Vec<Option<T>> = {
+    <v:T> <c:(",")+> => {
+        let mut output = Vec::new();
+
+        output.push(Some(v));
+
+        let mut u = (0..c.len() - 1)
+            .into_iter()
+            .map(|_| None)
+            .collect();
+
+        output.append(&mut u);
+
+        output
+    }
+}
+
+/// A comma separated list of `T` with the possibility of a trailing comma
+TrailingComma<T>: Vec<T> = {
+    <mut v:(<T> ",")*> <e:T?> => match e {
+        None => v,
+        Some(e) => {
+            v.push(e);
+            v
+        }
+    }
+};
+
+/// A dot separated list of `T` with NO possibility of a trailing dot
+DotSeparated<T>: Vec<T> = {
+    <e:T> "." <ee:T> <mut v:("." <T> )*> => {
+        v.push(e);
+        v.push(ee);
+        v
+    }
+};
+
+/// A Tier,
+/// 
+///
+Tier<Op,NextTier>: Rc<Expression> = {
+    Tier<Op,NextTier> Op NextTier => Rc::new(Expression::new(ExpressionBody::Operation(<>))),
+    NextTier
+};
+
+Spanned<T>: SpannedNode<T> = {
+    <l: @L> <val: T> <r: @R> => SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+};
+
+StringLiteral = {
+    r#""[^"]*""#
+};
+
+CharLiteral = {
+    r#"'[^']*'"#
+};
+
+// `match`: Declares the precedence of regular expressions
+// relative to one another when synthesizing
+// the lexer
+match {
+    // Ignore C++-style comments
+    r"//[^\n\r]*[\n\r]*" => {},
+    r"/\*[^\*]*[^/]*(\*/)[\n\r]*" => {},
+
+    // These items have highest precedence.
+    r"[0-9]+",
+
+    "faction" => KeywordFaction,
+    "variables" => KeywordVariables,
+    "leaders" => KeywordLeaders,
+    "heroes" => KeywordHeroes,
+    "units" => KeywordUnits,
+    "points" => KeywordPoints,
+    "difficulty" => KeywordDifficulty
+} else {
+    // These items have next highest precedence.
+
+    // Given an input like `123`, the number regex above
+    // will match; but otherwise, given something like
+    // `123foo` or `foo123`, this will match.
+    //
+    // Here, we also renamed the regex to the name `ID`, which we can
+    // use in the grammar itself.
+    r"\w+" => IdentifierRegex,
+
+    // Ignore whitespace
+    // You probably want this to have low precedence
+    r"\s*" => {},
+
+    // This `_` means "add in all the other strings and
+    // regular expressions in the grammer here" (e.g.,
+    // `"("`).
+    _
+} // you can have more `else` sections if you like
