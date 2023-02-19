@@ -1,27 +1,24 @@
 call variables.cmd
 
-call variables.cmd
-call bundle.bat
-call encode-csv-strings.bat
-
 rmdir "%modpath%\release" /s /q
 mkdir "%modpath%\release"
 
-mkdir "%modpath%\release\mods\%modname%\content\scripts\"
-rmdir "%modpath%\release\mods\%modName%\content\" /s /q
+:: here we compile the cahirc scripts, then construct the final mods by combining
+:: the vanilla edits of the mods and their local scripts:
+call compile
 
-@REM pack everything into a single a file and put the file in the release folder
-mkdir "%modpath%\release\mods\%modname%\content\scripts\local\
-XCOPY "%modPath%\src\vanilla\" "%modpath%\release\mods\%modname%\content\scripts\" /e /s /y
-> "%modpath%\release\mods\%modname%\content\scripts\local\ga_scripts.min.ws" (for /r "%modpath%\src\local" %%F in (*.ws) do @type "%%F")
+set modname=modGwentAddict
+XCOPY "%modpath%\src\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
+rmdir "%modpath%\release\mods\%modname%\content\scripts\local\" /s /q
+XCOPY "%modpath%\dist\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
 
-XCOPY "%modpath%\wolvenkit-project\packed\" "%modpath%\release\dlc\dlc%modname%\" /e /s /y
+:: move the strings
 XCOPY "%modpath%\strings" "%modpath%\release\mods\%modName%\content\" /e /s /y
 
-mkdir "%modpath%\release\bin\config\r4game\user_config_matrix\pc\"
-copy "%modpath%\mod-menu.xml" "%modpath%\release\bin\config\r4game\user_config_matrix\pc\%modname%.xml" /y
+echo copy the sharedutils dependencies
+set modname=mod_sharedutils_npcInteraction
+XCOPY "%modpath%\sharedutils\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
 
-REM Shared utilities
-XCOPY "%modpath%\sharedutils\mod_sharedutils_dialogChoices\" "%modpath%\release\mods\mod_sharedutils_dialogChoices\" /e /s /y
-XCOPY "%modpath%\sharedutils\mod_sharedutils_npcInteraction\" "%modpath%\release\mods\mod_sharedutils_npcInteraction\" /e /s /y
-XCOPY "%modpath%\sharedutils\mod_sharedutils_helpers\" "%modpath%\release\mods\mod_sharedutils_helpers\" /e /s /y
+:: don't need a menu at the moment
+@REM mkdir "%modpath%\release\bin\config\r4game\user_config_matrix\pc\"
+@REM copy "%modpath%\mod-menu.xml" "%modpath%\release\bin\config\r4game\user_config_matrix\pc\%modname%.xml" /y

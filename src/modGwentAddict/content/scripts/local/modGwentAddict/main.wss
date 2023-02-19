@@ -7,7 +7,7 @@ state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandl
   event OnEnterState(previous_state_name: name) {
     super.OnEnterState(previous_state_name);
 
-    this.MyGlobalEventListener_main();
+    this.GwentAddictGlobalInteractionListener_main();
   }
 
   /**
@@ -15,7 +15,7 @@ state GwentAddictGlobalInteractionListener in SU_NpcInteraction_GlobalEventHandl
    * same name. For this reason it is recommend to use a prefix on your function
    * names, using the state name is a good solution.
    */
-  entry function MyGlobalEventListener_main() {
+  entry function GwentAddictGlobalInteractionListener_main() {
     var gwintManager:CR4GwintManager;
     var receptor: CPeristentEntity;
     var actionName: string;
