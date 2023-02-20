@@ -4,12 +4,14 @@ use crate::ast::DefinitionVariable;
 use crate::Spanned;
 
 pub struct ProgramInformation {
+  pub name: String,
   pub variables: HashMap<String, u64>,
 }
 
 impl ProgramInformation {
-  pub fn new() -> Self {
+  pub fn new(name: String) -> Self {
     Self {
+      name,
       variables: HashMap::new(),
     }
   }

@@ -4,6 +4,7 @@ pub mod report_manager;
 pub mod span_manager;
 
 use std::fs;
+use std::path::Path;
 
 use ariadne::ColorGenerator;
 use ariadne::Label;
@@ -15,26 +16,52 @@ pub use program_information::ProgramInformation;
 pub use report_manager::ReportManager;
 pub use span_manager::*;
 
+mod codegen;
 mod parser;
 
 pub enum DictionaryError {
   UnknownVariable(Spanned<String>),
+  UnknownFaction(Spanned<String>),
 }
 
 fn main() {
-  let mut sources_span_manager = SpanManager::new();
-  let mut span_maker = sources_span_manager.add_source("dictionary".to_owned());
-  let content = fs::read_to_string("dictionary").expect("could not read `dictionary` file");
-  let mut program_information = ProgramInformation::new();
+  for child in fs::read_dir(".").expect("failed to read current directory") {
+    let child = child.expect("failed to get current directory child");
+    let path = child.path();
 
-  let result =
-    parser::ProgramParser::new().parse(&mut program_information, &mut span_maker, &content);
+    let Some("ruleset") = path.extension().and_then(|s| s.to_str()) else {
+      continue;
+    };
 
-  match result {
-    Ok(ast) => {
-      dbg!(ast);
+    let filename = path
+      .file_name()
+      .unwrap_or_default()
+      .to_str()
+      .unwrap_or_default();
+
+    println!("compiling {filename}");
+    let mut sources_span_manager = SpanManager::new();
+    let mut span_maker = sources_span_manager.add_source(filename.to_owned());
+    let content =
+      fs::read_to_string(&filename).expect(&format!("could not read `{filename}` file"));
+    let filename_without_extension = filename.replace(".ruleset", "");
+    let mut program_information = ProgramInformation::new(filename_without_extension.to_owned());
+
+    let result =
+      parser::ProgramParser::new().parse(&mut program_information, &mut span_maker, &content);
+
+    let output_filename = child.path().with_extension("ws");
+    match result {
+      Ok(ast) => {
+        println!(" - generating {output_filename:#?}");
+        let directory_path = format!("modGwentRuleset{}/content/scripts/AGE/rulesets", program_information.name);
+        fs::create_dir_all(&directory_path).expect("failed to write resulting mod folders");
+
+        let file_path = Path::new(&directory_path).join(&program_information.name).with_extension("ws");
+        fs::write(file_path, ast.to_string()).expect("failed to write output to file");
+      }
+      Err(err) => print_parsing_error(&content, err, &span_maker.parent, &program_information),
     }
-    Err(err) => print_parsing_error(&content, err, &span_maker.parent, &program_information),
   }
 }
 
@@ -97,6 +124,9 @@ fn handle_user_error(
     DictionaryError::UnknownVariable(spanned) => {
       handle_unknown_variable_error(content, spanned, span_manager, program_information)
     }
+    DictionaryError::UnknownFaction(spanned) => {
+      handle_unknown_faction_error(content, spanned, span_manager, program_information)
+    }
   }
 }
 
@@ -128,6 +158,28 @@ fn handle_unknown_variable_error(
   if "difficulty".contains(error_slice) {
     builder = builder.with_help("Did you mean to use `difficulty`?");
   }
+
+  builder.finish().print(Source::from(&content)).unwrap();
+}
+
+fn handle_unknown_faction_error(
+  content: &str, spanned: Spanned<String>, span_manager: &SpanManager,
+  _program_information: &ProgramInformation,
+) {
+  let mut colors = ColorGenerator::new();
+  let a = colors.next();
+
+  let span = span_manager.get_range(spanned.span);
+  let builder = Report::build(ReportKind::Error, (), span.len())
+    .with_message("Unknown faction")
+    .with_label(
+      Label::new(span)
+        .with_message(format!("No faction with this name"))
+        .with_color(a),
+    )
+    .with_help(
+      "Possible faction names: NorthernKingdom | Skellige | Nilfgaardian | Monster | Scoiatael",
+    );
 
   builder.finish().print(Source::from(&content)).unwrap();
 }

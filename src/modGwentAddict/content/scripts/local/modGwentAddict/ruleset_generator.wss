@@ -1,0 +1,144 @@
+
+abstract class GA_BaseRulesetGenerator {
+  //////////////////////////////////////////////////////////////////////////////
+  // The following functions are meant to be overridden by the generated code //
+  // or any class that extends this class to return custom generation rules.  //
+  //                                                                          //
+  // Each faction has a main function that calls three sub-functions to get   //
+  // the hero, leader, unit cards. When overriding the class it is enough to  //
+  // override the sub-functions only.                                         //
+  //////////////////////////////////////////////////////////////////////////////
+
+  function generateNorthernKingdomRules(): GA_FactionCardDictionary {
+    var faction: GA_FactionCardDictionary;
+
+    faction = GA_FactionCardDictionary(
+      this.generateNorthernKingdomRulesHeroCards(),
+      this.generateNorthernKingdomRulesLeaderCards(),
+      this.generateNorthernKingdomRulesUnitCards()
+    );
+
+    return faction;
+  }
+
+  function generateNorthernKingdomRulesHeroCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateNorthernKingdomRulesLeaderCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateNorthernKingdomRulesUnitCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  function generateSkelligeRules(): GA_FactionCardDictionary {
+    var faction: GA_FactionCardDictionary;
+
+    faction = GA_FactionCardDictionary(
+      this.generateSkelligeRulesHeroCards(),
+      this.generateSkelligeRulesLeaderCards(),
+      this.generateSkelligeRulesUnitCards()
+    );
+
+    return faction;
+  }
+
+  function generateSkelligeRulesHeroCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateSkelligeRulesLeaderCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateSkelligeRulesUnitCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  function generateNilfgaardianRules(): GA_FactionCardDictionary {
+    var faction: GA_FactionCardDictionary;
+
+    faction = GA_FactionCardDictionary(
+      this.generateNilfgaardianRulesHeroCards(),
+      this.generateNilfgaardianRulesLeaderCards(),
+      this.generateNilfgaardianRulesUnitCards()
+    );
+
+    return faction;
+  }
+
+  function generateNilfgaardianRulesHeroCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateNilfgaardianRulesLeaderCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateNilfgaardianRulesUnitCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  function generateScoiataelRules(): GA_FactionCardDictionary {
+    var faction: GA_FactionCardDictionary;
+
+    faction = GA_FactionCardDictionary(
+      this.generateScoiataelRulesHeroCards(),
+      this.generateScoiataelRulesLeaderCards(),
+      this.generateScoiataelRulesUnitCards()
+    );
+
+    return faction;
+  }
+
+  function generateScoiataelRulesHeroCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateScoiataelRulesLeaderCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateScoiataelRulesUnitCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
+  function generateMonsterRules(): GA_FactionCardDictionary {
+    var faction: GA_FactionCardDictionary;
+
+    faction = GA_FactionCardDictionary(
+      this.generateMonsterRulesHeroCards(),
+      this.generateMonsterRulesLeaderCards(),
+      this.generateMonsterRulesUnitCards()
+    );
+
+    return faction;
+  }
+
+  function generateMonsterRulesHeroCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateMonsterRulesLeaderCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+  function generateMonsterRulesUnitCards(): array<GA_CardEntry> {
+    var output: array<GA_CardEntry>;
+    return output;
+  }
+}

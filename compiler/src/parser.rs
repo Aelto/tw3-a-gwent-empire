@@ -1,17 +1,17 @@
 // auto-generated: "lalrpop 0.19.8"
-// sha3: 1c1741d0bc4eb2e2670b1af32b0c99b6f8e725df24058177c939ceefca135fe6
-use crate::ast::*;
+// sha3: df983cccc0255e1e4be7e76c0fbdc8ea6c888ca329468ab4214dd61a2448f098
+use lalrpop_util::ParseError;
 use crate::DictionaryError;
 use crate::ProgramInformation;
 use crate::SpanMaker;
 use crate::Spanned as SpannedNode;
-use lalrpop_util::ParseError;
+use crate::ast::*;
 #[allow(unused_extern_crates)]
 extern crate lalrpop_util as __lalrpop_util;
 #[allow(unused_imports)]
 use self::__lalrpop_util::state_machine as __state_machine;
-extern crate alloc;
 extern crate core;
+extern crate alloc;
 
 #[cfg_attr(rustfmt, rustfmt_skip)]
 mod __parse__Program {
@@ -40,25 +40,23 @@ mod __parse__Program {
         Variant4(alloc::vec::Vec<DefinitionVariable>),
         Variant5(SpannedNode<Definition>),
         Variant6(alloc::vec::Vec<SpannedNode<Definition>>),
-        Variant7(NumberOrVariable),
+        Variant7(u64),
         Variant8(usize),
         Variant9(bool),
         Variant10(core::option::Option<CardEntry>),
-        Variant11(SpannedNode<NumberOrVariable>),
-        Variant12(core::option::Option<SpannedNode<NumberOrVariable>>),
+        Variant11(SpannedNode<u64>),
+        Variant12(core::option::Option<SpannedNode<u64>>),
         Variant13(Definition),
         Variant14(DefinitionFaction),
         Variant15(core::option::Option<DefinitionVariable>),
         Variant16(Vec<DefinitionVariable>),
         Variant17(String),
-        Variant18(u64),
-        Variant19(Program),
-        Variant20(SpannedNode<DefinitionFaction>),
-        Variant21(SpannedNode<Vec<DefinitionVariable>>),
-        Variant22(SpannedNode<String>),
-        Variant23(SpannedNode<u64>),
-        Variant24(SpannedNode<Vec<CardEntry>>),
-        Variant25(Vec<CardEntry>),
+        Variant18(Program),
+        Variant19(SpannedNode<DefinitionFaction>),
+        Variant20(SpannedNode<Vec<DefinitionVariable>>),
+        Variant21(SpannedNode<String>),
+        Variant22(SpannedNode<Vec<CardEntry>>),
+        Variant23(Vec<CardEntry>),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -730,7 +728,32 @@ mod __parse__Program {
                 __reduce35(program_information, span_maker, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             36 => {
-                __reduce36(program_information, span_maker, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+                // DefinitionFaction = KeywordFaction, Spanned<Identifier>, "{", KeywordLeaders, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordHeroes, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordUnits, "{", Spanned<TrailingComma<CardEntry>>, "}", "}" => ActionFn(5);
+                assert!(__symbols.len() >= 16);
+                let __sym15 = __pop_Variant0(__symbols);
+                let __sym14 = __pop_Variant0(__symbols);
+                let __sym13 = __pop_Variant22(__symbols);
+                let __sym12 = __pop_Variant0(__symbols);
+                let __sym11 = __pop_Variant0(__symbols);
+                let __sym10 = __pop_Variant0(__symbols);
+                let __sym9 = __pop_Variant22(__symbols);
+                let __sym8 = __pop_Variant0(__symbols);
+                let __sym7 = __pop_Variant0(__symbols);
+                let __sym6 = __pop_Variant0(__symbols);
+                let __sym5 = __pop_Variant22(__symbols);
+                let __sym4 = __pop_Variant0(__symbols);
+                let __sym3 = __pop_Variant0(__symbols);
+                let __sym2 = __pop_Variant0(__symbols);
+                let __sym1 = __pop_Variant21(__symbols);
+                let __sym0 = __pop_Variant0(__symbols);
+                let __start = __sym0.0.clone();
+                let __end = __sym15.2.clone();
+                let __nt = match super::__action5::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10, __sym11, __sym12, __sym13, __sym14, __sym15) {
+                    Ok(v) => v,
+                    Err(e) => return Some(Err(e)),
+                };
+                __symbols.push((__start, __Symbol::Variant14(__nt), __end));
+                (16, 22)
             }
             37 => {
                 __reduce37(program_information, span_maker, input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -758,7 +781,7 @@ mod __parse__Program {
             }
             45 => {
                 // NumberOrVariable = Spanned<Identifier> => ActionFn(10);
-                let __sym0 = __pop_Variant22(__symbols);
+                let __sym0 = __pop_Variant21(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
                 let __nt = match super::__action10::<>(program_information, span_maker, input, __sym0) {
@@ -830,7 +853,7 @@ mod __parse__Program {
             }
             66 => {
                 // __Program = Program => ActionFn(0);
-                let __sym0 = __pop_Variant19(__symbols);
+                let __sym0 = __pop_Variant18(__symbols);
                 let __start = __sym0.0.clone();
                 let __end = __sym0.2.clone();
                 let __nt = super::__action0::<>(program_information, span_maker, input, __sym0);
@@ -893,25 +916,14 @@ mod __parse__Program {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant7<
-      'input,
-    >(
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
-    ) -> (usize, NumberOrVariable, usize)
-     {
-        match __symbols.pop() {
-            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
-            _ => __symbol_type_mismatch()
-        }
-    }
-    fn __pop_Variant19<
+    fn __pop_Variant18<
       'input,
     >(
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
     ) -> (usize, Program, usize)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant19(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant18(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -926,11 +938,44 @@ mod __parse__Program {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant20<
+    fn __pop_Variant19<
       'input,
     >(
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
     ) -> (usize, SpannedNode<DefinitionFaction>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant19(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant21<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, SpannedNode<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant21(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant22<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, SpannedNode<Vec<CardEntry>>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant22(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant20<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, SpannedNode<Vec<DefinitionVariable>>, usize)
      {
         match __symbols.pop() {
             Some((__l, __Symbol::Variant20(__v), __r)) => (__l, __v, __r),
@@ -941,54 +986,10 @@ mod __parse__Program {
       'input,
     >(
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
-    ) -> (usize, SpannedNode<NumberOrVariable>, usize)
-     {
-        match __symbols.pop() {
-            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
-            _ => __symbol_type_mismatch()
-        }
-    }
-    fn __pop_Variant22<
-      'input,
-    >(
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
-    ) -> (usize, SpannedNode<String>, usize)
-     {
-        match __symbols.pop() {
-            Some((__l, __Symbol::Variant22(__v), __r)) => (__l, __v, __r),
-            _ => __symbol_type_mismatch()
-        }
-    }
-    fn __pop_Variant24<
-      'input,
-    >(
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
-    ) -> (usize, SpannedNode<Vec<CardEntry>>, usize)
-     {
-        match __symbols.pop() {
-            Some((__l, __Symbol::Variant24(__v), __r)) => (__l, __v, __r),
-            _ => __symbol_type_mismatch()
-        }
-    }
-    fn __pop_Variant21<
-      'input,
-    >(
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
-    ) -> (usize, SpannedNode<Vec<DefinitionVariable>>, usize)
-     {
-        match __symbols.pop() {
-            Some((__l, __Symbol::Variant21(__v), __r)) => (__l, __v, __r),
-            _ => __symbol_type_mismatch()
-        }
-    }
-    fn __pop_Variant23<
-      'input,
-    >(
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
     ) -> (usize, SpannedNode<u64>, usize)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant23(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -1003,14 +1004,14 @@ mod __parse__Program {
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant25<
+    fn __pop_Variant23<
       'input,
     >(
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
     ) -> (usize, Vec<CardEntry>, usize)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant25(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant23(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -1095,21 +1096,21 @@ mod __parse__Program {
       'input,
     >(
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
-    ) -> (usize, core::option::Option<SpannedNode<NumberOrVariable>>, usize)
+    ) -> (usize, core::option::Option<SpannedNode<u64>>, usize)
      {
         match __symbols.pop() {
             Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
-    fn __pop_Variant18<
+    fn __pop_Variant7<
       'input,
     >(
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
     ) -> (usize, u64, usize)
      {
         match __symbols.pop() {
-            Some((__l, __Symbol::Variant18(__v), __r)) => (__l, __v, __r),
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
             _ => __symbol_type_mismatch()
         }
     }
@@ -1821,7 +1822,7 @@ mod __parse__Program {
     ) -> (usize, usize)
     {
         // Definition = Spanned<DefinitionVariables> => ActionFn(2);
-        let __sym0 = __pop_Variant21(__symbols);
+        let __sym0 = __pop_Variant20(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action2::<>(program_information, span_maker, input, __sym0);
@@ -1840,47 +1841,12 @@ mod __parse__Program {
     ) -> (usize, usize)
     {
         // Definition = Spanned<DefinitionFaction> => ActionFn(3);
-        let __sym0 = __pop_Variant20(__symbols);
+        let __sym0 = __pop_Variant19(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action3::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant13(__nt), __end));
         (1, 21)
-    }
-    pub(crate) fn __reduce36<
-        'input,
-    >(
-        program_information: &mut ProgramInformation,
-        span_maker: &mut SpanMaker<'input>,
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // DefinitionFaction = KeywordFaction, Spanned<Identifier>, "{", KeywordLeaders, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordHeroes, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordUnits, "{", Spanned<TrailingComma<CardEntry>>, "}", "}" => ActionFn(5);
-        assert!(__symbols.len() >= 16);
-        let __sym15 = __pop_Variant0(__symbols);
-        let __sym14 = __pop_Variant0(__symbols);
-        let __sym13 = __pop_Variant24(__symbols);
-        let __sym12 = __pop_Variant0(__symbols);
-        let __sym11 = __pop_Variant0(__symbols);
-        let __sym10 = __pop_Variant0(__symbols);
-        let __sym9 = __pop_Variant24(__symbols);
-        let __sym8 = __pop_Variant0(__symbols);
-        let __sym7 = __pop_Variant0(__symbols);
-        let __sym6 = __pop_Variant0(__symbols);
-        let __sym5 = __pop_Variant24(__symbols);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant22(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym15.2.clone();
-        let __nt = super::__action5::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10, __sym11, __sym12, __sym13, __sym14, __sym15);
-        __symbols.push((__start, __Symbol::Variant14(__nt), __end));
-        (16, 22)
     }
     pub(crate) fn __reduce37<
         'input,
@@ -1895,9 +1861,9 @@ mod __parse__Program {
     {
         // DefinitionVariable = Spanned<Identifier>, "=", Spanned<Integer> => ActionFn(11);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant23(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant22(__symbols);
+        let __sym0 = __pop_Variant21(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym2.2.clone();
         let __nt = super::__action11::<>(program_information, span_maker, input, __sym0, __sym1, __sym2);
@@ -1978,7 +1944,7 @@ mod __parse__Program {
         // Float = Integer, r#"\\.[0-9]*"# => ActionFn(12);
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant18(__symbols);
+        let __sym0 = __pop_Variant7(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action12::<>(program_information, span_maker, input, __sym0, __sym1);
@@ -2020,7 +1986,7 @@ mod __parse__Program {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action13::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant18(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
         (1, 28)
     }
     pub(crate) fn __reduce44<
@@ -2035,7 +2001,7 @@ mod __parse__Program {
     ) -> (usize, usize)
     {
         // NumberOrVariable = Integer => ActionFn(9);
-        let __sym0 = __pop_Variant18(__symbols);
+        let __sym0 = __pop_Variant7(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action9::<>(program_information, span_maker, input, __sym0);
@@ -2057,7 +2023,7 @@ mod __parse__Program {
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
         let __nt = super::__action67::<>(program_information, span_maker, input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant19(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant18(__nt), __end));
         (0, 30)
     }
     pub(crate) fn __reduce47<
@@ -2076,7 +2042,7 @@ mod __parse__Program {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action68::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant19(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant18(__nt), __end));
         (1, 30)
     }
     pub(crate) fn __reduce48<
@@ -2160,7 +2126,7 @@ mod __parse__Program {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action83::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant20(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant19(__nt), __end));
         (1, 34)
     }
     pub(crate) fn __reduce52<
@@ -2179,7 +2145,7 @@ mod __parse__Program {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action84::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant21(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant20(__nt), __end));
         (1, 35)
     }
     pub(crate) fn __reduce53<
@@ -2198,7 +2164,7 @@ mod __parse__Program {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action85::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant22(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant21(__nt), __end));
         (1, 36)
     }
     pub(crate) fn __reduce54<
@@ -2213,11 +2179,11 @@ mod __parse__Program {
     ) -> (usize, usize)
     {
         // Spanned<Integer> = Integer => ActionFn(86);
-        let __sym0 = __pop_Variant18(__symbols);
+        let __sym0 = __pop_Variant7(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action86::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant23(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
         (1, 37)
     }
     pub(crate) fn __reduce55<
@@ -2251,11 +2217,11 @@ mod __parse__Program {
     ) -> (usize, usize)
     {
         // Spanned<TrailingComma<CardEntry>> = TrailingComma<CardEntry> => ActionFn(88);
-        let __sym0 = __pop_Variant25(__symbols);
+        let __sym0 = __pop_Variant23(__symbols);
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action88::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant24(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant22(__nt), __end));
         (1, 39)
     }
     pub(crate) fn __reduce57<
@@ -2293,7 +2259,7 @@ mod __parse__Program {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action89::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant25(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant23(__nt), __end));
         (1, 41)
     }
     pub(crate) fn __reduce59<
@@ -2311,7 +2277,7 @@ mod __parse__Program {
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2.clone())).unwrap_or_default();
         let __end = __start.clone();
         let __nt = super::__action90::<>(program_information, span_maker, input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant25(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant23(__nt), __end));
         (0, 41)
     }
     pub(crate) fn __reduce60<
@@ -2332,7 +2298,7 @@ mod __parse__Program {
         let __start = __sym0.0.clone();
         let __end = __sym1.2.clone();
         let __nt = super::__action91::<>(program_information, span_maker, input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant25(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant23(__nt), __end));
         (2, 41)
     }
     pub(crate) fn __reduce61<
@@ -2351,7 +2317,7 @@ mod __parse__Program {
         let __start = __sym0.0.clone();
         let __end = __sym0.2.clone();
         let __nt = super::__action92::<>(program_information, span_maker, input, __sym0);
-        __symbols.push((__start, __Symbol::Variant25(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant23(__nt), __end));
         (1, 41)
     }
     pub(crate) fn __reduce62<
@@ -2480,1235 +2446,2254 @@ mod __intern_token {
 pub(crate) use self::__lalrpop_util::lexer::Token;
 
 #[allow(unused_variables)]
-fn __action0<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, Program, usize),
-) -> Program {
-  __0
+fn __action0<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, Program, usize),
+) -> Program
+{
+    __0
 }
 
 #[allow(unused_variables)]
-fn __action1<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str,
-  (_, definitions, _): (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
-) -> Program {
-  Program { definitions }
+fn __action1<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, definitions, _): (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
+) -> Program
+{
+    Program { definitions, name: program_information.name.clone() }
 }
 
 #[allow(unused_variables)]
-fn __action2<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<Vec<DefinitionVariable>>, usize),
-) -> Definition {
-  Definition::Variables(__0)
+fn __action2<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<Vec<DefinitionVariable>>, usize),
+) -> Definition
+{
+    Definition::Variables(__0)
 }
 
 #[allow(unused_variables)]
-fn __action3<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<DefinitionFaction>, usize),
-) -> Definition {
-  Definition::Faction(__0)
+fn __action3<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<DefinitionFaction>, usize),
+) -> Definition
+{
+    Definition::Faction(__0)
 }
 
 #[allow(unused_variables)]
-fn __action4<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, _, _): (usize, &'input str, usize),
-  (_, _, _): (usize, &'input str, usize),
-  (_, variables, _): (usize, Vec<DefinitionVariable>, usize),
-  (_, _, _): (usize, &'input str, usize),
-) -> Vec<DefinitionVariable> {
-  variables
+fn __action4<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, variables, _): (usize, Vec<DefinitionVariable>, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> Vec<DefinitionVariable>
+{
+    variables
 }
 
 #[allow(unused_variables)]
-fn __action5<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, _, _): (usize, &'input str, usize),
-  (_, name, _): (usize, SpannedNode<String>, usize), (_, _, _): (usize, &'input str, usize),
-  (_, _, _): (usize, &'input str, usize), (_, _, _): (usize, &'input str, usize),
-  (_, leaders, _): (usize, SpannedNode<Vec<CardEntry>>, usize),
-  (_, _, _): (usize, &'input str, usize), (_, _, _): (usize, &'input str, usize),
-  (_, _, _): (usize, &'input str, usize),
-  (_, heroes, _): (usize, SpannedNode<Vec<CardEntry>>, usize),
-  (_, _, _): (usize, &'input str, usize), (_, _, _): (usize, &'input str, usize),
-  (_, _, _): (usize, &'input str, usize),
-  (_, units, _): (usize, SpannedNode<Vec<CardEntry>>, usize),
-  (_, _, _): (usize, &'input str, usize), (_, _, _): (usize, &'input str, usize),
-) -> DefinitionFaction {
-  DefinitionFaction {
-    name,
-    leaders,
-    heroes,
-    units,
-  }
-}
-
-#[allow(unused_variables)]
-fn __action6<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, count, _): (usize, SpannedNode<NumberOrVariable>, usize),
-  (_, index, _): (usize, SpannedNode<NumberOrVariable>, usize),
-  (_, points, _): (
-    usize,
-    core::option::Option<SpannedNode<NumberOrVariable>>,
-    usize,
-  ),
-  (_, difficulty, _): (
-    usize,
-    core::option::Option<SpannedNode<NumberOrVariable>>,
-    usize,
-  ),
-) -> CardEntry {
-  CardEntry {
-    index,
-    count,
-    points,
-    difficulty,
-  }
-}
-
-#[allow(unused_variables)]
-fn __action7<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<NumberOrVariable>, usize),
-) -> SpannedNode<NumberOrVariable> {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action8<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<NumberOrVariable>, usize),
-) -> SpannedNode<NumberOrVariable> {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action9<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, u64, usize),
-) -> NumberOrVariable {
-  NumberOrVariable::Number(__0)
-}
-
-#[allow(unused_variables)]
-fn __action10<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<String>, usize),
-) -> Result<NumberOrVariable, __lalrpop_util::ParseError<usize, Token<'input>, DictionaryError>> {
-  match program_information.get_variable(&__0) {
-    Some(value) => Ok(NumberOrVariable::Number(value)),
-    None => Err(ParseError::User {
-      error: DictionaryError::UnknownVariable(__0),
-    }),
-  }
-}
-
-#[allow(unused_variables)]
-fn __action11<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, name, _): (usize, SpannedNode<String>, usize),
-  (_, _, _): (usize, &'input str, usize), (_, value, _): (usize, SpannedNode<u64>, usize),
-) -> DefinitionVariable {
-  program_information.register_variable(name, value)
-}
-
-#[allow(unused_variables)]
-fn __action12<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, int, _): (usize, u64, usize), (_, n, _): (usize, &'input str, usize),
-) -> String {
-  format!("{int}{n}")
-}
-
-#[allow(unused_variables)]
-fn __action13<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, &'input str, usize),
-) -> u64 {
-  __0.parse().expect("integer parsing error")
-}
-
-#[allow(unused_variables)]
-fn __action14<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, &'input str, usize),
-) -> bool {
-  true
-}
-
-#[allow(unused_variables)]
-fn __action15<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, &'input str, usize),
-) -> bool {
-  false
-}
-
-#[allow(unused_variables)]
-fn __action16<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, &'input str, usize),
-) -> String {
-  String::from(__0)
-}
-
-#[allow(unused_variables)]
-fn __action17<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, &'input str, usize),
-) -> &'input str {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action18<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, &'input str, usize),
-) -> &'input str {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action19<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize), (_, val, _): (usize, u64, usize),
-  (_, r, _): (usize, usize, usize),
-) -> SpannedNode<u64> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
-}
-
-#[allow(unused_variables)]
-fn __action20<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize),
-  (_, val, _): (usize, NumberOrVariable, usize), (_, r, _): (usize, usize, usize),
-) -> SpannedNode<NumberOrVariable> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
-}
-
-#[allow(unused_variables)]
-fn __action21<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, _, _): (usize, &'input str, usize),
-  (_, _, _): (usize, &'input str, usize), (_, __0, _): (usize, NumberOrVariable, usize),
-  (_, _, _): (usize, &'input str, usize),
-) -> NumberOrVariable {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action22<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize),
-  (_, val, _): (usize, NumberOrVariable, usize), (_, r, _): (usize, usize, usize),
-) -> SpannedNode<NumberOrVariable> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
-}
-
-#[allow(unused_variables)]
-fn __action23<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, _, _): (usize, &'input str, usize),
-  (_, _, _): (usize, &'input str, usize), (_, __0, _): (usize, NumberOrVariable, usize),
-  (_, _, _): (usize, &'input str, usize),
-) -> NumberOrVariable {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action24<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<NumberOrVariable>, usize),
-) -> core::option::Option<SpannedNode<NumberOrVariable>> {
-  Some(__0)
-}
-
-#[allow(unused_variables)]
-fn __action25<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> core::option::Option<SpannedNode<NumberOrVariable>> {
-  None
-}
-
-#[allow(unused_variables)]
-fn __action26<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<NumberOrVariable>, usize),
-) -> core::option::Option<SpannedNode<NumberOrVariable>> {
-  Some(__0)
-}
-
-#[allow(unused_variables)]
-fn __action27<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> core::option::Option<SpannedNode<NumberOrVariable>> {
-  None
-}
-
-#[allow(unused_variables)]
-fn __action28<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize),
-  (_, val, _): (usize, NumberOrVariable, usize), (_, r, _): (usize, usize, usize),
-) -> SpannedNode<NumberOrVariable> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
-}
-
-#[allow(unused_variables)]
-fn __action29<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize),
-  (_, val, _): (usize, Vec<CardEntry>, usize), (_, r, _): (usize, usize, usize),
-) -> SpannedNode<Vec<CardEntry>> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
-}
-
-#[allow(unused_variables)]
-fn __action30<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, mut v, _): (usize, alloc::vec::Vec<CardEntry>, usize),
-  (_, e, _): (usize, core::option::Option<CardEntry>, usize),
-) -> Vec<CardEntry> {
-  match e {
-    None => v,
-    Some(e) => {
-      v.push(e);
-      v
+fn __action5<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, _, _): (usize, &'input str, usize),
+    (_, name, _): (usize, SpannedNode<String>, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, leaders, _): (usize, SpannedNode<Vec<CardEntry>>, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, heroes, _): (usize, SpannedNode<Vec<CardEntry>>, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, units, _): (usize, SpannedNode<Vec<CardEntry>>, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> Result<DefinitionFaction,__lalrpop_util::ParseError<usize,Token<'input>,DictionaryError>>
+{
+    match name.as_ref() {
+        "NorthernKingdom" | "Monster" | "Scoiatael" |
+        "Nilfgaardian" | "Skellige" => Ok(DefinitionFaction { name, leaders, heroes, units }),
+        _ => Err(ParseError::User { error: DictionaryError::UnknownFaction(name) })
     }
+}
+
+#[allow(unused_variables)]
+fn __action6<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, count, _): (usize, SpannedNode<u64>, usize),
+    (_, index, _): (usize, SpannedNode<u64>, usize),
+    (_, points, _): (usize, core::option::Option<SpannedNode<u64>>, usize),
+    (_, difficulty, _): (usize, core::option::Option<SpannedNode<u64>>, usize),
+) -> CardEntry
+{
+    CardEntry { index, count, points, difficulty }
+}
+
+#[allow(unused_variables)]
+fn __action7<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<u64>, usize),
+) -> SpannedNode<u64>
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action8<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<u64>, usize),
+) -> SpannedNode<u64>
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action9<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, u64, usize),
+) -> u64
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action10<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<String>, usize),
+) -> Result<u64,__lalrpop_util::ParseError<usize,Token<'input>,DictionaryError>>
+{
+    match program_information.get_variable(&__0) {
+    Some(value) => Ok(value),
+    None => Err(ParseError::User { error: DictionaryError::UnknownVariable(__0) }),
   }
 }
 
 #[allow(unused_variables)]
-fn __action31<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize), (_, val, _): (usize, String, usize),
-  (_, r, _): (usize, usize, usize),
-) -> SpannedNode<String> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+fn __action11<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, name, _): (usize, SpannedNode<String>, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, value, _): (usize, SpannedNode<u64>, usize),
+) -> DefinitionVariable
+{
+    program_information.register_variable(name, value)
 }
 
 #[allow(unused_variables)]
-fn __action32<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, mut v, _): (usize, alloc::vec::Vec<DefinitionVariable>, usize),
-  (_, e, _): (usize, core::option::Option<DefinitionVariable>, usize),
-) -> Vec<DefinitionVariable> {
-  match e {
-    None => v,
-    Some(e) => {
-      v.push(e);
-      v
+fn __action12<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, int, _): (usize, u64, usize),
+    (_, n, _): (usize, &'input str, usize),
+) -> String
+{
+    format!("{int}{n}")
+}
+
+#[allow(unused_variables)]
+fn __action13<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, &'input str, usize),
+) -> u64
+{
+    __0.parse().expect("integer parsing error")
+}
+
+#[allow(unused_variables)]
+fn __action14<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, &'input str, usize),
+) -> bool
+{
+    true
+}
+
+#[allow(unused_variables)]
+fn __action15<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, &'input str, usize),
+) -> bool
+{
+    false
+}
+
+#[allow(unused_variables)]
+fn __action16<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, &'input str, usize),
+) -> String
+{
+    String::from(__0)
+}
+
+#[allow(unused_variables)]
+fn __action17<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, &'input str, usize),
+) -> &'input str
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action18<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, &'input str, usize),
+) -> &'input str
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action19<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, u64, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action20<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, u64, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action21<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, __0, _): (usize, u64, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> u64
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action22<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, u64, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action23<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, __0, _): (usize, u64, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> u64
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action24<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<u64>, usize),
+) -> core::option::Option<SpannedNode<u64>>
+{
+    Some(__0)
+}
+
+#[allow(unused_variables)]
+fn __action25<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> core::option::Option<SpannedNode<u64>>
+{
+    None
+}
+
+#[allow(unused_variables)]
+fn __action26<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<u64>, usize),
+) -> core::option::Option<SpannedNode<u64>>
+{
+    Some(__0)
+}
+
+#[allow(unused_variables)]
+fn __action27<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> core::option::Option<SpannedNode<u64>>
+{
+    None
+}
+
+#[allow(unused_variables)]
+fn __action28<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, u64, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action29<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, Vec<CardEntry>, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<Vec<CardEntry>>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action30<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, mut v, _): (usize, alloc::vec::Vec<CardEntry>, usize),
+    (_, e, _): (usize, core::option::Option<CardEntry>, usize),
+) -> Vec<CardEntry>
+{
+    match e {
+        None => v,
+        Some(e) => {
+            v.push(e);
+            v
+        }
     }
-  }
 }
 
 #[allow(unused_variables)]
-fn __action33<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize),
-  (_, val, _): (usize, DefinitionFaction, usize), (_, r, _): (usize, usize, usize),
-) -> SpannedNode<DefinitionFaction> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
-}
-
-#[allow(unused_variables)]
-fn __action34<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize),
-  (_, val, _): (usize, Vec<DefinitionVariable>, usize), (_, r, _): (usize, usize, usize),
-) -> SpannedNode<Vec<DefinitionVariable>> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
-}
-
-#[allow(unused_variables)]
-fn __action35<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> alloc::vec::Vec<SpannedNode<Definition>> {
-  alloc::vec![]
-}
-
-#[allow(unused_variables)]
-fn __action36<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, v, _): (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
-) -> alloc::vec::Vec<SpannedNode<Definition>> {
-  v
-}
-
-#[allow(unused_variables)]
-fn __action37<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<Definition>, usize),
-) -> SpannedNode<Definition> {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action38<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, l, _): (usize, usize, usize), (_, val, _): (usize, Definition, usize),
-  (_, r, _): (usize, usize, usize),
-) -> SpannedNode<Definition> {
-  SpannedNode::new(val, span_maker.span(l, r, "spanned"))
-}
-
-#[allow(unused_variables)]
-fn __action39<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, SpannedNode<Definition>, usize),
-) -> alloc::vec::Vec<SpannedNode<Definition>> {
-  alloc::vec![__0]
-}
-
-#[allow(unused_variables)]
-fn __action40<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, v, _): (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
-  (_, e, _): (usize, SpannedNode<Definition>, usize),
-) -> alloc::vec::Vec<SpannedNode<Definition>> {
-  {
-    let mut v = v;
-    v.push(e);
-    v
-  }
-}
-
-#[allow(unused_variables)]
-fn __action41<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, DefinitionVariable, usize),
-) -> core::option::Option<DefinitionVariable> {
-  Some(__0)
-}
-
-#[allow(unused_variables)]
-fn __action42<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> core::option::Option<DefinitionVariable> {
-  None
-}
-
-#[allow(unused_variables)]
-fn __action43<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> alloc::vec::Vec<DefinitionVariable> {
-  alloc::vec![]
-}
-
-#[allow(unused_variables)]
-fn __action44<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, v, _): (usize, alloc::vec::Vec<DefinitionVariable>, usize),
-) -> alloc::vec::Vec<DefinitionVariable> {
-  v
-}
-
-#[allow(unused_variables)]
-fn __action45<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, DefinitionVariable, usize),
-  (_, _, _): (usize, &'input str, usize),
-) -> DefinitionVariable {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action46<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, CardEntry, usize),
-) -> core::option::Option<CardEntry> {
-  Some(__0)
-}
-
-#[allow(unused_variables)]
-fn __action47<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> core::option::Option<CardEntry> {
-  None
-}
-
-#[allow(unused_variables)]
-fn __action48<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> alloc::vec::Vec<CardEntry> {
-  alloc::vec![]
-}
-
-#[allow(unused_variables)]
-fn __action49<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, v, _): (usize, alloc::vec::Vec<CardEntry>, usize),
-) -> alloc::vec::Vec<CardEntry> {
-  v
-}
-
-#[allow(unused_variables)]
-fn __action50<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, CardEntry, usize),
-  (_, _, _): (usize, &'input str, usize),
-) -> CardEntry {
-  __0
-}
-
-#[allow(unused_variables)]
-fn __action51<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> usize {
-  __lookbehind.clone()
-}
-
-#[allow(unused_variables)]
-fn __action52<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> usize {
-  __lookahead.clone()
-}
-
-#[allow(unused_variables)]
-fn __action53<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, CardEntry, usize),
-) -> alloc::vec::Vec<CardEntry> {
-  alloc::vec![__0]
-}
-
-#[allow(unused_variables)]
-fn __action54<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, v, _): (usize, alloc::vec::Vec<CardEntry>, usize),
-  (_, e, _): (usize, CardEntry, usize),
-) -> alloc::vec::Vec<CardEntry> {
-  {
-    let mut v = v;
-    v.push(e);
-    v
-  }
-}
-
-#[allow(unused_variables)]
-fn __action55<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, __0, _): (usize, DefinitionVariable, usize),
-) -> alloc::vec::Vec<DefinitionVariable> {
-  alloc::vec![__0]
-}
-
-#[allow(unused_variables)]
-fn __action56<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, (_, v, _): (usize, alloc::vec::Vec<DefinitionVariable>, usize),
-  (_, e, _): (usize, DefinitionVariable, usize),
-) -> alloc::vec::Vec<DefinitionVariable> {
-  {
-    let mut v = v;
-    v.push(e);
-    v
-  }
-}
-
-#[allow(unused_variables)]
-fn __action57<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, CardEntry, usize), __1: (usize, &'input str, usize),
-) -> alloc::vec::Vec<CardEntry> {
-  let __start0 = __0.0.clone();
-  let __end0 = __1.2.clone();
-  let __temp0 = __action50(program_information, span_maker, input, __0, __1);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action53(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action58<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<CardEntry>, usize),
-  __1: (usize, CardEntry, usize), __2: (usize, &'input str, usize),
-) -> alloc::vec::Vec<CardEntry> {
-  let __start0 = __1.0.clone();
-  let __end0 = __2.2.clone();
-  let __temp0 = __action50(program_information, span_maker, input, __1, __2);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action54(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action59<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, core::option::Option<CardEntry>, usize),
-) -> Vec<CardEntry> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action48(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action30(program_information, span_maker, input, __temp0, __0)
-}
-
-#[allow(unused_variables)]
-fn __action60<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<CardEntry>, usize),
-  __1: (usize, core::option::Option<CardEntry>, usize),
-) -> Vec<CardEntry> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action49(program_information, span_maker, input, __0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action30(program_information, span_maker, input, __temp0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action61<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, DefinitionVariable, usize), __1: (usize, &'input str, usize),
-) -> alloc::vec::Vec<DefinitionVariable> {
-  let __start0 = __0.0.clone();
-  let __end0 = __1.2.clone();
-  let __temp0 = __action45(program_information, span_maker, input, __0, __1);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action55(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action62<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
-  __1: (usize, DefinitionVariable, usize), __2: (usize, &'input str, usize),
-) -> alloc::vec::Vec<DefinitionVariable> {
-  let __start0 = __1.0.clone();
-  let __end0 = __2.2.clone();
-  let __temp0 = __action45(program_information, span_maker, input, __1, __2);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action56(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action63<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, core::option::Option<DefinitionVariable>, usize),
-) -> Vec<DefinitionVariable> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action43(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action32(program_information, span_maker, input, __temp0, __0)
-}
-
-#[allow(unused_variables)]
-fn __action64<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
-  __1: (usize, core::option::Option<DefinitionVariable>, usize),
-) -> Vec<DefinitionVariable> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action44(program_information, span_maker, input, __0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action32(program_information, span_maker, input, __temp0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action65<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, SpannedNode<Definition>, usize),
-) -> alloc::vec::Vec<SpannedNode<Definition>> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action37(program_information, span_maker, input, __0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action39(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action66<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
-  __1: (usize, SpannedNode<Definition>, usize),
-) -> alloc::vec::Vec<SpannedNode<Definition>> {
-  let __start0 = __1.0.clone();
-  let __end0 = __1.2.clone();
-  let __temp0 = __action37(program_information, span_maker, input, __1);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action40(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action67<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> Program {
-  let __start0 = __lookbehind.clone();
-  let __end0 = __lookahead.clone();
-  let __temp0 = __action35(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action1(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action68<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
-) -> Program {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action36(program_information, span_maker, input, __0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action1(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action69<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, usize, usize), __1: (usize, &'input str, usize),
-  __2: (usize, &'input str, usize), __3: (usize, NumberOrVariable, usize),
-  __4: (usize, &'input str, usize), __5: (usize, usize, usize),
-) -> SpannedNode<NumberOrVariable> {
-  let __start0 = __1.0.clone();
-  let __end0 = __4.2.clone();
-  let __temp0 = __action21(program_information, span_maker, input, __1, __2, __3, __4);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action20(program_information, span_maker, input, __0, __temp0, __5)
-}
-
-#[allow(unused_variables)]
-fn __action70<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, usize, usize), __1: (usize, &'input str, usize),
-  __2: (usize, &'input str, usize), __3: (usize, NumberOrVariable, usize),
-  __4: (usize, &'input str, usize), __5: (usize, usize, usize),
-) -> SpannedNode<NumberOrVariable> {
-  let __start0 = __1.0.clone();
-  let __end0 = __4.2.clone();
-  let __temp0 = __action23(program_information, span_maker, input, __1, __2, __3, __4);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action22(program_information, span_maker, input, __0, __temp0, __5)
-}
-
-#[allow(unused_variables)]
-fn __action71<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, &'input str, usize), __1: (usize, &'input str, usize),
-  __2: (usize, NumberOrVariable, usize), __3: (usize, &'input str, usize),
-  __4: (usize, usize, usize),
-) -> SpannedNode<NumberOrVariable> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action69(
-    program_information,
-    span_maker,
-    input,
-    __temp0,
-    __0,
-    __1,
-    __2,
-    __3,
-    __4,
-  )
-}
-
-#[allow(unused_variables)]
-fn __action72<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, &'input str, usize), __1: (usize, &'input str, usize),
-  __2: (usize, NumberOrVariable, usize), __3: (usize, &'input str, usize),
-  __4: (usize, usize, usize),
-) -> SpannedNode<NumberOrVariable> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action70(
-    program_information,
-    span_maker,
-    input,
-    __temp0,
-    __0,
-    __1,
-    __2,
-    __3,
-    __4,
-  )
-}
-
-#[allow(unused_variables)]
-fn __action73<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, Definition, usize), __1: (usize, usize, usize),
-) -> SpannedNode<Definition> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action38(program_information, span_maker, input, __temp0, __0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action74<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, DefinitionFaction, usize), __1: (usize, usize, usize),
-) -> SpannedNode<DefinitionFaction> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action33(program_information, span_maker, input, __temp0, __0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action75<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, Vec<DefinitionVariable>, usize), __1: (usize, usize, usize),
-) -> SpannedNode<Vec<DefinitionVariable>> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action34(program_information, span_maker, input, __temp0, __0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action76<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, String, usize), __1: (usize, usize, usize),
-) -> SpannedNode<String> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action31(program_information, span_maker, input, __temp0, __0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action77<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, u64, usize), __1: (usize, usize, usize),
-) -> SpannedNode<u64> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action19(program_information, span_maker, input, __temp0, __0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action78<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, NumberOrVariable, usize), __1: (usize, usize, usize),
-) -> SpannedNode<NumberOrVariable> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action28(program_information, span_maker, input, __temp0, __0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action79<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, Vec<CardEntry>, usize), __1: (usize, usize, usize),
-) -> SpannedNode<Vec<CardEntry>> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.0.clone();
-  let __temp0 = __action52(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action29(program_information, span_maker, input, __temp0, __0, __1)
-}
-
-#[allow(unused_variables)]
-fn __action80<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, &'input str, usize), __1: (usize, &'input str, usize),
-  __2: (usize, NumberOrVariable, usize), __3: (usize, &'input str, usize),
-) -> SpannedNode<NumberOrVariable> {
-  let __start0 = __3.2.clone();
-  let __end0 = __3.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action71(
-    program_information,
-    span_maker,
-    input,
-    __0,
-    __1,
-    __2,
-    __3,
-    __temp0,
-  )
-}
-
-#[allow(unused_variables)]
-fn __action81<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, &'input str, usize), __1: (usize, &'input str, usize),
-  __2: (usize, NumberOrVariable, usize), __3: (usize, &'input str, usize),
-) -> SpannedNode<NumberOrVariable> {
-  let __start0 = __3.2.clone();
-  let __end0 = __3.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action72(
-    program_information,
-    span_maker,
-    input,
-    __0,
-    __1,
-    __2,
-    __3,
-    __temp0,
-  )
-}
-
-#[allow(unused_variables)]
-fn __action82<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, Definition, usize),
-) -> SpannedNode<Definition> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action73(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action83<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, DefinitionFaction, usize),
-) -> SpannedNode<DefinitionFaction> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action74(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action84<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, Vec<DefinitionVariable>, usize),
-) -> SpannedNode<Vec<DefinitionVariable>> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action75(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action85<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, String, usize),
-) -> SpannedNode<String> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action76(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action86<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, u64, usize),
-) -> SpannedNode<u64> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action77(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action87<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, NumberOrVariable, usize),
-) -> SpannedNode<NumberOrVariable> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action78(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action88<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, Vec<CardEntry>, usize),
-) -> SpannedNode<Vec<CardEntry>> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action51(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action79(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action89<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, CardEntry, usize),
-) -> Vec<CardEntry> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action46(program_information, span_maker, input, __0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action59(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action90<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> Vec<CardEntry> {
-  let __start0 = __lookbehind.clone();
-  let __end0 = __lookahead.clone();
-  let __temp0 = __action47(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action59(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action91<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<CardEntry>, usize),
-  __1: (usize, CardEntry, usize),
-) -> Vec<CardEntry> {
-  let __start0 = __1.0.clone();
-  let __end0 = __1.2.clone();
-  let __temp0 = __action46(program_information, span_maker, input, __1);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action60(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action92<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<CardEntry>, usize),
-) -> Vec<CardEntry> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action47(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action60(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action93<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, SpannedNode<NumberOrVariable>, usize),
-  __1: (usize, SpannedNode<NumberOrVariable>, usize),
-  __2: (
-    usize,
-    core::option::Option<SpannedNode<NumberOrVariable>>,
-    usize,
-  ),
-  __3: (usize, SpannedNode<NumberOrVariable>, usize),
-) -> CardEntry {
-  let __start0 = __3.0.clone();
-  let __end0 = __3.2.clone();
-  let __temp0 = __action24(program_information, span_maker, input, __3);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action6(
-    program_information,
-    span_maker,
-    input,
-    __0,
-    __1,
-    __2,
-    __temp0,
-  )
-}
-
-#[allow(unused_variables)]
-fn __action94<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, SpannedNode<NumberOrVariable>, usize),
-  __1: (usize, SpannedNode<NumberOrVariable>, usize),
-  __2: (
-    usize,
-    core::option::Option<SpannedNode<NumberOrVariable>>,
-    usize,
-  ),
-) -> CardEntry {
-  let __start0 = __2.2.clone();
-  let __end0 = __2.2.clone();
-  let __temp0 = __action25(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action6(
-    program_information,
-    span_maker,
-    input,
-    __0,
-    __1,
-    __2,
-    __temp0,
-  )
-}
-
-#[allow(unused_variables)]
-fn __action95<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, SpannedNode<NumberOrVariable>, usize),
-  __1: (usize, SpannedNode<NumberOrVariable>, usize),
-  __2: (usize, SpannedNode<NumberOrVariable>, usize),
-  __3: (usize, SpannedNode<NumberOrVariable>, usize),
-) -> CardEntry {
-  let __start0 = __2.0.clone();
-  let __end0 = __2.2.clone();
-  let __temp0 = __action26(program_information, span_maker, input, __2);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action93(
-    program_information,
-    span_maker,
-    input,
-    __0,
-    __1,
-    __temp0,
-    __3,
-  )
-}
-
-#[allow(unused_variables)]
-fn __action96<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, SpannedNode<NumberOrVariable>, usize),
-  __1: (usize, SpannedNode<NumberOrVariable>, usize),
-  __2: (usize, SpannedNode<NumberOrVariable>, usize),
-) -> CardEntry {
-  let __start0 = __1.2.clone();
-  let __end0 = __2.0.clone();
-  let __temp0 = __action27(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action93(
-    program_information,
-    span_maker,
-    input,
-    __0,
-    __1,
-    __temp0,
-    __2,
-  )
-}
-
-#[allow(unused_variables)]
-fn __action97<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, SpannedNode<NumberOrVariable>, usize),
-  __1: (usize, SpannedNode<NumberOrVariable>, usize),
-  __2: (usize, SpannedNode<NumberOrVariable>, usize),
-) -> CardEntry {
-  let __start0 = __2.0.clone();
-  let __end0 = __2.2.clone();
-  let __temp0 = __action26(program_information, span_maker, input, __2);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action94(program_information, span_maker, input, __0, __1, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action98<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, SpannedNode<NumberOrVariable>, usize),
-  __1: (usize, SpannedNode<NumberOrVariable>, usize),
-) -> CardEntry {
-  let __start0 = __1.2.clone();
-  let __end0 = __1.2.clone();
-  let __temp0 = __action27(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action94(program_information, span_maker, input, __0, __1, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action99<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, DefinitionVariable, usize),
-) -> Vec<DefinitionVariable> {
-  let __start0 = __0.0.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action41(program_information, span_maker, input, __0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action63(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action100<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __lookbehind: &usize, __lookahead: &usize,
-) -> Vec<DefinitionVariable> {
-  let __start0 = __lookbehind.clone();
-  let __end0 = __lookahead.clone();
-  let __temp0 = __action42(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action63(program_information, span_maker, input, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action101<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
-  __1: (usize, DefinitionVariable, usize),
-) -> Vec<DefinitionVariable> {
-  let __start0 = __1.0.clone();
-  let __end0 = __1.2.clone();
-  let __temp0 = __action41(program_information, span_maker, input, __1);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action64(program_information, span_maker, input, __0, __temp0)
-}
-
-#[allow(unused_variables)]
-fn __action102<'input>(
-  program_information: &mut ProgramInformation, span_maker: &mut SpanMaker<'input>,
-  input: &'input str, __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
-) -> Vec<DefinitionVariable> {
-  let __start0 = __0.2.clone();
-  let __end0 = __0.2.clone();
-  let __temp0 = __action42(program_information, span_maker, input, &__start0, &__end0);
-  let __temp0 = (__start0, __temp0, __end0);
-  __action64(program_information, span_maker, input, __0, __temp0)
-}
-
-pub trait __ToTriple<'input> {
-  fn to_triple(
-    value: Self,
-  ) -> Result<
-    (usize, Token<'input>, usize),
-    __lalrpop_util::ParseError<usize, Token<'input>, DictionaryError>,
-  >;
-}
-
-impl<'input> __ToTriple<'input> for (usize, Token<'input>, usize) {
-  fn to_triple(
-    value: Self,
-  ) -> Result<
-    (usize, Token<'input>, usize),
-    __lalrpop_util::ParseError<usize, Token<'input>, DictionaryError>,
-  > {
-    Ok(value)
-  }
-}
-impl<'input> __ToTriple<'input> for Result<(usize, Token<'input>, usize), DictionaryError> {
-  fn to_triple(
-    value: Self,
-  ) -> Result<
-    (usize, Token<'input>, usize),
-    __lalrpop_util::ParseError<usize, Token<'input>, DictionaryError>,
-  > {
-    match value {
-      Ok(v) => Ok(v),
-      Err(error) => Err(__lalrpop_util::ParseError::User { error }),
+fn __action31<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, String, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<String>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action32<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, mut v, _): (usize, alloc::vec::Vec<DefinitionVariable>, usize),
+    (_, e, _): (usize, core::option::Option<DefinitionVariable>, usize),
+) -> Vec<DefinitionVariable>
+{
+    match e {
+        None => v,
+        Some(e) => {
+            v.push(e);
+            v
+        }
     }
-  }
+}
+
+#[allow(unused_variables)]
+fn __action33<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, DefinitionFaction, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<DefinitionFaction>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action34<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, Vec<DefinitionVariable>, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<Vec<DefinitionVariable>>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action35<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> alloc::vec::Vec<SpannedNode<Definition>>
+{
+    alloc::vec![]
+}
+
+#[allow(unused_variables)]
+fn __action36<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, v, _): (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
+) -> alloc::vec::Vec<SpannedNode<Definition>>
+{
+    v
+}
+
+#[allow(unused_variables)]
+fn __action37<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<Definition>, usize),
+) -> SpannedNode<Definition>
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action38<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, l, _): (usize, usize, usize),
+    (_, val, _): (usize, Definition, usize),
+    (_, r, _): (usize, usize, usize),
+) -> SpannedNode<Definition>
+{
+    SpannedNode::new(val, span_maker.span(l, r, "spanned"))
+}
+
+#[allow(unused_variables)]
+fn __action39<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, SpannedNode<Definition>, usize),
+) -> alloc::vec::Vec<SpannedNode<Definition>>
+{
+    alloc::vec![__0]
+}
+
+#[allow(unused_variables)]
+fn __action40<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, v, _): (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
+    (_, e, _): (usize, SpannedNode<Definition>, usize),
+) -> alloc::vec::Vec<SpannedNode<Definition>>
+{
+    { let mut v = v; v.push(e); v }
+}
+
+#[allow(unused_variables)]
+fn __action41<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, DefinitionVariable, usize),
+) -> core::option::Option<DefinitionVariable>
+{
+    Some(__0)
+}
+
+#[allow(unused_variables)]
+fn __action42<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> core::option::Option<DefinitionVariable>
+{
+    None
+}
+
+#[allow(unused_variables)]
+fn __action43<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> alloc::vec::Vec<DefinitionVariable>
+{
+    alloc::vec![]
+}
+
+#[allow(unused_variables)]
+fn __action44<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, v, _): (usize, alloc::vec::Vec<DefinitionVariable>, usize),
+) -> alloc::vec::Vec<DefinitionVariable>
+{
+    v
+}
+
+#[allow(unused_variables)]
+fn __action45<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, DefinitionVariable, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> DefinitionVariable
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action46<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, CardEntry, usize),
+) -> core::option::Option<CardEntry>
+{
+    Some(__0)
+}
+
+#[allow(unused_variables)]
+fn __action47<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> core::option::Option<CardEntry>
+{
+    None
+}
+
+#[allow(unused_variables)]
+fn __action48<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> alloc::vec::Vec<CardEntry>
+{
+    alloc::vec![]
+}
+
+#[allow(unused_variables)]
+fn __action49<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, v, _): (usize, alloc::vec::Vec<CardEntry>, usize),
+) -> alloc::vec::Vec<CardEntry>
+{
+    v
+}
+
+#[allow(unused_variables)]
+fn __action50<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, CardEntry, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> CardEntry
+{
+    __0
+}
+
+#[allow(unused_variables)]
+fn __action51<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> usize
+{
+    __lookbehind.clone()
+}
+
+#[allow(unused_variables)]
+fn __action52<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> usize
+{
+    __lookahead.clone()
+}
+
+#[allow(unused_variables)]
+fn __action53<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, CardEntry, usize),
+) -> alloc::vec::Vec<CardEntry>
+{
+    alloc::vec![__0]
+}
+
+#[allow(unused_variables)]
+fn __action54<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, v, _): (usize, alloc::vec::Vec<CardEntry>, usize),
+    (_, e, _): (usize, CardEntry, usize),
+) -> alloc::vec::Vec<CardEntry>
+{
+    { let mut v = v; v.push(e); v }
+}
+
+#[allow(unused_variables)]
+fn __action55<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, __0, _): (usize, DefinitionVariable, usize),
+) -> alloc::vec::Vec<DefinitionVariable>
+{
+    alloc::vec![__0]
+}
+
+#[allow(unused_variables)]
+fn __action56<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    (_, v, _): (usize, alloc::vec::Vec<DefinitionVariable>, usize),
+    (_, e, _): (usize, DefinitionVariable, usize),
+) -> alloc::vec::Vec<DefinitionVariable>
+{
+    { let mut v = v; v.push(e); v }
+}
+
+#[allow(unused_variables)]
+fn __action57<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, CardEntry, usize),
+    __1: (usize, &'input str, usize),
+) -> alloc::vec::Vec<CardEntry>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __1.2.clone();
+    let __temp0 = __action50(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action53(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action58<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<CardEntry>, usize),
+    __1: (usize, CardEntry, usize),
+    __2: (usize, &'input str, usize),
+) -> alloc::vec::Vec<CardEntry>
+{
+    let __start0 = __1.0.clone();
+    let __end0 = __2.2.clone();
+    let __temp0 = __action50(
+        program_information,
+        span_maker,
+        input,
+        __1,
+        __2,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action54(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action59<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, core::option::Option<CardEntry>, usize),
+) -> Vec<CardEntry>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action48(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action30(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action60<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<CardEntry>, usize),
+    __1: (usize, core::option::Option<CardEntry>, usize),
+) -> Vec<CardEntry>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action49(
+        program_information,
+        span_maker,
+        input,
+        __0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action30(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action61<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, DefinitionVariable, usize),
+    __1: (usize, &'input str, usize),
+) -> alloc::vec::Vec<DefinitionVariable>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __1.2.clone();
+    let __temp0 = __action45(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action55(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action62<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
+    __1: (usize, DefinitionVariable, usize),
+    __2: (usize, &'input str, usize),
+) -> alloc::vec::Vec<DefinitionVariable>
+{
+    let __start0 = __1.0.clone();
+    let __end0 = __2.2.clone();
+    let __temp0 = __action45(
+        program_information,
+        span_maker,
+        input,
+        __1,
+        __2,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action56(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action63<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, core::option::Option<DefinitionVariable>, usize),
+) -> Vec<DefinitionVariable>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action43(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action32(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action64<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
+    __1: (usize, core::option::Option<DefinitionVariable>, usize),
+) -> Vec<DefinitionVariable>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action44(
+        program_information,
+        span_maker,
+        input,
+        __0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action32(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action65<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, SpannedNode<Definition>, usize),
+) -> alloc::vec::Vec<SpannedNode<Definition>>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action37(
+        program_information,
+        span_maker,
+        input,
+        __0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action39(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action66<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
+    __1: (usize, SpannedNode<Definition>, usize),
+) -> alloc::vec::Vec<SpannedNode<Definition>>
+{
+    let __start0 = __1.0.clone();
+    let __end0 = __1.2.clone();
+    let __temp0 = __action37(
+        program_information,
+        span_maker,
+        input,
+        __1,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action40(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action67<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> Program
+{
+    let __start0 = __lookbehind.clone();
+    let __end0 = __lookahead.clone();
+    let __temp0 = __action35(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action1(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action68<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
+) -> Program
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action36(
+        program_information,
+        span_maker,
+        input,
+        __0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action1(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action69<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, usize, usize),
+    __1: (usize, &'input str, usize),
+    __2: (usize, &'input str, usize),
+    __3: (usize, u64, usize),
+    __4: (usize, &'input str, usize),
+    __5: (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __1.0.clone();
+    let __end0 = __4.2.clone();
+    let __temp0 = __action21(
+        program_information,
+        span_maker,
+        input,
+        __1,
+        __2,
+        __3,
+        __4,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action20(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+        __5,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action70<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, usize, usize),
+    __1: (usize, &'input str, usize),
+    __2: (usize, &'input str, usize),
+    __3: (usize, u64, usize),
+    __4: (usize, &'input str, usize),
+    __5: (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __1.0.clone();
+    let __end0 = __4.2.clone();
+    let __temp0 = __action23(
+        program_information,
+        span_maker,
+        input,
+        __1,
+        __2,
+        __3,
+        __4,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action22(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+        __5,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action71<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, &'input str, usize),
+    __1: (usize, &'input str, usize),
+    __2: (usize, u64, usize),
+    __3: (usize, &'input str, usize),
+    __4: (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action69(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+        __2,
+        __3,
+        __4,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action72<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, &'input str, usize),
+    __1: (usize, &'input str, usize),
+    __2: (usize, u64, usize),
+    __3: (usize, &'input str, usize),
+    __4: (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action70(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+        __2,
+        __3,
+        __4,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action73<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, Definition, usize),
+    __1: (usize, usize, usize),
+) -> SpannedNode<Definition>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action38(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action74<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, DefinitionFaction, usize),
+    __1: (usize, usize, usize),
+) -> SpannedNode<DefinitionFaction>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action33(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action75<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, Vec<DefinitionVariable>, usize),
+    __1: (usize, usize, usize),
+) -> SpannedNode<Vec<DefinitionVariable>>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action34(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action76<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, String, usize),
+    __1: (usize, usize, usize),
+) -> SpannedNode<String>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action31(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action77<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, u64, usize),
+    __1: (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action19(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action78<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, u64, usize),
+    __1: (usize, usize, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action28(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action79<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, Vec<CardEntry>, usize),
+    __1: (usize, usize, usize),
+) -> SpannedNode<Vec<CardEntry>>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.0.clone();
+    let __temp0 = __action52(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action29(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+        __0,
+        __1,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action80<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, &'input str, usize),
+    __1: (usize, &'input str, usize),
+    __2: (usize, u64, usize),
+    __3: (usize, &'input str, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __3.2.clone();
+    let __end0 = __3.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action71(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+        __2,
+        __3,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action81<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, &'input str, usize),
+    __1: (usize, &'input str, usize),
+    __2: (usize, u64, usize),
+    __3: (usize, &'input str, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __3.2.clone();
+    let __end0 = __3.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action72(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+        __2,
+        __3,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action82<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, Definition, usize),
+) -> SpannedNode<Definition>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action73(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action83<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, DefinitionFaction, usize),
+) -> SpannedNode<DefinitionFaction>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action74(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action84<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, Vec<DefinitionVariable>, usize),
+) -> SpannedNode<Vec<DefinitionVariable>>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action75(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action85<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, String, usize),
+) -> SpannedNode<String>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action76(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action86<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, u64, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action77(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action87<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, u64, usize),
+) -> SpannedNode<u64>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action78(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action88<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, Vec<CardEntry>, usize),
+) -> SpannedNode<Vec<CardEntry>>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action51(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action79(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action89<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, CardEntry, usize),
+) -> Vec<CardEntry>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action46(
+        program_information,
+        span_maker,
+        input,
+        __0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action59(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action90<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> Vec<CardEntry>
+{
+    let __start0 = __lookbehind.clone();
+    let __end0 = __lookahead.clone();
+    let __temp0 = __action47(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action59(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action91<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<CardEntry>, usize),
+    __1: (usize, CardEntry, usize),
+) -> Vec<CardEntry>
+{
+    let __start0 = __1.0.clone();
+    let __end0 = __1.2.clone();
+    let __temp0 = __action46(
+        program_information,
+        span_maker,
+        input,
+        __1,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action60(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action92<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<CardEntry>, usize),
+) -> Vec<CardEntry>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action47(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action60(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action93<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, SpannedNode<u64>, usize),
+    __1: (usize, SpannedNode<u64>, usize),
+    __2: (usize, core::option::Option<SpannedNode<u64>>, usize),
+    __3: (usize, SpannedNode<u64>, usize),
+) -> CardEntry
+{
+    let __start0 = __3.0.clone();
+    let __end0 = __3.2.clone();
+    let __temp0 = __action24(
+        program_information,
+        span_maker,
+        input,
+        __3,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action6(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+        __2,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action94<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, SpannedNode<u64>, usize),
+    __1: (usize, SpannedNode<u64>, usize),
+    __2: (usize, core::option::Option<SpannedNode<u64>>, usize),
+) -> CardEntry
+{
+    let __start0 = __2.2.clone();
+    let __end0 = __2.2.clone();
+    let __temp0 = __action25(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action6(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+        __2,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action95<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, SpannedNode<u64>, usize),
+    __1: (usize, SpannedNode<u64>, usize),
+    __2: (usize, SpannedNode<u64>, usize),
+    __3: (usize, SpannedNode<u64>, usize),
+) -> CardEntry
+{
+    let __start0 = __2.0.clone();
+    let __end0 = __2.2.clone();
+    let __temp0 = __action26(
+        program_information,
+        span_maker,
+        input,
+        __2,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action93(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+        __temp0,
+        __3,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action96<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, SpannedNode<u64>, usize),
+    __1: (usize, SpannedNode<u64>, usize),
+    __2: (usize, SpannedNode<u64>, usize),
+) -> CardEntry
+{
+    let __start0 = __1.2.clone();
+    let __end0 = __2.0.clone();
+    let __temp0 = __action27(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action93(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+        __temp0,
+        __2,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action97<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, SpannedNode<u64>, usize),
+    __1: (usize, SpannedNode<u64>, usize),
+    __2: (usize, SpannedNode<u64>, usize),
+) -> CardEntry
+{
+    let __start0 = __2.0.clone();
+    let __end0 = __2.2.clone();
+    let __temp0 = __action26(
+        program_information,
+        span_maker,
+        input,
+        __2,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action94(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action98<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, SpannedNode<u64>, usize),
+    __1: (usize, SpannedNode<u64>, usize),
+) -> CardEntry
+{
+    let __start0 = __1.2.clone();
+    let __end0 = __1.2.clone();
+    let __temp0 = __action27(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action94(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __1,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action99<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, DefinitionVariable, usize),
+) -> Vec<DefinitionVariable>
+{
+    let __start0 = __0.0.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action41(
+        program_information,
+        span_maker,
+        input,
+        __0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action63(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action100<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> Vec<DefinitionVariable>
+{
+    let __start0 = __lookbehind.clone();
+    let __end0 = __lookahead.clone();
+    let __temp0 = __action42(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action63(
+        program_information,
+        span_maker,
+        input,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action101<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
+    __1: (usize, DefinitionVariable, usize),
+) -> Vec<DefinitionVariable>
+{
+    let __start0 = __1.0.clone();
+    let __end0 = __1.2.clone();
+    let __temp0 = __action41(
+        program_information,
+        span_maker,
+        input,
+        __1,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action64(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+fn __action102<
+    'input,
+>(
+    program_information: &mut ProgramInformation,
+    span_maker: &mut SpanMaker<'input>,
+    input: &'input str,
+    __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
+) -> Vec<DefinitionVariable>
+{
+    let __start0 = __0.2.clone();
+    let __end0 = __0.2.clone();
+    let __temp0 = __action42(
+        program_information,
+        span_maker,
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action64(
+        program_information,
+        span_maker,
+        input,
+        __0,
+        __temp0,
+    )
+}
+
+pub trait __ToTriple<'input, >
+{
+    fn to_triple(value: Self) -> Result<(usize,Token<'input>,usize), __lalrpop_util::ParseError<usize, Token<'input>, DictionaryError>>;
+}
+
+impl<'input, > __ToTriple<'input, > for (usize, Token<'input>, usize)
+{
+    fn to_triple(value: Self) -> Result<(usize,Token<'input>,usize), __lalrpop_util::ParseError<usize, Token<'input>, DictionaryError>> {
+        Ok(value)
+    }
+}
+impl<'input, > __ToTriple<'input, > for Result<(usize, Token<'input>, usize), DictionaryError>
+{
+    fn to_triple(value: Self) -> Result<(usize,Token<'input>,usize), __lalrpop_util::ParseError<usize, Token<'input>, DictionaryError>> {
+        match value {
+            Ok(v) => Ok(v),
+            Err(error) => Err(__lalrpop_util::ParseError::User { error }),
+        }
+    }
 }

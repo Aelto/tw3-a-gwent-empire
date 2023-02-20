@@ -7,8 +7,8 @@ function GA_generateRandomDeck(manager: CR4GwintManager): SDeckDefinition {
     GA_getDeckIdentifierFromNpc(storage.opponent)
   );
 
-  var dictionnary: GA_CardsDictionnary;
-  dictionnary = new GA_VanillaCardsDictionnary in manager;
+  var dictionnary: GA_CardsDictionary;
+  dictionnary = new GA_VanillaCardsDictionary in manager;
 
   return dictionnary.generateDeck(storage.current_match);
 }

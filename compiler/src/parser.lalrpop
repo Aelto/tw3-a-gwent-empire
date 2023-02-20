@@ -13,7 +13,7 @@ extern {
 }
 
 pub Program: Program = {
-    <definitions:(<Spanned<Definition>>)*> => Program { definitions }
+    <definitions:(<Spanned<Definition>>)*> => Program { definitions, name: program_information.name.clone() }
 }
 
 Definition: Definition = {
@@ -37,7 +37,13 @@ DefinitionFaction: DefinitionFaction = {
   KeywordHeroes "{" <heroes:Spanned<TrailingComma<CardEntry>>> "}"
   KeywordUnits "{" <units:Spanned<TrailingComma<CardEntry>>> "}"
   "}"
-    => DefinitionFaction { name, leaders, heroes, units }
+    =>? match name.as_ref() {
+        "NorthernKingdom" | "Monster" | "Scoiatael" |
+        "Nilfgaardian" | "Skellige" => Ok(DefinitionFaction { name, leaders, heroes, units }),
+        _ => Err(ParseError::User { error: DictionaryError::UnknownFaction(name) })
+    }
+    
+    
 }
 
 // -----------------------------------------------------------------------------
@@ -49,20 +55,20 @@ CardEntry: CardEntry = {
     => CardEntry { index, count, points, difficulty }
 }
 
-CardEntryPoints: SpannedNode<NumberOrVariable> = {
+CardEntryPoints: SpannedNode<u64> = {
   Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> => <>
 }
 
-CardEntryDifficulty: SpannedNode<NumberOrVariable> = {
+CardEntryDifficulty: SpannedNode<u64> = {
   Spanned<(KeywordDifficulty "(" <NumberOrVariable> ")")> => <>
 }
 
 // -----------------------------------------------------------------------------
 
-NumberOrVariable: NumberOrVariable = {
-  Integer => NumberOrVariable::Number(<>),
+NumberOrVariable: u64 = {
+  Integer => <>,
   Spanned<Identifier> =>? match program_information.get_variable(&<>) {
-    Some(value) => Ok(NumberOrVariable::Number(value)),
+    Some(value) => Ok(value),
     None => Err(ParseError::User { error: DictionaryError::UnknownVariable(<>) }),
   }
 }
