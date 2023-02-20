@@ -26,7 +26,7 @@ Every time you define a card you can give it 3 additional values:
  - `difficulty`: the difficulty requirement for the card to appear, any player with a lower difficulty than what was entered won't get the card
 
 Here is an example of how a faction is declared:
-```lua
+```python
 faction Skellige {
   leaders {
     1 King_bran_bronze,
