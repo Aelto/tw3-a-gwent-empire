@@ -25,6 +25,16 @@ Every time you define a card you can give it 3 additional values:
 
  - `difficulty`: the difficulty requirement for the card to appear, any player with a lower difficulty than what was entered won't get the card
 
+the faction rules define what cards can be added to a deck during generation. They don't define the deck itself directly,
+but the pool of cards to pick from while generating. Adding 10 Blue Stripe soldiers to the pool doesn't mean the decks
+will have the 10 of them, but rather 10 of the pool are Blue Stripe solider. So if the pool consists of 400 cards,
+then there is a 10/400 chance to pick a Blue Stripe soldier every time the generator asks a new card from the pool.
+
+> Reminder 1: difficulty goes from 0 up to infinity where 10000 is already a really high difficulty
+> 
+> Reminder 2: points control how many cards can be in a deck as a player is given around 30 points (lower level players get less, higher players get more)
+> and each card cost 1 point by default.
+
 Here is an example of how a faction is declared:
 ```python
 faction Skellige {
