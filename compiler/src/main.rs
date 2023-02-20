@@ -54,7 +54,7 @@ fn main() {
     match result {
       Ok(ast) => {
         println!(" - generating {output_filename:#?}");
-        let directory_path = format!("modGwentRuleset{}/content/scripts/AGE/rulesets", program_information.name);
+        let directory_path = format!("modAGwentEmpireRuleset{}/content/scripts/AGE/rulesets", program_information.name);
         fs::create_dir_all(&directory_path).expect("failed to write resulting mod folders");
 
         let file_path = Path::new(&directory_path).join(&program_information.name).with_extension("ws");

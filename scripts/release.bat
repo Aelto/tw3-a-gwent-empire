@@ -8,7 +8,7 @@ mkdir "%modpath%\release"
 call compile
 @REM call bundle.bat
 
-set modname=modGwentAddict
+set modname=modAGwentEmpire
 XCOPY "%modpath%\src\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
 rmdir "%modpath%\release\mods\%modname%\content\scripts\local\" /s /q
 XCOPY "%modpath%\dist\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
@@ -32,7 +32,7 @@ echo generating vanilla ruleset
 cd "%modpath%\compiler"
 cargo run
 cd "%modpath%"
-XCOPY "%modpath%\compiler\modGwentRulesetVanilla\" "%modpath%\release\mods\modGwentRulesetVanilla\" /e /s /y
+XCOPY "%modpath%\compiler\modAGwentEmpireRulesetVanilla\" "%modpath%\release\mods\modAGwentEmpireRulesetVanilla\" /e /s /y
 
 :: don't need a menu at the moment
 @REM mkdir "%modpath%\release\bin\config\r4game\user_config_matrix\pc\"

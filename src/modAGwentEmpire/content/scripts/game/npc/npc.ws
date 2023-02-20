@@ -4012,6 +4012,10 @@ statemachine import class CNewNPC extends CActor
 			
 		return !IsFrozen() && CanTalk( true );
 	}
+
+	// modAGwentEmpire - BEGIN
+	public saved var GA_deck_identifier: GA_DeckIdentifier;
+	// modAGwentEmpire - END
 	
 	event OnInteraction( actionName : string, activator : CEntity )
 	{
@@ -4020,9 +4024,9 @@ statemachine import class CNewNPC extends CActor
 		var isAtWork			: bool;
 		var isConciousAtWork 	: bool;
 
-		// modGwentAddict - BEGIN
+		// modAGwentEmpire - BEGIN
 		GA_npcOnInteraction(actionName, activator, this);
-		// modGwentAddict - END
+		// modAGwentEmpire - END
 		
 		LogChannel( 'DialogueTest', "Event Interaction Used" );
 		if ( actionName == "Talk" )

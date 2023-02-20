@@ -22,7 +22,7 @@ exec function ageruleset{}() {{
   SU_getStorage().setItem(data);
 }}
 
-class {dictionary_name} extends GA_BaseCardsDictionary {{
+class {dictionary_name} extends GA_CardsDictionary {{
   function getRulesetGenerator(): GA_BaseRulesetGenerator {{
     return new {generator_name} in this;
   }}

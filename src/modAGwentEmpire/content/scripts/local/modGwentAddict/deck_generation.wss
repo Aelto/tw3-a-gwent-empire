@@ -3,9 +3,21 @@ function GA_generateRandomDeck(manager: CR4GwintManager): SDeckDefinition {
   var deck: SDeckDefinition;
 
   storage = GA_getStorage();
-  storage.current_match = GA_GeneralDataCurrentMatch(
-    GA_getDeckIdentifierFromNpc(storage.opponent)
-  );
+
+
+  var identifier: GA_DeckIdentifier;
+  if (StrLen(storage.opponent.GA_deck_identifier.value) > 0) {
+    identifier = storage.opponent.GA_deck_identifier;
+    GALOG("GA_generateRandomDeck(), using existing deck identifier for NPC: " + identifier.value);
+  }
+  else {
+    identifier = GA_getDeckIdentifierFromNpc(storage.opponent);
+    GALOG("GA_generateRandomDeck(), generating new deck identifier for NPC: " + identifier.value);
+  }
+
+  // update the NPC's deck identifier in case it changed:
+  storage.opponent.GA_deck_identifier = identifier;
+  storage.current_match = GA_GeneralDataCurrentMatch(identifier);
 
   var dictionnary: GA_CardsDictionary;
   dictionnary = new GA_VanillaCardsDictionary in manager;
@@ -50,6 +62,7 @@ function GA_getDeckIdentifierFromNpc(npc: CNewNPC): GA_DeckIdentifier {
   identifier += is_teleporting + "-";
   identifier += can_be_targeted + "-";
   identifier += can_be_hit_by_fists + "-";
+  identifier += VecToString(npc.GetWorldPosition());
 
   return GA_DeckIdentifier(identifier);
 }

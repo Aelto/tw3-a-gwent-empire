@@ -9,24 +9,24 @@ enum GA_CONSTANTS_ENUM {
 }
 
 function GA_npcOnInteraction(actionName: string, activator: CEntity, npc: CNewNPC) {
-  theGame
-      .GetGuiManager()
-      .ShowNotification(
-        "received interaction: " + actionName +
-        ", activator: " + activator.ToString() +
-        ", receptor: " + npc.ToString()
-      );
-
-  GA_startGwentMatch(npc);
+  GA_startGwentMatchNoDialog(npc);
 }
 
 
-function GA_startGwentMatch(opponent: CNewNPC) {
+function GA_startGwentMatchNoDialog(opponent: CNewNPC) {
   var storage: GA_Storage = GA_getStorage();
   storage.opponent = opponent;
 
   storage.GotoState('Idle');
-  storage.GotoState('Start');
+  storage.GotoState('StartNoDialog');
+}
+
+function GA_startGwentMatchFromDialog(opponent: CNewNPC) {
+  var storage: GA_Storage = GA_getStorage();
+  storage.opponent = opponent;
+
+  storage.GotoState('Idle');
+  storage.GotoState('StartFromDialog');
 }
 
 
@@ -35,5 +35,71 @@ function GA_onCustomGwentStarted(manager: CR4GwintManager): SDeckDefinition {
 }
 
 function GALOG(message: string) {
-  LogChannel('GwentAddict', message);
+  LogChannel('AGwentEmpire', message);
+}
+
+function GA_injectGwentDialogOption(choices: array<SSceneChoice>, choiceFlashArray: CScriptedFlashArray, module: CR4HudModuleDialog): array<SSceneChoice> {
+  var has_gwent_choice: bool = false;
+  var has_exit_choice: bool = false;
+
+  for choice: SSceneChoice in choices {
+    has_gwent_choice = has_gwent_choice || choice.dialogAction == DialogAction_GAME_CARDS;
+    has_exit_choice = has_exit_choice || choice.dialogAction == DialogAction_EXIT;
+  }
+
+  // could be tied to a toggle in the menu:
+  // if (has_gwent_choice) {
+  //   return;
+  // }
+
+  GALOG("GA_injectGwentDialogOption()");
+
+  if (!has_exit_choice) {
+    return choices;
+  }
+
+  choices.PushBack(SSceneChoice(
+    "A Gwent Empire",
+    true,
+    false,
+    false,
+    DialogAction_GAME_CARDS,
+    'AGwentEmpire'
+  ));
+
+  return choices;
+}
+
+function GA_onDialogOptionAccepted(choice: SSceneChoice, choices: array<SSceneChoice>): int {
+  if (choice.playGoChunk != 'AGwentEmpire') {
+    return -1;
+  }
+
+  var exit_choice_index: int;
+  var found_exit_choice: bool = false;
+  for (exit_choice_index = 0; exit_choice_index < choices.Size(); exit_choice_index += 1) {
+    var current_choice: SSceneChoice = choices[exit_choice_index];
+
+    if (current_choice.dialogAction == DialogAction_EXIT) {
+      found_exit_choice = true;
+      break;
+    }
+  }
+
+  if (!found_exit_choice) {
+    return -1;
+  }
+
+  var entities: array<CGameplayEntity>;
+  var radius: float = 15;
+  FindGameplayEntitiesInCylinder(entities, thePlayer.GetWorldPosition(), radius, radius, 1,, FLAG_OnlyAliveActors + FLAG_ExcludePlayer,, 'CNewNPC');
+
+  if (entities.Size() <= 0) {
+    return -1;
+  }
+
+  var opponent: CNewNPC = entities[0] as CNewNPC;
+  GA_startGwentMatchFromDialog(opponent);
+
+  return exit_choice_index;
 }
