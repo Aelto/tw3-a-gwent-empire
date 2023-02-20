@@ -3,6 +3,14 @@
 version = 3
 
 [[package]]
+name = "age-compiler"
+version = "0.1.0"
+dependencies = [
+ "ariadne",
+ "lalrpop-util",
+]
+
+[[package]]
 name = "aho-corasick"
 version = "0.7.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -18,14 +26,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f1cb2a2046bea8ce5e875551f5772024882de0b540c7f93dfc5d6cf1ca8b030c"
 dependencies = [
  "yansi",
-]
-
-[[package]]
-name = "compiler"
-version = "0.1.0"
-dependencies = [
- "ariadne",
- "lalrpop-util",
 ]
 
 [[package]]

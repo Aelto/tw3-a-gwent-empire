@@ -34,10 +34,6 @@ function GA_onCustomGwentStarted(manager: CR4GwintManager): SDeckDefinition {
   return GA_generateRandomDeck(manager);
 }
 
-function GALOG(message: string) {
-  LogChannel('AGwentEmpire', message);
-}
-
 function GA_injectGwentDialogOption(choices: array<SSceneChoice>, choiceFlashArray: CScriptedFlashArray, module: CR4HudModuleDialog): array<SSceneChoice> {
   var has_gwent_choice: bool = false;
   var has_exit_choice: bool = false;
@@ -102,4 +98,12 @@ function GA_onDialogOptionAccepted(choice: SSceneChoice, choices: array<SSceneCh
   GA_startGwentMatchFromDialog(opponent);
 
   return exit_choice_index;
+}
+
+function GALOG(message: string) {
+  LogChannel('AGwentEmpire', message);
+}
+
+function GAHUD(message: string) {
+  thePlayer.DisplayHudMessage(message);
 }

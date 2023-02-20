@@ -1,7 +1,7 @@
 @echo off
 
 call variables.cmd
-call release.bat
+call release.bat -nocompiler
 
 rmdir "%gamePath%\mods\%modName%" /s /q
 XCOPY "%modPath%\release\mods" "%gamePath%\mods" /e /s /y

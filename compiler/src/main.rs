@@ -50,10 +50,12 @@ fn main() {
     let result =
       parser::ProgramParser::new().parse(&mut program_information, &mut span_maker, &content);
 
-    let output_filename = child.path().with_extension("ws");
+    // let output_filename = child.path().with_extension("ws");
     match result {
       Ok(ast) => {
-        println!(" - generating {output_filename:#?}");
+        println!(" - generated {}'s ruleset mod: [modAGwentEmpireRuleset{}]", program_information.name, program_information.name);
+        println!(" - generated install command: [ageruleset{}]", program_information.name);
+
         let directory_path = format!("modAGwentEmpireRuleset{}/content/scripts/AGE/rulesets", program_information.name);
         fs::create_dir_all(&directory_path).expect("failed to write resulting mod folders");
 

@@ -16,9 +16,9 @@ XCOPY "%modpath%\dist\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
 :: move the strings
 XCOPY "%modpath%\strings" "%modpath%\release\mods\%modName%\content\" /e /s /y
 
-echo copy the DLC
-mkdir "%modspot%\release\dlc"
-XCOPY "%modpath%\wolvenkit-project\packed\" "%modpath%\release\dlc\dlc%modname%\" /e /s /y
+@REM echo copy the DLC
+@REM mkdir "%modspot%\release\dlc"
+@REM XCOPY "%modpath%\wolvenkit-project\packed\" "%modpath%\release\dlc\dlc%modname%\" /e /s /y
 
 echo copy the sharedutils dependencies
 set modname=mod_sharedutils_npcInteraction
@@ -33,6 +33,15 @@ cd "%modpath%\compiler"
 cargo run
 cd "%modpath%"
 XCOPY "%modpath%\compiler\modAGwentEmpireRulesetVanilla\" "%modpath%\release\mods\modAGwentEmpireRulesetVanilla\" /e /s /y
+
+if "%1"=="-nocompiler" (
+  echo skipping compiler build
+) else (
+  echo building compiler
+  cd "%modpath%\compiler"
+  cargo build --release
+  copy "%modpath%\compiler\target\release\age-compiler.exe" "%modpath%\release\age-compiler.exe"
+)
 
 :: don't need a menu at the moment
 @REM mkdir "%modpath%\release\bin\config\r4game\user_config_matrix\pc\"

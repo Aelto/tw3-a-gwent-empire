@@ -20,6 +20,7 @@ exec function ageruleset{}() {{
   var data: {dictionary_name};
   data = new {dictionary_name} in thePlayer;
   SU_getStorage().setItem(data);
+  GAHUD(\"{dictionary_name} Ruleset installed successully\");
 }}
 
 class {dictionary_name} extends GA_CardsDictionary {{
