@@ -1,4 +1,4 @@
-// nilfgaardian
+# Nilfgaardian
 variables {
   Letho = 200,
   Menno = 201,
@@ -34,9 +34,8 @@ variables {
   SiegeSupport = 265,
 }
 
-// Scoiatael
+# Scoiatael
 variables {
-  // Scoiatael
   Eithne = 300,
   Saskia = 301,
   Isengrim = 302,
@@ -77,7 +76,7 @@ variables {
   Schirru = 368,
 }
 
-// Monster
+# Monster
 variables {
   Draug = 400,
   Kayran = 401,
@@ -120,7 +119,7 @@ variables {
   Toad = 48,
 }
 
-// Skellige
+# Skellige
 variables {
   CrachAnCraite = 500,
   Hjalmar = 501,
@@ -150,7 +149,7 @@ variables {
   Cock = 525,
 }
 
-// Neutral
+# Neutral
 variables {
   Geralt = 7,
   Vesemir = 8, 
@@ -170,7 +169,7 @@ variables {
   Visenna = 25,
 }
 
-// northern kingdom
+# Northern kingdom
 variables {
   Vernon = 100,
   Natalis = 101,
@@ -194,7 +193,7 @@ variables {
   DunBannerMedic = 175,
 }
 
-// Special
+# Special
 variables {
   Dummy = 0, 
   Horn = 1, 
@@ -207,7 +206,7 @@ variables {
   SkelligeStorm = 23,
 }
 
-// Leaders
+# Leaders
 variables {
   Foltest_bronze = 1002,
   Foltest_silver = 1003,
@@ -238,10 +237,10 @@ faction NorthernKingdom {
   }
 
   heroes {
-    1 Geralt,
-    1 Ciri,
-    1 Vesemir,
-    1 Yennefer,
+    1 Geralt difficulty(5000),
+    1 Ciri difficulty(5000),
+    1 Vesemir difficulty(6000),
+    1 Yennefer difficulty(3000),
   }
 
   units {
@@ -274,7 +273,21 @@ faction NorthernKingdom {
     1 Kaedwen,
     1 Kaedwen_1,
     1 SiegeTower points(2) difficulty(3000),
-    1 DunBannerMedic points(1) difficulty(2000),
+    1 DunBannerMedic difficulty(2000),
+
+    1 Dummy,
+    1 Dummy difficulty(500),
+    1 Dummy difficulty(2000),
+
+    1 Horn,
+    1 Horn points(2) difficulty(6000),
+
+    1 Scorch points(2) difficulty(4000),
+    
+    2 Frost,
+    2 Fog,
+    2 Rain,
+    2 ClearSky,
   }
 }
 

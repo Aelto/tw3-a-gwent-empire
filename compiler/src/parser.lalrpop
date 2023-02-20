@@ -204,6 +204,7 @@ CharLiteral = {
 match {
     // Ignore C++-style comments
     r"//[^\n\r]*[\n\r]*" => {},
+    r"#[^\n\r]*[\n\r]*" => {},
     r"/\*[^\*]*[^/]*(\*/)[\n\r]*" => {},
 
     // These items have highest precedence.

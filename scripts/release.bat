@@ -28,6 +28,12 @@ XCOPY "%modpath%\sharedutils\%modname%\" "%modpath%\release\mods\%modname%\" /e 
 set modname=mod_sharedutils_helpers
 XCOPY "%modpath%\sharedutils\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
 
+echo generating vanilla ruleset
+cd "%modpath%\compiler"
+cargo run
+cd "%modpath%"
+XCOPY "%modpath%\compiler\modGwentRulesetVanilla\" "%modpath%\release\mods\modGwentRulesetVanilla\" /e /s /y
+
 :: don't need a menu at the moment
 @REM mkdir "%modpath%\release\bin\config\r4game\user_config_matrix\pc\"
 @REM copy "%modpath%\mod-menu.xml" "%modpath%\release\bin\config\r4game\user_config_matrix\pc\%modname%.xml" /y
