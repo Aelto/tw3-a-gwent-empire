@@ -61,3 +61,22 @@ faction Skellige {
 
 ### Compiling the ruleset
 Once the ruleset is fully edited you can use the `age-compiler.exe` that is shipped with every release of the mod, drop it in the folder alongside the ruleset file and run the compiler (by double-clicking it). You should see a a mod folder being created, you can now install the mod folder by dropping it in your `The Witcher 3/mods` folder, then use the `agerulesetNameOfTheRuleset` command once in game where `NameOfTheRuleset` is the name of your ruleset file (excluding `.ruleset`)
+
+### Advices for improved balance of ruleset
+While filling the list of units you are able (and encouraged) to duplicate some entries for higher difficulties:
+```python
+  units {
+    2 card_northern_francis points(2) difficulty(4000),
+    1 card_northern_francis points(2) difficulty(6000),
+    1 card_northern_whoreson points(2) difficulty(5000),
+    1 card_northern_whoreson points(2) difficulty(9000),
+  }
+```
+
+This allow a low level to have 2 entries for this card, and a high level one to have 5 of them. Thus giving a higher chance
+of having this card in the generated deck.
+
+It is very important you keep this technique in mind as you wouldn't want a high difficulty player to have a deck
+full of low level cards. And since there is no way to exclude cards from the pool (yet) you must make sure higher
+level players get new cards injected into the pool as a way to "drown out" the low level cards and ensure the
+new higher level ones are picked more frequently.
