@@ -9,7 +9,7 @@ pub struct CardEntry {
   pub index: Spanned<u64>,
   pub count: Spanned<u64>,
   pub points: Option<Spanned<u64>>,
-  pub difficulty: Option<Spanned<u64>>,
+  pub difficulty: Option<Spanned<(i64, i64)>>,
 }
 
 impl Display for CardEntry {
@@ -21,15 +21,15 @@ impl Display for CardEntry {
       .as_ref()
       .and_then(|spanned| Some(spanned.inner()))
       .unwrap_or_else(|| 1);
-    let difficulty = &self
+    let (difficulty_above, difficulty_below) = &self
       .difficulty
       .as_ref()
       .and_then(|spanned| Some(spanned.inner()))
-      .unwrap_or_else(|| 0);
+      .unwrap_or_else(|| (-1, -1));
 
     for i in 0..count {
       codegen::indent(f, 3)?;
-      writeln!(f, "output.PushBack(GA_CardEntry({index}, 1, 1, 1, GA_DeckPoints({points}), GA_MatchDifficulty({difficulty}))); // {i}")?;
+      writeln!(f, "output.PushBack(GA_CardEntry({index}, 1, 1, 1, GA_DeckPoints({points}), GA_MatchDifficulty({difficulty_above},{difficulty_below}))); // {i}")?;
     }
 
     Ok(())

@@ -1,0 +1,14 @@
+
+/// Values that are set to -1 mean "no requirement".
+struct GA_MatchDifficultyRequirement {
+  // entry can only appear if difficulty is above the entered value
+  var above: int;
+
+  // entry can only appear if difficulty is below the entered value
+  var below: int;
+}
+
+function GA_meetsDifficultyRequirement(requirement: GA_MatchDifficultyRequirement, difficulty: GA_MatchDifficulty): bool {
+  return (requirement.above < 0 || difficulty.value >= requirement.above)
+      && (requirement.below < 0 || difficulty.value <= requirement.below);
+}

@@ -107,7 +107,7 @@ abstract class GA_CardsDictionary extends SU_StorageItem {
     var i: int;
 
     for (i = 0; i < cards.Size(); i += 1) {
-      if (cards[i].required_difficulty.value > difficulty.value) {
+      if (!GA_meetsDifficultyRequirement(cards[i].required_difficulty, difficulty)) {
         continue;
       }
 

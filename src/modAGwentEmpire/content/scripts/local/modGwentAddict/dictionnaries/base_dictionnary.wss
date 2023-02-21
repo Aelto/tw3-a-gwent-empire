@@ -45,7 +45,7 @@ struct GA_CardEntry {
    * Defines after what difficulty the card should start
    * appearing in decks
    */
-  var required_difficulty: GA_MatchDifficulty;
+  var required_difficulty: GA_MatchDifficultyRequirement;
 }
 
 enum GA_VanillaFactionsIndex {

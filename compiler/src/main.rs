@@ -22,6 +22,7 @@ mod parser;
 pub enum DictionaryError {
   UnknownVariable(Spanned<String>),
   UnknownFaction(Spanned<String>),
+  InvalidRequirement(Spanned<(i64, i64)>)
 }
 
 fn main() {
@@ -128,7 +129,9 @@ fn handle_user_error(
     }
     DictionaryError::UnknownFaction(spanned) => {
       handle_unknown_faction_error(content, spanned, span_manager, program_information)
-    }
+    },
+    DictionaryError::InvalidRequirement(requirement) => handle_invalid_requirement_error(content, requirement, span_manager, program_information),
+    
   }
 }
 
@@ -182,6 +185,34 @@ fn handle_unknown_faction_error(
     .with_help(
       "Possible faction names: NorthernKingdom | Skellige | Nilfgaardian | Monster | Scoiatael",
     );
+
+  builder.finish().print(Source::from(&content)).unwrap();
+}
+
+fn handle_invalid_requirement_error(
+  content: &str, requirement: Spanned<(i64, i64)>, span_manager: &SpanManager,
+  _program_information: &ProgramInformation,
+) {
+  let mut colors = ColorGenerator::new();
+  let a = colors.next();
+
+  let span = span_manager.get_range(requirement.span);
+  let builder = Report::build(ReportKind::Error, (), span.len())
+    .with_message("Invalid difficulty requirement")
+    .with_label(
+      Label::new(span)
+        .with_message(format!("Right side of a difficulty requirement cannot be lower or equal to the left side"))
+        .with_color(a),
+    )
+    .with_note(
+      "A difficulty requirement can be expressed in 4 ways:
+        - difficulty(5), for when the card should appear only when difficulty is ABOVE 5
+        - difficulty(5..), for the exact same result as above
+        - difficulty(..500), for when the card should appear only when difficulty is BELOW 5
+        - difficulty(100..500), for when the card should appear only when difficulty is ABOVE 100 AND BELOW 500"
+    );
+  
+  
 
   builder.finish().print(Source::from(&content)).unwrap();
 }

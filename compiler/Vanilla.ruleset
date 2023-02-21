@@ -440,7 +440,7 @@ faction Nilfgaardian {
     5 card_special_rain points(2),
     5 card_special_clear_sky,
     # card_special_mushroom
-    1 card_special_skellige_storm points(3) difficulty(3000),
+    1 card_special_skellige_storm points(3) difficulty(3000..100),
     1 card_special_skellige_storm points(3) difficulty(6000),
 
     3 card_neutral_dandelion points(2),

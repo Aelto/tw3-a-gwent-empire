@@ -1,0 +1,8 @@
+
+// The available points for the deck.
+// This is mostly used when generating the deck to know how many
+// cards it can have. Each card has a cost and this controls how
+// much it can insert into the deck.
+struct GA_DeckPoints {
+  var value: int;
+}

@@ -59,8 +59,15 @@ CardEntryPoints: SpannedNode<u64> = {
   Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> => <>
 }
 
-CardEntryDifficulty: SpannedNode<u64> = {
-  Spanned<(KeywordDifficulty "(" <NumberOrVariable> ")")> => <>
+CardEntryDifficulty: SpannedNode<(i64,i64)> = {
+  KeywordDifficulty "(" <l: @L> <above:NumberOrVariableSigned> <r: @R> ")" => SpannedNode::new((above,-1), span_maker.span(l, r, "card_entry_difficulty")),
+  KeywordDifficulty "(" <l: @L> <above:NumberOrVariableSigned> <r: @R> ".." ")" => SpannedNode::new((above,-1), span_maker.span(l, r, "card_entry_difficulty")),
+  KeywordDifficulty "(" ".." <l: @L> <below:NumberOrVariableSigned> <r: @R> ")" => SpannedNode::new((-1,below), span_maker.span(l, r, "card_entry_difficulty")),
+  KeywordDifficulty "(" <l: @L> <above:NumberOrVariableSigned> ".." <below:NumberOrVariableSigned> <r: @R> ")" =>? if above >= below {
+    Err(ParseError::User { error: DictionaryError::InvalidRequirement(SpannedNode::new((above,below), span_maker.span(l, r, "card_entry_difficulty"))) })
+  } else {
+    Ok(SpannedNode::new((above,below), span_maker.span(l, r, "card_entry_difficulty")))
+  },
 }
 
 // -----------------------------------------------------------------------------
@@ -72,6 +79,15 @@ NumberOrVariable: u64 = {
     None => Err(ParseError::User { error: DictionaryError::UnknownVariable(<>) }),
   }
 }
+
+// fooo
+NumberOrVariableSigned: i64 = {
+    Integer => <>.try_into().expect("Entered number too big for an i64"),
+    Spanned<Identifier> =>? match program_information.get_variable(&<>) {
+      Some(value) => Ok(value as i64),
+      None => Err(ParseError::User { error: DictionaryError::UnknownVariable(<>) }),
+    }
+  }
 
 // -----------------------------------------------------------------------------
 
