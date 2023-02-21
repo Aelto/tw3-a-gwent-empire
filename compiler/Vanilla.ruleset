@@ -451,8 +451,10 @@ faction Nilfgaardian {
     5 card_neutral_mrmirror points(2),
     1 card_neutral_mrmirror_foglet points(3) difficulty(4000),
     2 card_neutral_cow,
-    1 card_neutral_lady_of_the_lake,
-    1 card_neutral_visenna,
+
+    # i couldn't find what these two cards are:
+    1 card_neutral_lady_of_the_lake difficulty(3000),
+    1 card_neutral_visenna difficulty(3000), 
   }
 }
 
