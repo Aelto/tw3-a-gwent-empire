@@ -3,6 +3,7 @@ statemachine class GA_Storage extends SU_StorageItem {
 
   // The opponent for the next/ongoing match of gwent
   var opponent: CNewNPC;
+  var bet_amount: int;
 
   var current_match: GA_GeneralDataCurrentMatch;
 }
@@ -12,6 +13,31 @@ state Idle in GA_Storage {
     super.OnEnterState(previous_state_name);
 
     GALOG("GA_Storage - [Idle]");
+  }
+}
+
+state Betting in GA_Storage {
+  event OnEnterState(previous_state_name: name) {
+    super.OnEnterState(previous_state_name);
+
+    GALOG("GA_Storage - [Betting]");
+    this.Betting_main();
+  }
+
+  entry function Betting_main() {
+    if (!GA_isPlayerBusy()) {
+      parent.bet_amount = 0;
+      this.openHaggleWindow();
+    }
+
+    parent.GotoState('Idle');
+  }
+
+  function openHaggleWindow() {
+    var haggle_module_dialog: GA_BountyModuleDialog;
+
+    haggle_module_dialog = new GA_BountyModuleDialog in parent;
+    haggle_module_dialog.openBettingWindow();
   }
 }
 
@@ -25,17 +51,7 @@ state StartNoDialog in GA_Storage {
 
   entry function StartNoDialog_main() {
     Sleep(2.5);
-
-    var gwintManager:CR4GwintManager;
-
-    gwintManager = theGame.GetGwintManager();
-    gwintManager.testMatch = true;
-
-    if (!GA_isPlayerBusy()) {
-      thePlayer.OnGwintGameRequested('AGwentEmpireCustomDeck', GwintFaction_NothernKingdom);
-    }
-
-    parent.GotoState('Idle');
+    parent.GotoState('Betting');
   }
 }
 
@@ -53,12 +69,30 @@ state StartFromDialog in GA_Storage {
     }
 
     Sleep(0.2);
+    parent.GotoState('Betting');
+  }
+}
+
+state Playing in GA_Storage {
+  event OnEnterState(previous_state_name: name) {
+    super.OnEnterState(previous_state_name);
+
+    GALOG("GA_Storage - [Playing]");
+    this.Playing_main();
+  }
+
+  entry function Playing_main() {
+    this.startMatch();
+    parent.GotoState('Idle');
+  }
+
+  function startMatch() {
     var gwintManager:CR4GwintManager = theGame.GetGwintManager();
     gwintManager.testMatch = true;
 
-    thePlayer.OnGwintGameRequested('AGwentEmpireCustomDeck', GwintFaction_NothernKingdom);
-
-    parent.GotoState('Idle');
+    if (!GA_isPlayerBusy()) {
+      thePlayer.OnGwintGameRequested('AGwentEmpireCustomDeck', GwintFaction_NothernKingdom);
+    }
   }
 }
 
@@ -72,6 +106,20 @@ function GA_getStorage(): GA_Storage {
     data = new GA_Storage in thePlayer;
     SU_getStorage().setItem(data);
   }
+
+  return data;
+}
+
+/**
+ * Unlike the regular getStorage function this one reset the storage when it
+ * is called, great way to ensure the storage always uses a recent instance
+ * of the class after an update.
+ */
+function GA_getCleanStorage(): GA_Storage {
+  var data: GA_Storage;
+
+  data = new GA_Storage in thePlayer;
+  SU_getStorage().setItem(data);
 
   return data;
 }

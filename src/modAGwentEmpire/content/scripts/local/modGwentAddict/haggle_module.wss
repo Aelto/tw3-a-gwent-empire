@@ -1,0 +1,52 @@
+
+class GA_BountyModuleDialog extends CR4HudModuleDialog {
+  function DialogueSliderDataPopupResult(value: float, optional isItemReward: bool) {
+    super.DialogueSliderDataPopupResult(0,false);
+
+    var storage: GA_Storage = GA_getStorage();
+    storage.bet_amount = value as int;
+    storage.GotoState('Playing');
+  }
+
+  function openBettingWindow() {
+    var data: GA_BettingSliderData;
+
+    data = new GA_BettingSliderData in this;
+    data.ScreenPosX = 0.62;
+    data.ScreenPosY = 0.65;
+
+    data.SetMessageTitle(GetLocStringByKeyExt("panel_hud_dialogue_title_bet"));
+    data.dialogueRef = this;
+    data.BlurBackground = false;
+
+    data.minValue = 0;
+    data.maxValue = thePlayer.inv.GetMoney();
+    data.currentValue = Clamp(50, 0, data.maxValue);
+
+    theGame.RequestMenu('PopupMenu', data);
+  }
+
+  
+}
+
+class GA_BettingSliderData extends BettingSliderData {
+  public function GetGFxData(parentFlashValueStorage: CScriptedFlashValueStorage): CScriptedFlashObject {
+    var l_flashObject: CScriptedFlashObject;
+
+    l_flashObject = super.GetGFxData(parentFlashValueStorage);
+    l_flashObject.SetMemberFlashInt(
+      "playerMoney",
+      thePlayer.inv.GetMoney()
+    );
+    l_flashObject.SetMemberFlashBool("displayMoneyIcon", true);
+
+    return l_flashObject;
+  }
+
+  public function  OnUserFeedback(KeyCode:string): void {
+    if (KeyCode == "enter-gamepad_A") {
+      dialogueRef.DialogueSliderDataPopupResult( currentValue );
+      ClosePopup();
+    }
+  }
+}

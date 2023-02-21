@@ -14,18 +14,16 @@ function GA_npcOnInteraction(actionName: string, activator: CEntity, npc: CNewNP
 
 
 function GA_startGwentMatchNoDialog(opponent: CNewNPC) {
-  var storage: GA_Storage = GA_getStorage();
+  var storage: GA_Storage = GA_getCleanStorage();
   storage.opponent = opponent;
 
-  storage.GotoState('Idle');
   storage.GotoState('StartNoDialog');
 }
 
 function GA_startGwentMatchFromDialog(opponent: CNewNPC) {
-  var storage: GA_Storage = GA_getStorage();
+  var storage: GA_Storage = GA_getCleanStorage();
   storage.opponent = opponent;
 
-  storage.GotoState('Idle');
   storage.GotoState('StartFromDialog');
 }
 
@@ -98,6 +96,22 @@ function GA_onDialogOptionAccepted(choice: SSceneChoice, choices: array<SSceneCh
   GA_startGwentMatchFromDialog(opponent);
 
   return exit_choice_index;
+}
+
+function GA_onGwentMatchEnded(gamestate: EMinigameState) {
+  var won: bool = gamestate == EMS_End_PlayerWon;
+  var storage: GA_Storage = GA_getStorage();
+
+  if (storage.bet_amount <= 0) {
+    return;
+  }
+
+  if (won) {
+    thePlayer.AddMoney(storage.bet_amount);
+  }
+  else {
+    thePlayer.RemoveMoney(storage.bet_amount);
+  }
 }
 
 function GALOG(message: string) {
