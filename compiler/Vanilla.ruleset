@@ -57,9 +57,9 @@ variables {
   card_nilfgaard_hero_letho = 200,
   card_nilfgaard_black_archer = 235,
   card_nilfgaard_black_archer2 = 236,
-  card_nilfgaard_menno = 201,
+  card_nilfgaard_hero_menno = 201,
   card_nilfgaard_hero_moorvran = 202,
-  card_nilfgaard_tibor = 203,
+  card_nilfgaard_hero_tibor = 203,
   card_nilfgaard_albrich = 205,
   card_nilfgaard_combat_engineer = 255,
   card_nilfgaard_assire = 206,
@@ -358,46 +358,101 @@ faction Nilfgaardian {
   }
 
   heroes {
-    1 card_nilfgaard_hero_letho,
-    1 card_nilfgaard_hero_moorvran
+    1 card_nilfgaard_hero_letho points(3) difficulty(1000),
+    1 card_nilfgaard_hero_moorvran points(3),
+    1 card_nilfgaard_hero_menno points(4) difficulty(5000),
+    1 card_nilfgaard_hero_tibor points(3) difficulty(1000),
+
+    1 card_neutral_hero_geralt points(3) difficulty(6000),
+    1 card_neutral_hero_vesemir points(3) difficulty(3000),
+    1 card_neutral_hero_yennefer points(3) difficulty(3000),
+    1 card_neutral_hero_ciri points(3) difficulty(3000),
+    1 card_neutral_hero_triss points(3) difficulty(3000),
+    1 card_neutral_hero_avallach points(4) difficulty(5000)
   }
 
   units {
-    1 card_nilfgaard_menno,
-    1 card_nilfgaard_tibor,
-    1 card_nilfgaard_albrich,
-    1 card_nilfgaard_assire,
-    1 card_nilfgaard_cynthia,
-    1 card_nilfgaard_fringilla,
-    1 card_nilfgaard_morteisen,
-    1 card_nilfgaard_rainfarn,
-    1 card_nilfgaard_renuald,
-    1 card_nilfgaard_rotten,
-    1 card_nilfgaard_shilard,
-    1 card_nilfgaard_stefan,
-    1 card_nilfgaard_sweers,
-    1 card_nilfgaard_vanhemar,
-    1 card_nilfgaard_vattier,
-    1 card_nilfgaard_vreemde,
-    1 card_nilfgaard_cahir,
-    1 card_nilfgaard_puttkammer,
-    1 card_nilfgaard_archer_support,
-    1 card_nilfgaard_archer_support2,
-    1 card_nilfgaard_black_archer,
-    1 card_nilfgaard_black_archer2,
-    1 card_nilfgaard_heavy_zerri,
-    1 card_nilfgaard_zerri,
-    1 card_nilfgaard_impera_brigade,
-    1 card_nilfgaard_impera_brigade2,
-    1 card_nilfgaard_impera_brigade3,
-    1 card_nilfgaard_impera_brigade4,
-    1 card_nilfgaard_nausicaa,
-    1 card_nilfgaard_nausicaa2,
-    1 card_nilfgaard_nausicaa3,
-    1 card_nilfgaard_combat_engineer,
-    1 card_nilfgaard_young_emissary,
-    1 card_nilfgaard_young_emissary2,
-    1 card_nilfgaard_siege_support,
+    15 card_nilfgaard_albrich,
+
+    5 card_nilfgaard_assire,
+    2 card_nilfgaard_assire difficulty(500),
+    2 card_nilfgaard_assire difficulty(1000),
+
+    2 card_nilfgaard_black_archer points(2),
+    1 card_nilfgaard_black_archer points(2) difficulty(1000),
+    1 card_nilfgaard_black_archer points(2) difficulty(3000),
+
+    5 card_nilfgaard_cahir,
+    2 card_nilfgaard_cahir difficulty(1000),
+
+    10 card_nilfgaard_cynthia,
+
+    5 card_nilfgaard_archer_support points(2),
+    5 card_nilfgaard_archer_support2 points(2) difficulty(1000),
+
+    10 card_nilfgaard_fringilla,
+
+    5 card_nilfgaard_heavy_zerri,
+    2 card_nilfgaard_heavy_zerri points(2) difficulty(2000),
+    2 card_nilfgaard_heavy_zerri points(2) difficulty(5000),
+    2 card_nilfgaard_heavy_zerri points(2) difficulty(8000),
+
+    3 card_nilfgaard_impera_brigade,
+    3 card_nilfgaard_impera_brigade2 difficulty(2000),
+    3 card_nilfgaard_impera_brigade3 difficulty(4000),
+    3 card_nilfgaard_impera_brigade4 difficulty(6000),
+
+    15 card_nilfgaard_morteisen,
+    5 card_nilfgaard_nausicaa,
+    5 card_nilfgaard_nausicaa2,
+    5 card_nilfgaard_nausicaa3,
+    10 card_nilfgaard_puttkammer,
+    10 card_nilfgaard_rainfarn,
+    10 card_nilfgaard_renuald,
+    10 card_nilfgaard_rotten,
+
+    5 card_nilfgaard_shilard points(2),
+    5 card_nilfgaard_shilard points(2) difficulty(5000),
+    5 card_nilfgaard_shilard points(2) difficulty(9000),
+
+    10 card_nilfgaard_combat_engineer,
+    5 card_nilfgaard_siege_support points(2),
+    5 card_nilfgaard_stefan points(3),
+    15 card_nilfgaard_sweers,
+    15 card_nilfgaard_vanhemar,
+    5 card_nilfgaard_vattier points(3) difficulty(4000),
+    15 card_nilfgaard_vreemde,
+    8 card_nilfgaard_young_emissary points(2),
+    8 card_nilfgaard_young_emissary2 points(2) difficulty(4000),
+    10 card_nilfgaard_zerri,
+
+    5 card_special_dummy points(2),
+    5 card_special_dummy points(2) difficulty(9000),
+
+    1 card_special_horn points(3) difficulty(1000),
+    1 card_special_horn points(3) difficulty(2000),
+    1 card_special_horn points(3) difficulty(6000),
+    1 card_special_horn points(3) difficulty(9000),
+
+    1 card_special_scorch points(3) difficulty(5000),
+    5 card_special_frost points(2),
+    5 card_special_fog points(2),
+    5 card_special_rain points(2),
+    5 card_special_clear_sky,
+    # card_special_mushroom
+    1 card_special_skellige_storm points(3) difficulty(3000),
+    1 card_special_skellige_storm points(3) difficulty(6000),
+
+    3 card_neutral_dandelion points(2),
+    10 card_neutral_zoltan,
+    10 card_neutral_emiel,
+    1 card_neutral_villen,
+    1 card_neutral_olgierd,
+    5 card_neutral_mrmirror points(2),
+    1 card_neutral_mrmirror_foglet points(3) difficulty(4000),
+    2 card_neutral_cow,
+    1 card_neutral_lady_of_the_lake,
+    1 card_neutral_visenna,
   }
 }
 
