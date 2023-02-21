@@ -110,7 +110,7 @@ variables {
 # Monster
 variables {
   card_monsters_hero_emiel = 14,
-  card_monsters_avallach = 16,
+  card_neutral_avallach = 16,
   card_monsters_mrmirror = 18,
   card_monsters_mrmirror_foglet = 19,
   card_monsters_cow = 20,
@@ -183,13 +183,13 @@ variables {
 # Skellige
 variables {
   card_skellige_mushroom = 22,
-  card_skellige_skellige_storm = 23,
+  card_neutral_skellige_storm = 23,
   card_skellige_ragh_nar_roog = 27,
   card_skellige_dreams = 31,
   card_skellige_werewolf = 417,
   card_skellige_hero_hjalmar = 501,
-  card_skellige_cerys = 502,
-  card_skellige_ermion = 503,
+  card_skellige_hero_cerys = 502,
+  card_skellige_hero_ermion = 503,
   card_skellige_draig = 504,
   card_skellige_holger_blackhand = 505,
   card_skellige_madman_lugos = 506,
@@ -252,6 +252,7 @@ variables {
   card_neutral_vesemir = 8,
   card_neutral_yennefer = 9,
   card_neutral_ciri = 10,
+  card_neutral_triss = 11,
   card_neutral_eskel = 135,
   card_neutral_lambert = 136,
   card_neutral_azar_hero_javed = 480,
@@ -260,9 +261,8 @@ variables {
 
 # Northern kingdom
 variables {
-  card_northern_triss = 11,
   card_northern_dandelion = 12,
-  card_northern_zoltan = 13,
+  card_neutral_zoltan = 13,
   card_northern_olgierd = 17,
   card_northern_hailstorm = 25,
   card_northern_vernon = 100,
@@ -341,9 +341,9 @@ faction NorthernKingdom {
   }
 
   units {
-    1 card_northern_triss points(3) difficulty(6000),
+    1 card_neutral_triss points(3) difficulty(6000),
     1 card_northern_dandelion points(2) difficulty(2000),
-    1 card_northern_zoltan difficulty(2000),
+    1 card_neutral_zoltan difficulty(2000),
     1 card_northern_olgierd points(3) difficulty(5000),
     1 card_northern_hailstorm points(2) difficulty(4000),
     1 card_northern_vernon points(2) difficulty(3000),
@@ -423,7 +423,8 @@ faction Monster {
   }
 
   units {
-    1 card_monsters_avallach,
+    1 card_neutral_avallach,
+    2 card_neutral_scorch,
     1 card_monsters_mrmirror,
     1 card_monsters_mrmirror_foglet,
     1 card_monsters_cow,
@@ -561,60 +562,80 @@ faction Skellige {
   heroes {
     1 card_skellige_hero_cock,
     1 card_skellige_hero_hjalmar,
-    1 card_skellige_hero_tyr
+    1 card_skellige_hero_tyr,
+    1 card_skellige_hero_cerys,
+    1 card_skellige_hero_ermion difficulty(4000),
   }
 
   units {
-    1 card_skellige_mushroom,
-    1 card_skellige_skellige_storm,
-    1 card_skellige_ragh_nar_roog,
-    1 card_skellige_dreams,
-    1 card_skellige_werewolf,
-    1 card_skellige_hero_hjalmar,
-    1 card_skellige_cerys,
-    1 card_skellige_ermion,
-    1 card_skellige_draig,
-    1 card_skellige_holger_blackhand,
-    1 card_skellige_madman_lugos,
-    1 card_skellige_donar_an_hindar,
-    1 card_skellige_udalryk,
-    1 card_skellige_birna_bran,
-    1 card_skellige_blueboy_lugos,
-    1 card_skellige_svanrige,
-    1 card_skellige_olaf,
-    1 card_skellige_berserker,
-    1 card_skellige_young_berserker,
-    1 card_skellige_vabjorn,
-    1 card_skellige_clan_an_craite_warrior,
-    1 card_skellige_clan_tordarroch_armorsmith,
-    1 card_skellige_clan_heymaey_skald,
-    1 card_skellige_light_drakkar,
-    1 card_skellige_war_drakkar,
-    1 card_skellige_clan_brokvar_archer,
-    1 card_skellige_clan_drummond_shieldmaiden,
-    1 card_skellige_clan_dimun_pirate,
-    1 card_skellige_hero_cock,
-    1 card_skellige_clan_drummond_shieldmaiden2,
-    1 card_skellige_clan_drummond_shieldmaiden3,
-    1 card_skellige_jutta,
-    1 card_skellige_skjall,
-    1 card_skellige_coral,
-    1 card_skellige_yoana,
-    1 card_skellige_djenge_frett,
-    1 card_skellige_clan_an_craite_whaler,
-    1 card_skellige_boatbuilders,
-    1 card_skellige_sukrus,
-    1 card_skellige_athak,
-    1 card_skellige_clan_tuirseach_skirmisher,
-    1 card_skellige_clan_dimun_smuggler,
-    1 card_skellige_clan_dimun_captain,
-    1 card_skellige_clan_an_craite_marauder,
-    1 card_skellige_freya,
-    1 card_skellige_hero_tyr,
-    1 card_skellige_artis,
-    1 card_skellige_vabjorn,
-    1 card_skellige_svalblod,
-    1 card_skellige_knut,
+    5 card_skellige_young_berserker,
+    2 card_skellige_young_berserker difficulty(3500),
+    
+    3 card_skellige_berserker,
+    1 card_skellige_berserker difficulty(2000),
+    1 card_skellige_berserker difficulty(5000),
+
+    2 card_skellige_mushroom,
+    1 card_skellige_mushroom difficulty(5000),
+
+    4 card_skellige_birna_bran,
+    1 card_skellige_birna_bran difficulty(4000),
+
+    10 card_skellige_blueboy_lugos,
+    10 card_skellige_clan_brokvar_archer,
+    10 card_skellige_clan_dimun_pirate points(2),
+
+    5 card_skellige_clan_dimun_captain,
+    5 card_skellige_clan_dimun_captain difficulty(5000),
+    5 card_skellige_clan_dimun_captain difficulty(9000),
+
+    15 card_skellige_clan_tordarroch_armorsmith,
+
+    5 card_skellige_clan_an_craite_warrior points(2),
+    5 card_skellige_clan_an_craite_warrior difficulty(3500), # the lack of point is normal
+    5 card_skellige_clan_an_craite_warrior points(2) difficulty(500),
+
+    15 card_skellige_donar_an_hindar,
+    5 card_skellige_draig points(2),
+    10 card_skellige_holger_blackhand,
+
+    1 card_skellige_hero_cock points(2),
+    1 card_skellige_hero_cock points(2) difficulty(7000),
+
+    15 card_skellige_light_drakkar,
+    5 card_skellige_light_drakkar difficulty(3000),
+
+    5 card_skellige_war_drakkar points(2),
+    5 card_skellige_war_drakkar points(2) difficulty(6000),
+
+    15 card_skellige_madman_lugos,
+    5 card_skellige_mushroom,
+    5 card_skellige_mushroom difficulty(5000),
+    
+    1 card_skellige_olaf points(3),
+    4 card_skellige_olaf points(3) difficulty(4000),
+    
+    15 card_skellige_svanrige,
+    15 card_skellige_udalryk,
+    
+    # neutral cards
+    5 card_neutral_skellige_storm points(2),
+    5 card_neutral_frost,
+    1 card_neutral_hero_geralt difficulty(4000),
+    1 card_neutral_ciri difficulty(4000),
+    5 card_neutral_clear_sky,
+    2 card_neutral_horn,
+    2 card_neutral_horn difficulty(2000),
+    2 card_northern_dandelion difficulty(2000),
+    3 card_neutral_dummy,
+    1 card_neutral_dummy difficulty(1000),
+    1 card_neutral_dummy difficulty(2500),
+    1 card_neutral_dummy difficulty(5000),
+    1 card_neutral_avallach points(3) difficulty(4500),
+    2 card_neutral_scorch points(2),
+    1 card_neutral_triss points(2) difficulty(4000),
+    1 card_neutral_yennefer points(2) difficulty(4000),
+    1 card_neutral_zoltan difficulty(1000),
   }
 }
 
