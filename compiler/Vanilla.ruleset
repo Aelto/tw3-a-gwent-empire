@@ -95,9 +95,9 @@ variables {
 
 # Scoiatael
 variables {
-  card_scoiatael_eithne = 300,
-  card_scoiatael_saskia = 301,
-  card_scoiatael_isengrim = 302,
+  card_scoiatael_hero_eithne = 300,
+  card_scoiatael_hero_saskia = 301,
+  card_scoiatael_hero_isengrim = 302,
   card_scoiatael_hero_iorveth = 303,
   card_scoiatael_milva = 306,
   card_scoiatael_dennis = 305,
@@ -213,7 +213,7 @@ variables {
 # Neutral
 variables {
   card_neutral_hero_geralt = 7,
-  card_neutral_hero_vesemir = 8,
+  card_neutral_vesemir = 8,
   card_neutral_hero_yennefer = 9,
   card_neutral_hero_ciri = 10,
   card_neutral_hero_triss = 11,
@@ -364,7 +364,7 @@ faction Nilfgaardian {
     1 card_nilfgaard_hero_tibor points(3) difficulty(1000),
 
     1 card_neutral_hero_geralt points(3) difficulty(6000),
-    1 card_neutral_hero_vesemir points(3) difficulty(3000),
+    1 card_neutral_vesemir points(3) difficulty(3000),
     1 card_neutral_hero_yennefer points(3) difficulty(3000),
     1 card_neutral_hero_ciri points(3) difficulty(3000),
     1 card_neutral_hero_triss points(3) difficulty(3000),
@@ -440,7 +440,7 @@ faction Nilfgaardian {
     5 card_special_rain points(2),
     5 card_special_clear_sky,
     # card_special_mushroom
-    1 card_special_skellige_storm points(3) difficulty(3000..100),
+    1 card_special_skellige_storm points(3) difficulty(3000),
     1 card_special_skellige_storm points(3) difficulty(6000),
 
     3 card_neutral_dandelion points(2),
@@ -547,41 +547,140 @@ faction Scoiatael {
 
   heroes {
     1 card_scoiatael_hero_iorveth,
+    1 card_scoiatael_hero_eithne difficulty(..9000),
+    1 card_scoiatael_hero_isengrim points(2) difficulty(3000),
+    1 card_scoiatael_hero_saskia difficulty(..6500),
+
+    1 card_neutral_hero_geralt points(3) difficulty(6000),
+    1 card_neutral_hero_yennefer points(3) difficulty(2000..6000),
+    1 card_neutral_hero_ciri points(3) difficulty(3000),
+    1 card_neutral_hero_triss points(3) difficulty(3000..5000),
+    1 card_neutral_hero_avallach points(4) difficulty(5000)
   }
 
   units {
-    1 card_neutral_villen,
-    1 card_scoiatael_isengrim,
-    1 card_scoiatael_dennis,
-    1 card_scoiatael_milva,
-    1 card_scoiatael_ida,
-    1 card_scoiatael_filavandrel,
-    1 card_scoiatael_yaevinn,
-    1 card_scoiatael_toruviel,
-    1 card_scoiatael_riordain,
-    1 card_scoiatael_ciaran,
-    1 card_scoiatael_barclay,
-    1 card_scoiatael_havekar_support,
-    1 card_scoiatael_havekar_support2,
-    1 card_scoiatael_havekar_support3,
-    1 card_scoiatael_vrihedd_brigade,
-    1 card_scoiatael_vrihedd_brigade2,
-    1 card_scoiatael_dol_infantry,
-    1 card_scoiatael_dol_infantry2,
-    1 card_scoiatael_dol_infantry3,
-    1 card_scoiatael_mahakam,
-    1 card_scoiatael_mahakam2,
-    1 card_scoiatael_mahakam3,
-    1 card_scoiatael_mahakam4,
-    1 card_scoiatael_mahakam5,
-    1 card_scoiatael_elf_skirmisher,
-    1 card_scoiatael_elf_skirmisher2,
-    1 card_scoiatael_elf_skirmisher3,
-    1 card_scoiatael_vrihedd_cadet,
-    1 card_scoiatael_dol_archer,
-    1 card_scoiatael_havekar_nurse,
-    1 card_scoiatael_havekar_nurse2,
-    1 card_scoiatael_havekar_nurse3,
-    1 card_scoiatael_schirru,
+    # 6str melee/range
+    15 card_scoiatael_barclay,
+
+    # 3str melee/range:
+    10 card_scoiatael_ciaran difficulty(..2000),
+    5 card_scoiatael_ciaran difficulty(..3000),
+    5 card_scoiatael_ciaran difficulty(..4000),
+
+    # 6str melee
+    5 card_scoiatael_dennis,
+    10 card_scoiatael_dennis difficulty(..8000),
+
+    # 4str range
+    5 card_scoiatael_dol_archer difficulty(..4000),
+    5 card_scoiatael_dol_archer difficulty(..6000),
+
+    # 6str range
+    5 card_scoiatael_hero_isengrim difficulty(..6000),
+    5 card_scoiatael_hero_isengrim difficulty(..8000),
+
+    # 6str range
+    5 card_scoiatael_ida difficulty(6000),
+
+    # 6str melee/range
+    5 card_scoiatael_dol_infantry,
+    5 card_scoiatael_dol_infantry2,
+    5 card_scoiatael_dol_infantry3,
+
+    # 3str melee muster
+    5 card_scoiatael_dol_dwarf difficulty(2000..8000),
+    5 card_scoiatael_dol_dwarf2 difficulty(3000..8000),
+    5 card_scoiatael_dol_dwarf3 difficulty(4000..8000),
+
+    # 2str range muster
+    5 card_scoiatael_elf_skirmisher difficulty(..4000),
+    5 card_scoiatael_elf_skirmisher2 difficulty(..4000),
+    5 card_scoiatael_elf_skirmisher3 difficulty(..4000),
+
+    # 5str melee muster
+    5 card_scoiatael_havekar_support difficulty(4000),
+    5 card_scoiatael_havekar_support2 difficulty(6000),
+    5 card_scoiatael_havekar_support3 difficulty(8000),
+
+    # 6str agile
+    15 card_scoiatael_filavandrel,
+
+    # 0str medic
+    5 card_scoiatael_havekar_nurse,
+    5 card_scoiatael_havekar_nurse2 difficulty(3000),
+    5 card_scoiatael_havekar_nurse3 difficulty(6000),
+
+    # 5str melee
+    2 card_scoiatael_mahakam difficulty(500..6000),
+    2 card_scoiatael_mahakam2 difficulty(750..6000),
+    2 card_scoiatael_mahakam3 difficulty(1000..6000),
+    2 card_scoiatael_mahakam4 difficulty(1250..6000),
+    2 card_scoiatael_mahakam5 difficulty(1500..6000),
+
+    # 1str melee
+    10 card_scoiatael_riordain difficulty(..2000),
+    10 card_scoiatael_riordain difficulty(..3000),
+    10 card_scoiatael_riordain difficulty(..4000),
+
+    # 2str range
+    10 card_scoiatael_toruviel difficulty(..3000),
+    10 card_scoiatael_toruviel difficulty(..5000),
+
+    # 10str range, morale boost +1
+    4 card_scoiatael_milva points(2) difficulty(3000),
+    4 card_scoiatael_milva points(2) difficulty(6000),
+
+    # 8str siege, scorch
+    3 card_scoiatael_schirru points(2) difficulty(3000),
+    3 card_scoiatael_schirru points(2) difficulty(6000),
+    3 card_scoiatael_schirru points(2) difficulty(9000),
+
+    # 4str range
+    5 card_scoiatael_vrihedd_cadet difficulty(2000..7000),
+
+    # 5str agile
+    3 card_scoiatael_vrihedd_brigade difficulty(..4000),
+    3 card_scoiatael_vrihedd_brigade difficulty(2000..8000),
+
+    # 6str agile
+    5 card_scoiatael_yaevinn difficulty(1000),
+    5 card_scoiatael_yaevinn difficulty(2500),
+    5 card_scoiatael_yaevinn difficulty(3000),
+
+    5 card_special_dummy points(2),
+    5 card_special_dummy points(2) difficulty(9000),
+
+    1 card_special_horn points(3) difficulty(1000),
+    1 card_special_horn points(3) difficulty(2000),
+    1 card_special_horn points(3) difficulty(6000),
+    1 card_special_horn points(3) difficulty(9000),
+
+    1 card_special_scorch points(2),
+    1 card_special_scorch points(2) difficulty(2000),
+    1 card_special_scorch difficulty(4000),
+    1 card_special_scorch difficulty(6000),
+
+    5 card_special_frost points(2),
+    5 card_special_fog points(2),
+    5 card_special_rain points(2),
+    5 card_special_clear_sky,
+    # card_special_mushroom
+    1 card_special_skellige_storm points(3) difficulty(3000),
+    1 card_special_skellige_storm points(3) difficulty(6000),
+
+    1 card_neutral_vesemir points(3) difficulty(1000..4000),
+    1 card_special_scorch points(2) difficulty(4000),
+    2 card_neutral_dandelion points(2) difficulty(6000),
+    10 card_neutral_zoltan difficulty(..6000),
+    10 card_neutral_emiel difficulty(..6000),
+    1 card_neutral_villen difficulty(..6000),
+    2 card_neutral_olgierd,
+    5 card_neutral_mrmirror points(2),
+    1 card_neutral_mrmirror_foglet points(3) difficulty(3000),
+    2 card_neutral_cow,
+
+    # i couldn't find what these two cards are:
+    1 card_neutral_lady_of_the_lake difficulty(3000),
+    1 card_neutral_visenna difficulty(3000), 
   }
 }
