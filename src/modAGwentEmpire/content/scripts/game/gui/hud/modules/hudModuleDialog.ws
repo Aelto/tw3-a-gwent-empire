@@ -133,6 +133,7 @@ class CR4HudModuleDialog extends CR4HudModuleBase
 		overridden_index = GA_onDialogOptionAccepted(acceptedChoice, lastSetChoices);
 		if (overridden_index >= 0) {
 			index = overridden_index;
+			acceptedChoice = lastSetChoices[index];
 		}
 		// modAGwentEmpire - END
 		

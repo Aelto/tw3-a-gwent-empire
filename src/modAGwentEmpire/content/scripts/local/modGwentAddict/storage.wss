@@ -25,12 +25,77 @@ state Betting in GA_Storage {
   }
 
   entry function Betting_main() {
+    Sleep(0.5);
     if (!GA_isPlayerBusy()) {
+      this.playRandomGwentDialog();
+
       parent.bet_amount = 0;
       this.openHaggleWindow();
     }
 
     parent.GotoState('Idle');
+  }
+
+  latent function playRandomGwentDialog() {
+    var dialogs: array<int>;
+
+    dialogs.PushBack(1188483);
+    dialogs.PushBack(1188473);
+    dialogs.PushBack(1188476);
+    dialogs.PushBack(1188481);
+    dialogs.PushBack(1188481);
+    dialogs.PushBack(1188488);
+    dialogs.PushBack(1188490);
+    dialogs.PushBack(1188493);
+    dialogs.PushBack(1188495);
+    dialogs.PushBack(1188498);
+    dialogs.PushBack(1188504);
+    dialogs.PushBack(1188506);
+    dialogs.PushBack(1188509);
+    dialogs.PushBack(1200258);
+    dialogs.PushBack(1136548);
+    dialogs.PushBack(1136707);
+    dialogs.PushBack(1137396);
+    dialogs.PushBack(1028746);
+    dialogs.PushBack(1028773);
+    dialogs.PushBack(1028793);
+    dialogs.PushBack(1028748);
+    dialogs.PushBack(1028750);
+    dialogs.PushBack(1028765);
+    dialogs.PushBack(1028750);
+    dialogs.PushBack(1028793);
+    dialogs.PushBack(1028761);
+    dialogs.PushBack(1028750);
+    dialogs.PushBack(1028778);
+    dialogs.PushBack(514733);
+    dialogs.PushBack(1028761);
+    dialogs.PushBack(1028780);
+    dialogs.PushBack(1028755);
+    dialogs.PushBack(1028788);
+    dialogs.PushBack(1028778);
+    dialogs.PushBack(520912);
+    dialogs.PushBack(522288);
+    dialogs.PushBack(522516);
+    dialogs.PushBack(578228);
+    dialogs.PushBack(578265);
+    dialogs.PushBack(578292);
+    dialogs.PushBack(578330);
+    dialogs.PushBack(578372);
+    dialogs.PushBack(578437);
+    dialogs.PushBack(578452);
+    dialogs.PushBack(578467);
+    dialogs.PushBack(578469);
+    dialogs.PushBack(578467);
+    dialogs.PushBack(578556);
+    dialogs.PushBack(578576);
+    dialogs.PushBack(578592);
+    dialogs.PushBack(1028775);
+    dialogs.PushBack(587823);
+
+    var dialog: int = dialogs[RandRange(dialogs.Size())];
+
+    thePlayer.PlayLine(dialog, true);
+    thePlayer.WaitForEndOfSpeach();
   }
 
   function openHaggleWindow() {
@@ -50,8 +115,11 @@ state StartNoDialog in GA_Storage {
   }
 
   entry function StartNoDialog_main() {
-    Sleep(2.5);
-    parent.GotoState('Betting');
+    Sleep(1);
+    if (!GA_isPlayerBusy()) {
+      GA_openConfirmMatchStartModal();
+    }
+    parent.GotoState('Idle');
   }
 }
 
@@ -69,7 +137,8 @@ state StartFromDialog in GA_Storage {
     }
 
     Sleep(0.2);
-    parent.GotoState('Betting');
+    GA_openConfirmMatchStartModal();
+    parent.GotoState('Idle');
   }
 }
 

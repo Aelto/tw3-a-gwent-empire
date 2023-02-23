@@ -53,5 +53,6 @@ enum GA_VanillaFactionsIndex {
   GA_VFI_Nilfgaardian = 1,
   GA_VFI_Scoiatael = 2,
   GA_VFI_Monster = 3,
-  GA_VFI_Skellige = 4
+  GA_VFI_Skellige = 4,
+  GA_VFI_Max = 5
 }

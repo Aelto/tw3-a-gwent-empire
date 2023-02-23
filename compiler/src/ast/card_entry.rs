@@ -29,7 +29,7 @@ impl Display for CardEntry {
 
     for i in 0..count {
       codegen::indent(f, 3)?;
-      writeln!(f, "output.PushBack(GA_CardEntry({index}, 1, 1, 1, GA_DeckPoints({points}), GA_MatchDifficulty({difficulty_above},{difficulty_below}))); // {i}")?;
+      writeln!(f, "output.PushBack(GA_CardEntry({index}, 1, 1, 1, GA_DeckPoints({points}), GA_MatchDifficultyRequirement({difficulty_above},{difficulty_below}))); // {i}")?;
     }
 
     Ok(())

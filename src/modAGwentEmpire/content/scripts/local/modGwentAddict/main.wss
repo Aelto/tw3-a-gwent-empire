@@ -9,21 +9,21 @@ enum GA_CONSTANTS_ENUM {
 }
 
 function GA_npcOnInteraction(actionName: string, activator: CEntity, npc: CNewNPC) {
-  GA_startGwentMatchNoDialog(npc);
+  // on any interaction with a NPC, set it as the opponent for the future match.
+  var storage: GA_Storage = GA_getCleanStorage();
+  storage.opponent = npc;
+
+  GA_startGwentMatchNoDialog();
 }
 
 
-function GA_startGwentMatchNoDialog(opponent: CNewNPC) {
-  var storage: GA_Storage = GA_getCleanStorage();
-  storage.opponent = opponent;
-
+function GA_startGwentMatchNoDialog() {
+  var storage: GA_Storage = GA_getStorage();
   storage.GotoState('StartNoDialog');
 }
 
-function GA_startGwentMatchFromDialog(opponent: CNewNPC) {
-  var storage: GA_Storage = GA_getCleanStorage();
-  storage.opponent = opponent;
-
+function GA_startGwentMatchFromDialog() {
+  var storage: GA_Storage = GA_getStorage();
   storage.GotoState('StartFromDialog');
 }
 
@@ -84,16 +84,7 @@ function GA_onDialogOptionAccepted(choice: SSceneChoice, choices: array<SSceneCh
     return -1;
   }
 
-  var entities: array<CGameplayEntity>;
-  var radius: float = 15;
-  FindGameplayEntitiesInCylinder(entities, thePlayer.GetWorldPosition(), radius, radius, 1,, FLAG_OnlyAliveActors + FLAG_ExcludePlayer,, 'CNewNPC');
-
-  if (entities.Size() <= 0) {
-    return -1;
-  }
-
-  var opponent: CNewNPC = entities[0] as CNewNPC;
-  GA_startGwentMatchFromDialog(opponent);
+  GA_startGwentMatchFromDialog();
 
   return exit_choice_index;
 }
@@ -107,9 +98,11 @@ function GA_onGwentMatchEnded(gamestate: EMinigameState) {
   }
 
   if (won) {
+    GAHUD("Victory: you gain " + storage.bet_amount + " crowns");
     thePlayer.AddMoney(storage.bet_amount);
   }
   else {
+    GAHUD("Defeat: you lose " + storage.bet_amount + " crowns");
     thePlayer.RemoveMoney(storage.bet_amount);
   }
 }

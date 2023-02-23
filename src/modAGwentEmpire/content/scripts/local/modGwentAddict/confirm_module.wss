@@ -1,0 +1,42 @@
+
+function GA_openConfirmModal(data: ConfirmationPopupData, title: string, text: string) {
+  data.SetMessageTitle(title);
+  data.SetMessageText(text);
+  data.BlurBackground = true;
+  data.PauseGame = true;
+
+  theGame.RequestMenu('PopupMenu', data);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+logregion!(GA_ConfirmationMatchStartPopupData, GALOG, {{
+  class GA_ConfirmationMatchStartPopupData extends ConfirmationPopupData {
+    protected function OnUserAccept() {
+      GALOG("user accepted");
+
+      var storage: GA_Storage = GA_getStorage();
+      storage.GotoState('Betting');
+    }
+    
+    protected function OnUserDecline() {
+      GALOG("user declined");
+    }
+    
+    protected function GetAcceptText(): string {
+      return "panel_button_common_accept";
+    }
+    
+    protected function GetDeclineText() : string {
+      return "panel_button_common_exit";
+    }
+  }
+}});
+
+function GA_openConfirmMatchStartModal() {
+  GA_openConfirmModal(
+    new GA_ConfirmationMatchStartPopupData in thePlayer,
+    "A Gwent Empire",
+    "Do you wish to start a match against this opponent?"
+  );
+}

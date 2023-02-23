@@ -1,0 +1,6 @@
+#define function logregion(segment, log_function, code) {
+  #pragma find log_function("
+  #pragma replace log_function("[segment] - 
+
+code
+};

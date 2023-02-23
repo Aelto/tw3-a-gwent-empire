@@ -1,4 +1,0 @@
-
-struct GA_GeneralDataCurrentMatch {
-  var identifier: GA_DeckIdentifier;
-}

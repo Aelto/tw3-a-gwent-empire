@@ -89,12 +89,8 @@ abstract class GA_CardsDictionary extends SU_StorageItem {
   }
 
   public function getFactionFromSeed(rng: RandomNumberGenerator): GA_VanillaFactionsIndex {
-    var roll: int = GA_rngRolls(
-      GA_CONSTANTS_ENUM_POINTS_FROM_SEED_ROLL,
-      rng,
-      EnumGetMin('GA_VanillaFactionsIndex'),
-      EnumGetMax('GA_VanillaFactionsIndex') + 1
-    ) as int;
+    var max: int = GA_VFI_Max as int;
+    var roll: int = rng.nextRange(max as float, 0) as int;
     
     return roll as GA_VanillaFactionsIndex;
   }
