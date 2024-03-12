@@ -1,11 +1,14 @@
 @context(
+  note("hudModuleDialog changes")
   define("mod.aGwentEmpire")
   file("game/gui/hud/modules/hudModuleDialog.ws")
   at(class CR4HudModuleDialog)
 )
 
 @insert(
-  at(event  OnDialogOptionAccepted)
+  note("hook dialog accept event for override")
+  note("add dialog injecting variables")
+  at(OnDialogOptionAccepted)
   below(var progress : float)
 )
 // modAGwentEmpire - BEGIN
@@ -13,8 +16,10 @@ var overridden_index: int;
 // modAGwentEmpire - END
 
 @insert(
-  at(event  OnDialogOptionAccepted)
-  below(var progress : float) 
+  note("hook dialog accept event for override")
+  note("override dialog index")
+  at(OnDialogOptionAccepted)
+  below(var progress)
   below(LogChannel)
 )
 // modAGwentEmpire - BEGIN
@@ -26,6 +31,7 @@ if (overridden_index >= 0) {
 // modAGwentEmpire - END
 
 @insert(
+  note("add dialog injection")
   at(function SendDialogChoicesToUI)
   above(lastSetChoices = choices)
 )

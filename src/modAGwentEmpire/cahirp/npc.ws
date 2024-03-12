@@ -1,4 +1,5 @@
 @context(
+  note("npc changes")
   define("mod.aGwentEmpire")
   file("game/npc/npc.ws")
   at(class CNewNPC)

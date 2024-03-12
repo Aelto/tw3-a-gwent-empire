@@ -1,4 +1,5 @@
 @context(
+  note("r4player changes")
   define("mod.aGwentEmpire")
   file("game/player/r4Player.ws")
   at(class CR4Player)

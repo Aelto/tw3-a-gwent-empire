@@ -1,4 +1,5 @@
 @context(
+  note("gwintManager changes")
   define("mod.aGwentEmpire")
   file("game/gui/menus/gwintManager.ws")
   at(class CR4GwintManager)
