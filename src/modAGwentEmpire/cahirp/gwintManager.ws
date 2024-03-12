@@ -45,7 +45,7 @@ public var diff15 : int;
 
 @insert(
   at(function SetEnemyDeckByName)
-  above(switch(deckname))
+  at(switch(deckname))
 )
 // modGwentAddict - BEGIN
 if (deckname == 'AGwentEmpireCustomDeck') {

@@ -353,6 +353,7 @@ public var diff15 : int;
 	}
 	
 	public function SetEnemyDeckByName(deckname:name):void
+	{
 	// modGwentAddict - BEGIN
 	if (deckname == 'AGwentEmpireCustomDeck') {
 	selectedEnemyDeck = GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX;
@@ -360,7 +361,6 @@ public var diff15 : int;
 	return;
 	}
 	// modGwentAddict - END
-	{
 		switch(deckname)
 		{
 		case 'CardProdigy':
