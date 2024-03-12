@@ -8,6 +8,9 @@ mkdir "%modpath%\release"
 call compile
 @REM call bundle.bat
 
+echo generate vanilla merges from cahirp recipes
+call cahirp
+
 set modname=modAGwentEmpire
 XCOPY "%modpath%\src\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
 rmdir "%modpath%\release\mods\%modname%\content\scripts\local\" /s /q
