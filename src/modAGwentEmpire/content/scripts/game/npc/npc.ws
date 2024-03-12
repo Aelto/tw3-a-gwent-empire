@@ -4012,7 +4012,6 @@ statemachine import class CNewNPC extends CActor
 			
 		return !IsFrozen() && CanTalk( true );
 	}
-
 	// modAGwentEmpire - BEGIN
 	public saved var GA_deck_identifier: GA_DeckIdentifier;
 	// modAGwentEmpire - END
@@ -4023,7 +4022,6 @@ statemachine import class CNewNPC extends CActor
 		var ciriEntity  		: W3ReplacerCiri;
 		var isAtWork			: bool;
 		var isConciousAtWork 	: bool;
-
 		// modAGwentEmpire - BEGIN
 		GA_npcOnInteraction(actionName, activator, this);
 		// modAGwentEmpire - END

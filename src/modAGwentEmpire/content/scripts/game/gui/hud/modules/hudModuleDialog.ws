@@ -120,22 +120,20 @@ class CR4HudModuleDialog extends CR4HudModuleBase
 		// modAGwentEmpire - BEGIN
 		var overridden_index: int;
 		// modAGwentEmpire - END
-
 		
 		acceptedChoice = lastSetChoices[index];
 		
 		LogChannel('DIALOG', "***************************" );
-		LogChannel('DIALOG', "OnDialogOptionAccepted " + index );
-		
-		LogChannel('DIALOG', "***************************" );
-
 		// modAGwentEmpire - BEGIN
 		overridden_index = GA_onDialogOptionAccepted(acceptedChoice, lastSetChoices);
 		if (overridden_index >= 0) {
-			index = overridden_index;
-			acceptedChoice = lastSetChoices[index];
+		index = overridden_index;
+		acceptedChoice = lastSetChoices[index];
 		}
 		// modAGwentEmpire - END
+		LogChannel('DIALOG', "OnDialogOptionAccepted " + index );
+		
+		LogChannel('DIALOG', "***************************" );
 		
 		if (!acceptedChoice.disabled)
 		{
@@ -277,7 +275,6 @@ class CR4HudModuleDialog extends CR4HudModuleBase
 		flashValueStorage = GetModuleFlashValueStorage();
 		
 		choiceFlashArray = flashValueStorage.CreateTempFlashArray();
-
 		// modAGwentEmpire - BEGIN
 		choices = GA_injectGwentDialogOption(choices, choiceFlashArray, this);
 		// modAGwentEmpire - END

@@ -278,23 +278,23 @@ import class CR4GwintManager extends IGameSystem
 	
 	private var difficulty : int;
 
-	// modGwentAddict - BEGIN
-	public var diff1 : int;
-	public var diff2 : int;
-	public var diff3 : int;
-	public var diff4 : int;
-	public var diff5 : int;
-	public var diff6 : int;
-	public var diff7 : int;
-	public var diff8 : int;
-	public var diff9 : int;
-	public var diff10 : int;
-	public var diff11 : int;
-	public var diff12 : int;
-	public var diff13 : int;
-	public var diff14 : int;
-	public var diff15 : int;
-	// modGwentAddict - END
+// modAGwentEmpire - BEGIN
+public var diff1 : int;
+public var diff2 : int;
+public var diff3 : int;
+public var diff4 : int;
+public var diff5 : int;
+public var diff6 : int;
+public var diff7 : int;
+public var diff8 : int;
+public var diff9 : int;
+public var diff10 : int;
+public var diff11 : int;
+public var diff12 : int;
+public var diff13 : int;
+public var diff14 : int;
+public var diff15 : int;
+// modAGwentEmpire - END
 	
 	private var doubleAIEnabled : bool;
 	
@@ -353,15 +353,14 @@ import class CR4GwintManager extends IGameSystem
 	}
 	
 	public function SetEnemyDeckByName(deckname:name):void
+	// modGwentAddict - BEGIN
+	if (deckname == 'AGwentEmpireCustomDeck') {
+	selectedEnemyDeck = GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX;
+	
+	return;
+	}
+	// modGwentAddict - END
 	{
-		// modGwentAddict - BEGIN
-		if (deckname == 'AGwentEmpireCustomDeck') {
-			selectedEnemyDeck = GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX;
-
-			return;
-		}
-		// modGwentAddict - END
-
 		switch(deckname)
 		{
 		case 'CardProdigy':
@@ -554,11 +553,10 @@ import class CR4GwintManager extends IGameSystem
 		GenerateDifficultyData();
 
 		setupEnemyDecks(); 
-
 		// modGwentAddict - BEGIN
 		if (this.selectedEnemyDeck == GA_CONSTANTS_ENUM_CUSTOM_DECK_INDEX) {
-			return GA_onCustomGwentStarted(this);
-		} 
+		return GA_onCustomGwentStarted(this);
+		}
 		// modGwentAddict - BEGIN
 		
 		return enemyDecks[selectedEnemyDeck];
