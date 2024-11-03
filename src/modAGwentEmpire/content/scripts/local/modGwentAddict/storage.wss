@@ -1,6 +1,4 @@
-statemachine class GA_Storage extends SU_StorageItem {
-  default tag = "GA_Storage";
-
+statemachine class GA_Storage {
   // The opponent for the next/ongoing match of gwent
   var opponent: CNewNPC;
   var bet_amount: int;
@@ -160,23 +158,13 @@ state Playing in GA_Storage {
     gwintManager.testMatch = true;
 
     if (!GA_isPlayerBusy()) {
-      thePlayer.OnGwintGameRequested('AGwentEmpireCustomDeck', GwintFaction_NothernKingdom);
+      thePlayer.OnGwintGameRequested('AGwentEmpireCustomDeck', GwintFaction_Neutral);
     }
   }
 }
 
 function GA_getStorage(): GA_Storage {
-  var data: GA_Storage;
-
-  data = SU_getStorage().getItem("GA_Storage") as GA_Storage;
-
-  // create the data if it's the first time:
-  if (!data) {
-    data = new GA_Storage in thePlayer;
-    SU_getStorage().setItem(data);
-  }
-
-  return data;
+  return thePlayer.getAGwentEmpire();
 }
 
 /**
@@ -185,12 +173,8 @@ function GA_getStorage(): GA_Storage {
  * of the class after an update.
  */
 function GA_getCleanStorage(): GA_Storage {
-  var data: GA_Storage;
-
-  data = new GA_Storage in thePlayer;
-  SU_getStorage().setItem(data);
-
-  return data;
+  thePlayer.setAGwentEmpire(new GA_Storage in thePlayer);
+  return thePlayer.getAGwentEmpire();
 }
 
 // return true in cases where the player is busy in a cutscene or in the boat.

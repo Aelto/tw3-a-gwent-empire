@@ -9,8 +9,7 @@
  * It is a storage item that is added to the storage so addons can override it
  * 
  */
-abstract class GA_CardsDictionary extends SU_StorageItem {
-  default tag = "GA_CardsDictionary";
+abstract class GA_CardsDictionary {
 
   public function generateDeck(match: GA_GeneralDataCurrentMatch): SDeckDefinition {
     var deck_identifier: GA_DeckIdentifier = match.identifier;
@@ -199,13 +198,10 @@ abstract class GA_CardsDictionary extends SU_StorageItem {
 function GA_getCardDictionary(): GA_CardsDictionary {
   var data: GA_CardsDictionary;
 
-  data = SU_getStorage().getItem("GA_CardsDictionary") as GA_CardsDictionary;
-
   // create the data if it's the first time:
-  if (!data) {
-    data = new GA_VanillaCardsDictionary in thePlayer;
-    SU_getStorage().setItem(data);
+  if (!thePlayer.GA_cards_dictionary) {
+    thePlayer.AGE_setCardsDictionnary(new GA_VanillaCardsDictionary in thePlayer);
   }
 
-  return data;
+  return thePlayer.GA_cards_dictionary;
 }

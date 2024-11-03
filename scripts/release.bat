@@ -26,8 +26,6 @@ XCOPY "%modpath%\strings" "%modpath%\release\mods\%modName%\content\" /e /s /y
 echo copy the sharedutils dependencies
 set modname=mod_sharedutils_npcInteraction
 XCOPY "%modpath%\sharedutils\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
-set modname=mod_sharedutils_storage
-XCOPY "%modpath%\sharedutils\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
 set modname=mod_sharedutils_helpers
 XCOPY "%modpath%\sharedutils\%modname%\" "%modpath%\release\mods\%modname%\" /e /s /y
 
