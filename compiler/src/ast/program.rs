@@ -19,7 +19,7 @@ impl Display for Program {
 exec function ageruleset{}() {{
   var data: {dictionary_name};
   data = new {dictionary_name} in thePlayer;
-  SU_getStorage().setItem(data);
+  thePlayer.AGE_setCardsDictionnary(data);
   GAHUD(\"{dictionary_name} Ruleset installed successully\");
 }}
 

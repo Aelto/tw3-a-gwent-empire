@@ -1,4 +1,4 @@
-// auto-generated: "lalrpop 0.19.8"
+// auto-generated: "lalrpop 0.20.0"
 // sha3: 6bd07c642019dff20430e1e6df0583bc4f3b99d8782cbab26d62325065a28a72
 use lalrpop_util::ParseError;
 use crate::DictionaryError;
@@ -13,9 +13,9 @@ use self::__lalrpop_util::state_machine as __state_machine;
 extern crate core;
 extern crate alloc;
 
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
+#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
 mod __parse__Program {
-    #![allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
 
     use lalrpop_util::ParseError;
     use crate::DictionaryError;
@@ -63,2164 +63,306 @@ mod __parse__Program {
     }
     const __ACTION: &[i8] = &[
         // State 0
-        //     (<Spanned<Definition>>)+ = (*) (<Spanned<Definition>>)+ Spanned<Definition> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     (<Spanned<Definition>>)+ = (*) Spanned<Definition> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Definition = (*) Spanned<DefinitionFaction> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Definition = (*) Spanned<DefinitionVariables> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionFaction = (*) KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionVariables = (*) KeywordVariables "{" TrailingComma<DefinitionVariable> "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Program = (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Program = (*) (<Spanned<Definition>>)+ ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Definition> = (*) Definition ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<DefinitionFaction> = (*) DefinitionFaction ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<DefinitionVariables> = (*) DefinitionVariables ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     __Program = (*) Program ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        3,  // on KeywordFaction, goto 2
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        25,  // on KeywordVariables, goto 24
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 25,
         // State 1
-        //     (<Spanned<Definition>>)+ = (<Spanned<Definition>>)+ (*) Spanned<Definition> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Definition = (*) Spanned<DefinitionFaction> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Definition = (*) Spanned<DefinitionVariables> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionFaction = (*) KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionVariables = (*) KeywordVariables "{" TrailingComma<DefinitionVariable> "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Program = (<Spanned<Definition>>)+ (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Definition> = (*) Definition ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<DefinitionFaction> = (*) DefinitionFaction ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<DefinitionVariables> = (*) DefinitionVariables ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        3,  // on KeywordFaction, goto 2
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        25,  // on KeywordVariables, goto 24
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 25,
         // State 2
-        //     DefinitionFaction = KeywordFaction (*) Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 3
-        //     (<DefinitionVariable> ",")+ = (*) (<DefinitionVariable> ",")+ DefinitionVariable "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     (<DefinitionVariable> ",")+ = (*) DefinitionVariable "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionVariable = (*) Spanned<Identifier> "=" Spanned<Integer> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionVariables = KeywordVariables "{" (*) TrailingComma<DefinitionVariable> "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<DefinitionVariable> = (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<DefinitionVariable> = (*) (<DefinitionVariable> ",")+ ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<DefinitionVariable> = (*) (<DefinitionVariable> ",")+ DefinitionVariable ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<DefinitionVariable> = (*) DefinitionVariable ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -67,  // on "}", reduce `TrailingComma<DefinitionVariable> =  => ActionFn(108);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -67, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 4
-        //     (<DefinitionVariable> ",")+ = (<DefinitionVariable> ",")+ (*) DefinitionVariable "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionVariable = (*) Spanned<Identifier> "=" Spanned<Integer> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<DefinitionVariable> = (<DefinitionVariable> ",")+ (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<DefinitionVariable> = (<DefinitionVariable> ",")+ (*) DefinitionVariable ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -69,  // on "}", reduce `TrailingComma<DefinitionVariable> = (<DefinitionVariable> ",")+ => ActionFn(110);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -69, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 5
-        //     DefinitionVariable = Spanned<Identifier> "=" (*) Spanned<Integer> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Integer> = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 6
-        //     (<CardEntry> ",")+ = (*) (<CardEntry> ",")+ CardEntry "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     (<CardEntry> ",")+ = (*) CardEntry "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" (*) Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<NumberOrVariable> = (*) NumberOrVariable ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<TrailingComma<CardEntry>> = (*) TrailingComma<CardEntry> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) (<CardEntry> ",")+ ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) (<CardEntry> ",")+ CardEntry ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) CardEntry ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -63,  // on "}", reduce `TrailingComma<CardEntry> =  => ActionFn(98);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -63, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 7
-        //     (<CardEntry> ",")+ = (<CardEntry> ",")+ (*) CardEntry "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<NumberOrVariable> = (*) NumberOrVariable ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (<CardEntry> ",")+ (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (<CardEntry> ",")+ (*) CardEntry ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -65,  // on "}", reduce `TrailingComma<CardEntry> = (<CardEntry> ",")+ => ActionFn(100);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -65, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 8
-        //     CardEntry = Spanned<NumberOrVariable> (*) Spanned<NumberOrVariable> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = Spanned<NumberOrVariable> (*) Spanned<NumberOrVariable> CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = Spanned<NumberOrVariable> (*) Spanned<NumberOrVariable> CardEntryPoints ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = Spanned<NumberOrVariable> (*) Spanned<NumberOrVariable> CardEntryPoints CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<NumberOrVariable> = (*) NumberOrVariable ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 9
-        //     CardEntry = Spanned<NumberOrVariable> Spanned<NumberOrVariable> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = Spanned<NumberOrVariable> Spanned<NumberOrVariable> (*) CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = Spanned<NumberOrVariable> Spanned<NumberOrVariable> (*) CardEntryPoints ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = Spanned<NumberOrVariable> Spanned<NumberOrVariable> (*) CardEntryPoints CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = (*) KeywordDifficulty "(" NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = (*) KeywordDifficulty "(" NumberOrVariableSigned ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = (*) KeywordDifficulty "(" NumberOrVariableSigned ".." ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = (*) KeywordDifficulty "(" ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryPoints = (*) Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> = (*) KeywordPoints "(" NumberOrVariable ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -24,  // on ",", reduce `CardEntry = Spanned<NumberOrVariable>, Spanned<NumberOrVariable> => ActionFn(106);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -24,  // on "}", reduce `CardEntry = Spanned<NumberOrVariable>, Spanned<NumberOrVariable> => ActionFn(106);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        54,  // on KeywordDifficulty, goto 53
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        55,  // on KeywordPoints, goto 54
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -24, 0, 0, 0, 0, 0, -24, 0, 0, 0, 0, 0, 54, 0, 0, 0, 55, 0, 0,
         // State 10
-        //     CardEntry = Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints (*) CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = (*) KeywordDifficulty "(" NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = (*) KeywordDifficulty "(" NumberOrVariableSigned ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = (*) KeywordDifficulty "(" NumberOrVariableSigned ".." ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = (*) KeywordDifficulty "(" ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -23,  // on ",", reduce `CardEntry = Spanned<NumberOrVariable>, Spanned<NumberOrVariable>, CardEntryPoints => ActionFn(105);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -23,  // on "}", reduce `CardEntry = Spanned<NumberOrVariable>, Spanned<NumberOrVariable>, CardEntryPoints => ActionFn(105);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        54,  // on KeywordDifficulty, goto 53
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -23, 0, 0, 0, 0, 0, -23, 0, 0, 0, 0, 0, 54, 0, 0, 0, 0, 0, 0,
         // State 11
-        //     CardEntryDifficulty = KeywordDifficulty "(" (*) NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty "(" (*) NumberOrVariableSigned ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty "(" (*) NumberOrVariableSigned ".." ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty "(" (*) ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariableSigned = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariableSigned = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        15,  // on "..", goto 14
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 12
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> = KeywordPoints "(" (*) NumberOrVariable ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 13
-        //     (<CardEntry> ",")+ = (*) (<CardEntry> ",")+ CardEntry "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     (<CardEntry> ",")+ = (*) CardEntry "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" (*) Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<NumberOrVariable> = (*) NumberOrVariable ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<TrailingComma<CardEntry>> = (*) TrailingComma<CardEntry> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) (<CardEntry> ",")+ ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) (<CardEntry> ",")+ CardEntry ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) CardEntry ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -63,  // on "}", reduce `TrailingComma<CardEntry> =  => ActionFn(98);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -63, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 14
-        //     CardEntryDifficulty = KeywordDifficulty "(" ".." (*) NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariableSigned = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariableSigned = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 15
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned ".." (*) NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned ".." (*) ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariableSigned = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariableSigned = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        68,  // on ")", goto 67
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 16
-        //     (<CardEntry> ",")+ = (*) (<CardEntry> ",")+ CardEntry "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     (<CardEntry> ",")+ = (*) CardEntry "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntry = (*) Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints CardEntryDifficulty ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" (*) Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Identifier = (*) IdentifierRegex ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Integer = (*) r#"[0-9]+"# ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Integer ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     NumberOrVariable = (*) Spanned<Identifier> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<Identifier> = (*) Identifier ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<NumberOrVariable> = (*) NumberOrVariable ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     Spanned<TrailingComma<CardEntry>> = (*) TrailingComma<CardEntry> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) (<CardEntry> ",")+ ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) (<CardEntry> ",")+ CardEntry ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (*) CardEntry ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -63,  // on "}", reduce `TrailingComma<CardEntry> =  => ActionFn(98);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        41,  // on r#"[0-9]+"#, goto 40
-        0,  // on r#"\\.[0-9]*"#, error
-        29,  // on IdentifierRegex, goto 28
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -63, 0, 0, 41, 0, 29, 0, 0, 0, 0, 0, 0, 0,
         // State 17
-        //     Spanned<Definition> = Definition (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -54,  // on KeywordFaction, reduce `Spanned<Definition> = Definition => ActionFn(90);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -54,  // on KeywordVariables, reduce `Spanned<Definition> = Definition => ActionFn(90);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -54, 0, 0, 0, 0, -54,
         // State 18
-        //     Spanned<DefinitionFaction> = DefinitionFaction (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -55,  // on KeywordFaction, reduce `Spanned<DefinitionFaction> = DefinitionFaction => ActionFn(91);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -55,  // on KeywordVariables, reduce `Spanned<DefinitionFaction> = DefinitionFaction => ActionFn(91);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -55, 0, 0, 0, 0, -55,
         // State 19
-        //     Spanned<DefinitionVariables> = DefinitionVariables (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -56,  // on KeywordFaction, reduce `Spanned<DefinitionVariables> = DefinitionVariables => ActionFn(92);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -56,  // on KeywordVariables, reduce `Spanned<DefinitionVariables> = DefinitionVariables => ActionFn(92);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -56, 0, 0, 0, 0, -56,
         // State 20
-        //     __Program = Program (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 21
-        //     (<Spanned<Definition>>)+ = Spanned<Definition> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -14,  // on KeywordFaction, reduce `(<Spanned<Definition>>)+ = Spanned<Definition> => ActionFn(68);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -14,  // on KeywordVariables, reduce `(<Spanned<Definition>>)+ = Spanned<Definition> => ActionFn(68);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -14, 0, 0, 0, 0, -14,
         // State 22
-        //     Definition = Spanned<DefinitionFaction> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -38,  // on KeywordFaction, reduce `Definition = Spanned<DefinitionFaction> => ActionFn(3);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -38,  // on KeywordVariables, reduce `Definition = Spanned<DefinitionFaction> => ActionFn(3);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -38, 0, 0, 0, 0, -38,
         // State 23
-        //     Definition = Spanned<DefinitionVariables> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -37,  // on KeywordFaction, reduce `Definition = Spanned<DefinitionVariables> => ActionFn(2);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -37,  // on KeywordVariables, reduce `Definition = Spanned<DefinitionVariables> => ActionFn(2);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -37, 0, 0, 0, 0, -37,
         // State 24
-        //     DefinitionVariables = KeywordVariables (*) "{" TrailingComma<DefinitionVariable> "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        4,  // on "{", goto 3
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 25
-        //     (<Spanned<Definition>>)+ = (<Spanned<Definition>>)+ Spanned<Definition> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -15,  // on KeywordFaction, reduce `(<Spanned<Definition>>)+ = (<Spanned<Definition>>)+, Spanned<Definition> => ActionFn(69);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -15,  // on KeywordVariables, reduce `(<Spanned<Definition>>)+ = (<Spanned<Definition>>)+, Spanned<Definition> => ActionFn(69);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, -15,
         // State 26
-        //     Spanned<Identifier> = Identifier (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        -57,  // on ")", reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        -57,  // on ",", reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        -57,  // on "..", reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        -57,  // on "=", reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        0,  // on "false", error
-        0,  // on "true", error
-        -57,  // on "{", reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        -57,  // on "}", reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        -57,  // on r#"[0-9]+"#, reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        0,  // on r#"\\.[0-9]*"#, error
-        -57,  // on IdentifierRegex, reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        -57,  // on KeywordDifficulty, reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        -57,  // on KeywordPoints, reduce `Spanned<Identifier> = Identifier => ActionFn(93);`
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, -57, -57, -57, -57, 0, 0, -57, -57, 0, 0, -57, 0, -57, -57, 0, 0, 0, -57, 0, 0,
         // State 27
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> (*) "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        30,  // on "{", goto 29
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 28
-        //     Identifier = IdentifierRegex (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        -45,  // on ")", reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        -45,  // on ",", reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        -45,  // on "..", reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        -45,  // on "=", reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        0,  // on "false", error
-        0,  // on "true", error
-        -45,  // on "{", reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        -45,  // on "}", reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        -45,  // on r#"[0-9]+"#, reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        0,  // on r#"\\.[0-9]*"#, error
-        -45,  // on IdentifierRegex, reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        -45,  // on KeywordDifficulty, reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        -45,  // on KeywordPoints, reduce `Identifier = IdentifierRegex => ActionFn(21);`
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, -45, -45, -45, -45, 0, 0, -45, -45, 0, 0, -45, 0, -45, -45, 0, 0, 0, -45, 0, 0,
         // State 29
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" (*) KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        34,  // on KeywordLeaders, goto 33
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 0, 0, 0,
         // State 30
-        //     (<DefinitionVariable> ",")+ = DefinitionVariable (*) "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<DefinitionVariable> = DefinitionVariable (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        36,  // on ",", goto 35
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -66,  // on "}", reduce `TrailingComma<DefinitionVariable> = DefinitionVariable => ActionFn(107);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 36, 0, 0, 0, 0, 0, -66, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 31
-        //     DefinitionVariable = Spanned<Identifier> (*) "=" Spanned<Integer> ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        6,  // on "=", goto 5
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 32
-        //     DefinitionVariables = KeywordVariables "{" TrailingComma<DefinitionVariable> (*) "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        37,  // on "}", goto 36
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 33
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders (*) "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        7,  // on "{", goto 6
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 34
-        //     (<DefinitionVariable> ",")+ = (<DefinitionVariable> ",")+ DefinitionVariable (*) "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<DefinitionVariable> = (<DefinitionVariable> ",")+ DefinitionVariable (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        38,  // on ",", goto 37
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -68,  // on "}", reduce `TrailingComma<DefinitionVariable> = (<DefinitionVariable> ",")+, DefinitionVariable => ActionFn(109);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 38, 0, 0, 0, 0, 0, -68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 35
-        //     (<DefinitionVariable> ",")+ = DefinitionVariable "," (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -9,  // on "}", reduce `(<DefinitionVariable> ",")+ = DefinitionVariable, "," => ActionFn(64);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        -9,  // on IdentifierRegex, reduce `(<DefinitionVariable> ",")+ = DefinitionVariable, "," => ActionFn(64);`
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0,
         // State 36
-        //     DefinitionVariables = KeywordVariables "{" TrailingComma<DefinitionVariable> "}" (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -43,  // on KeywordFaction, reduce `DefinitionVariables = KeywordVariables, "{", TrailingComma<DefinitionVariable>, "}" => ActionFn(4);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -43,  // on KeywordVariables, reduce `DefinitionVariables = KeywordVariables, "{", TrailingComma<DefinitionVariable>, "}" => ActionFn(4);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -43, 0, 0, 0, 0, -43,
         // State 37
-        //     (<DefinitionVariable> ",")+ = (<DefinitionVariable> ",")+ DefinitionVariable "," (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -10,  // on "}", reduce `(<DefinitionVariable> ",")+ = (<DefinitionVariable> ",")+, DefinitionVariable, "," => ActionFn(65);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        -10,  // on IdentifierRegex, reduce `(<DefinitionVariable> ",")+ = (<DefinitionVariable> ",")+, DefinitionVariable, "," => ActionFn(65);`
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0,
         // State 38
-        //     Spanned<Integer> = Integer (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -58,  // on ",", reduce `Spanned<Integer> = Integer => ActionFn(94);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -58,  // on "}", reduce `Spanned<Integer> = Integer => ActionFn(94);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -58, 0, 0, 0, 0, 0, -58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 39
-        //     DefinitionVariable = Spanned<Identifier> "=" Spanned<Integer> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -40,  // on ",", reduce `DefinitionVariable = Spanned<Identifier>, "=", Spanned<Integer> => ActionFn(16);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -40,  // on "}", reduce `DefinitionVariable = Spanned<Identifier>, "=", Spanned<Integer> => ActionFn(16);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -40, 0, 0, 0, 0, 0, -40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 40
-        //     Integer = r#"[0-9]+"# (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        -46,  // on ")", reduce `Integer = r#"[0-9]+"# => ActionFn(18);`
-        -46,  // on ",", reduce `Integer = r#"[0-9]+"# => ActionFn(18);`
-        -46,  // on "..", reduce `Integer = r#"[0-9]+"# => ActionFn(18);`
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -46,  // on "}", reduce `Integer = r#"[0-9]+"# => ActionFn(18);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        -46,  // on r#"[0-9]+"#, reduce `Integer = r#"[0-9]+"# => ActionFn(18);`
-        0,  // on r#"\\.[0-9]*"#, error
-        -46,  // on IdentifierRegex, reduce `Integer = r#"[0-9]+"# => ActionFn(18);`
-        -46,  // on KeywordDifficulty, reduce `Integer = r#"[0-9]+"# => ActionFn(18);`
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        -46,  // on KeywordPoints, reduce `Integer = r#"[0-9]+"# => ActionFn(18);`
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, -46, -46, -46, 0, 0, 0, 0, -46, 0, 0, -46, 0, -46, -46, 0, 0, 0, -46, 0, 0,
         // State 41
-        //     (<CardEntry> ",")+ = CardEntry (*) "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = CardEntry (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        49,  // on ",", goto 48
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -62,  // on "}", reduce `TrailingComma<CardEntry> = CardEntry => ActionFn(97);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 49, 0, 0, 0, 0, 0, -62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 42
-        //     NumberOrVariable = Integer (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        -47,  // on ")", reduce `NumberOrVariable = Integer => ActionFn(12);`
-        -47,  // on ",", reduce `NumberOrVariable = Integer => ActionFn(12);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -47,  // on "}", reduce `NumberOrVariable = Integer => ActionFn(12);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        -47,  // on r#"[0-9]+"#, reduce `NumberOrVariable = Integer => ActionFn(12);`
-        0,  // on r#"\\.[0-9]*"#, error
-        -47,  // on IdentifierRegex, reduce `NumberOrVariable = Integer => ActionFn(12);`
-        -47,  // on KeywordDifficulty, reduce `NumberOrVariable = Integer => ActionFn(12);`
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        -47,  // on KeywordPoints, reduce `NumberOrVariable = Integer => ActionFn(12);`
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, -47, -47, 0, 0, 0, 0, 0, -47, 0, 0, -47, 0, -47, -47, 0, 0, 0, -47, 0, 0,
         // State 43
-        //     Spanned<NumberOrVariable> = NumberOrVariable (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -59,  // on ",", reduce `Spanned<NumberOrVariable> = NumberOrVariable => ActionFn(95);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -59,  // on "}", reduce `Spanned<NumberOrVariable> = NumberOrVariable => ActionFn(95);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        -59,  // on r#"[0-9]+"#, reduce `Spanned<NumberOrVariable> = NumberOrVariable => ActionFn(95);`
-        0,  // on r#"\\.[0-9]*"#, error
-        -59,  // on IdentifierRegex, reduce `Spanned<NumberOrVariable> = NumberOrVariable => ActionFn(95);`
-        -59,  // on KeywordDifficulty, reduce `Spanned<NumberOrVariable> = NumberOrVariable => ActionFn(95);`
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        -59,  // on KeywordPoints, reduce `Spanned<NumberOrVariable> = NumberOrVariable => ActionFn(95);`
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -59, 0, 0, 0, 0, 0, -59, 0, 0, -59, 0, -59, -59, 0, 0, 0, -59, 0, 0,
         // State 44
-        //     NumberOrVariable = Spanned<Identifier> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        -48,  // on ")", reduce `NumberOrVariable = Spanned<Identifier> => ActionFn(13);`
-        -48,  // on ",", reduce `NumberOrVariable = Spanned<Identifier> => ActionFn(13);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -48,  // on "}", reduce `NumberOrVariable = Spanned<Identifier> => ActionFn(13);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        -48,  // on r#"[0-9]+"#, reduce `NumberOrVariable = Spanned<Identifier> => ActionFn(13);`
-        0,  // on r#"\\.[0-9]*"#, error
-        -48,  // on IdentifierRegex, reduce `NumberOrVariable = Spanned<Identifier> => ActionFn(13);`
-        -48,  // on KeywordDifficulty, reduce `NumberOrVariable = Spanned<Identifier> => ActionFn(13);`
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        -48,  // on KeywordPoints, reduce `NumberOrVariable = Spanned<Identifier> => ActionFn(13);`
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, -48, -48, 0, 0, 0, 0, 0, -48, 0, 0, -48, 0, -48, -48, 0, 0, 0, -48, 0, 0,
         // State 45
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> (*) "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        50,  // on "}", goto 49
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 46
-        //     Spanned<TrailingComma<CardEntry>> = TrailingComma<CardEntry> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -60,  // on "}", reduce `Spanned<TrailingComma<CardEntry>> = TrailingComma<CardEntry> => ActionFn(96);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 47
-        //     (<CardEntry> ",")+ = (<CardEntry> ",")+ CardEntry (*) "," ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     TrailingComma<CardEntry> = (<CardEntry> ",")+ CardEntry (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        51,  // on ",", goto 50
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -64,  // on "}", reduce `TrailingComma<CardEntry> = (<CardEntry> ",")+, CardEntry => ActionFn(99);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 51, 0, 0, 0, 0, 0, -64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 48
-        //     (<CardEntry> ",")+ = CardEntry "," (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -4,  // on "}", reduce `(<CardEntry> ",")+ = CardEntry, "," => ActionFn(60);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        -4,  // on r#"[0-9]+"#, reduce `(<CardEntry> ",")+ = CardEntry, "," => ActionFn(60);`
-        0,  // on r#"\\.[0-9]*"#, error
-        -4,  // on IdentifierRegex, reduce `(<CardEntry> ",")+ = CardEntry, "," => ActionFn(60);`
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -4, 0, 0, -4, 0, -4, 0, 0, 0, 0, 0, 0, 0,
         // State 49
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" (*) KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        56,  // on KeywordHeroes, goto 55
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 0, 0, 0, 0,
         // State 50
-        //     (<CardEntry> ",")+ = (<CardEntry> ",")+ CardEntry "," (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -5,  // on "}", reduce `(<CardEntry> ",")+ = (<CardEntry> ",")+, CardEntry, "," => ActionFn(61);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        -5,  // on r#"[0-9]+"#, reduce `(<CardEntry> ",")+ = (<CardEntry> ",")+, CardEntry, "," => ActionFn(61);`
-        0,  // on r#"\\.[0-9]*"#, error
-        -5,  // on IdentifierRegex, reduce `(<CardEntry> ",")+ = (<CardEntry> ",")+, CardEntry, "," => ActionFn(61);`
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 0, -5, 0, -5, 0, 0, 0, 0, 0, 0, 0,
         // State 51
-        //     CardEntry = Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryDifficulty (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -22,  // on ",", reduce `CardEntry = Spanned<NumberOrVariable>, Spanned<NumberOrVariable>, CardEntryDifficulty => ActionFn(104);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -22,  // on "}", reduce `CardEntry = Spanned<NumberOrVariable>, Spanned<NumberOrVariable>, CardEntryDifficulty => ActionFn(104);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -22, 0, 0, 0, 0, 0, -22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 52
-        //     CardEntryPoints = Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -33,  // on ",", reduce `CardEntryPoints = Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> => ActionFn(7);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -33,  // on "}", reduce `CardEntryPoints = Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> => ActionFn(7);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        -33,  // on KeywordDifficulty, reduce `CardEntryPoints = Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> => ActionFn(7);`
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -33, 0, 0, 0, 0, 0, -33, 0, 0, 0, 0, 0, -33, 0, 0, 0, 0, 0, 0,
         // State 53
-        //     CardEntryDifficulty = KeywordDifficulty (*) "(" NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty (*) "(" NumberOrVariableSigned ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty (*) "(" NumberOrVariableSigned ".." ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty (*) "(" ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        12,  // on "(", goto 11
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 54
-        //     Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> = KeywordPoints (*) "(" NumberOrVariable ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        13,  // on "(", goto 12
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 55
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes (*) "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        14,  // on "{", goto 13
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 56
-        //     CardEntry = Spanned<NumberOrVariable> Spanned<NumberOrVariable> CardEntryPoints CardEntryDifficulty (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -21,  // on ",", reduce `CardEntry = Spanned<NumberOrVariable>, Spanned<NumberOrVariable>, CardEntryPoints, CardEntryDifficulty => ActionFn(103);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -21,  // on "}", reduce `CardEntry = Spanned<NumberOrVariable>, Spanned<NumberOrVariable>, CardEntryPoints, CardEntryDifficulty => ActionFn(103);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -21, 0, 0, 0, 0, 0, -21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 57
-        //     NumberOrVariableSigned = Integer (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        -49,  // on ")", reduce `NumberOrVariableSigned = Integer => ActionFn(14);`
-        0,  // on ",", error
-        -49,  // on "..", reduce `NumberOrVariableSigned = Integer => ActionFn(14);`
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, -49, 0, -49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 58
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned (*) ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned (*) ".." NumberOrVariableSigned ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned (*) ".." ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        63,  // on ")", goto 62
-        0,  // on ",", error
-        16,  // on "..", goto 15
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 63, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 59
-        //     NumberOrVariableSigned = Spanned<Identifier> (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        -50,  // on ")", reduce `NumberOrVariableSigned = Spanned<Identifier> => ActionFn(15);`
-        0,  // on ",", error
-        -50,  // on "..", reduce `NumberOrVariableSigned = Spanned<Identifier> => ActionFn(15);`
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, -50, 0, -50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 60
-        //     Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> = KeywordPoints "(" NumberOrVariable (*) ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        65,  // on ")", goto 64
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 61
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> (*) "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        66,  // on "}", goto 65
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 62
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned ")" (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -27,  // on ",", reduce `CardEntryDifficulty = KeywordDifficulty, "(", NumberOrVariableSigned, ")" => ActionFn(85);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -27,  // on "}", reduce `CardEntryDifficulty = KeywordDifficulty, "(", NumberOrVariableSigned, ")" => ActionFn(85);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -27, 0, 0, 0, 0, 0, -27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 63
-        //     CardEntryDifficulty = KeywordDifficulty "(" ".." NumberOrVariableSigned (*) ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        69,  // on ")", goto 68
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 69, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 64
-        //     Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> = KeywordPoints "(" NumberOrVariable ")" (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -53,  // on ",", reduce `Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> = KeywordPoints, "(", NumberOrVariable, ")" => ActionFn(89);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -53,  // on "}", reduce `Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> = KeywordPoints, "(", NumberOrVariable, ")" => ActionFn(89);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        -53,  // on KeywordDifficulty, reduce `Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> = KeywordPoints, "(", NumberOrVariable, ")" => ActionFn(89);`
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -53, 0, 0, 0, 0, 0, -53, 0, 0, 0, 0, 0, -53, 0, 0, 0, 0, 0, 0,
         // State 65
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" (*) KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        70,  // on KeywordUnits, goto 69
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 70, 0,
         // State 66
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned ".." NumberOrVariableSigned (*) ")" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        71,  // on ")", goto 70
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 71, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 67
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned ".." ")" (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -28,  // on ",", reduce `CardEntryDifficulty = KeywordDifficulty, "(", NumberOrVariableSigned, "..", ")" => ActionFn(86);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -28,  // on "}", reduce `CardEntryDifficulty = KeywordDifficulty, "(", NumberOrVariableSigned, "..", ")" => ActionFn(86);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -28, 0, 0, 0, 0, 0, -28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 68
-        //     CardEntryDifficulty = KeywordDifficulty "(" ".." NumberOrVariableSigned ")" (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -29,  // on ",", reduce `CardEntryDifficulty = KeywordDifficulty, "(", "..", NumberOrVariableSigned, ")" => ActionFn(87);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -29,  // on "}", reduce `CardEntryDifficulty = KeywordDifficulty, "(", "..", NumberOrVariableSigned, ")" => ActionFn(87);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -29, 0, 0, 0, 0, 0, -29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 69
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits (*) "{" Spanned<TrailingComma<CardEntry>> "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        17,  // on "{", goto 16
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 70
-        //     CardEntryDifficulty = KeywordDifficulty "(" NumberOrVariableSigned ".." NumberOrVariableSigned ")" (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        -30,  // on ",", reduce `CardEntryDifficulty = KeywordDifficulty, "(", NumberOrVariableSigned, "..", NumberOrVariableSigned, ")" => ActionFn(88);`
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        -30,  // on "}", reduce `CardEntryDifficulty = KeywordDifficulty, "(", NumberOrVariableSigned, "..", NumberOrVariableSigned, ")" => ActionFn(88);`
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, -30, 0, 0, 0, 0, 0, -30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 71
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> (*) "}" "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        73,  // on "}", goto 72
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 73, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 72
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" (*) "}" ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        74,  // on "}", goto 73
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        0,  // on KeywordFaction, error
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        0,  // on KeywordVariables, error
-
+        0, 0, 0, 0, 0, 0, 0, 0, 74, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 73
-        //     DefinitionFaction = KeywordFaction Spanned<Identifier> "{" KeywordLeaders "{" Spanned<TrailingComma<CardEntry>> "}" KeywordHeroes "{" Spanned<TrailingComma<CardEntry>> "}" KeywordUnits "{" Spanned<TrailingComma<CardEntry>> "}" "}" (*) ["(", ")", ",", "..", "=", "false", "true", "{", "}", r#"\"[^\"]*\""#, r#"'[^']*'"#, r#"[0-9]+"#, r#"\\.[0-9]*"#, IdentifierRegex, KeywordDifficulty, KeywordFaction, KeywordHeroes, KeywordLeaders, KeywordPoints, KeywordUnits, KeywordVariables, EOF]
-        0,  // on "(", error
-        0,  // on ")", error
-        0,  // on ",", error
-        0,  // on "..", error
-        0,  // on "=", error
-        0,  // on "false", error
-        0,  // on "true", error
-        0,  // on "{", error
-        0,  // on "}", error
-        0,  // on r#"\"[^\"]*\""#, error
-        0,  // on r#"'[^']*'"#, error
-        0,  // on r#"[0-9]+"#, error
-        0,  // on r#"\\.[0-9]*"#, error
-        0,  // on IdentifierRegex, error
-        0,  // on KeywordDifficulty, error
-        -39,  // on KeywordFaction, reduce `DefinitionFaction = KeywordFaction, Spanned<Identifier>, "{", KeywordLeaders, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordHeroes, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordUnits, "{", Spanned<TrailingComma<CardEntry>>, "}", "}" => ActionFn(5);`
-        0,  // on KeywordHeroes, error
-        0,  // on KeywordLeaders, error
-        0,  // on KeywordPoints, error
-        0,  // on KeywordUnits, error
-        -39,  // on KeywordVariables, reduce `DefinitionFaction = KeywordFaction, Spanned<Identifier>, "{", KeywordLeaders, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordHeroes, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordUnits, "{", Spanned<TrailingComma<CardEntry>>, "}", "}" => ActionFn(5);`
-
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -39, 0, 0, 0, 0, -39,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
         __ACTION[(state as usize) * 21 + integer]
     }
     const __EOF_ACTION: &[i8] = &[
         // State 0
-        -51,  // on EOF, reduce `Program =  => ActionFn(70);`
-
+        -51,
         // State 1
-        -52,  // on EOF, reduce `Program = (<Spanned<Definition>>)+ => ActionFn(71);`
-
+        -52,
         // State 2
-        0,  // on EOF, error
-
+        0,
         // State 3
-        0,  // on EOF, error
-
+        0,
         // State 4
-        0,  // on EOF, error
-
+        0,
         // State 5
-        0,  // on EOF, error
-
+        0,
         // State 6
-        0,  // on EOF, error
-
+        0,
         // State 7
-        0,  // on EOF, error
-
+        0,
         // State 8
-        0,  // on EOF, error
-
+        0,
         // State 9
-        0,  // on EOF, error
-
+        0,
         // State 10
-        0,  // on EOF, error
-
+        0,
         // State 11
-        0,  // on EOF, error
-
+        0,
         // State 12
-        0,  // on EOF, error
-
+        0,
         // State 13
-        0,  // on EOF, error
-
+        0,
         // State 14
-        0,  // on EOF, error
-
+        0,
         // State 15
-        0,  // on EOF, error
-
+        0,
         // State 16
-        0,  // on EOF, error
-
+        0,
         // State 17
-        -54,  // on EOF, reduce `Spanned<Definition> = Definition => ActionFn(90);`
-
+        -54,
         // State 18
-        -55,  // on EOF, reduce `Spanned<DefinitionFaction> = DefinitionFaction => ActionFn(91);`
-
+        -55,
         // State 19
-        -56,  // on EOF, reduce `Spanned<DefinitionVariables> = DefinitionVariables => ActionFn(92);`
-
+        -56,
         // State 20
-        -70,  // on EOF, reduce `__Program = Program => ActionFn(0);`
-
+        -70,
         // State 21
-        -14,  // on EOF, reduce `(<Spanned<Definition>>)+ = Spanned<Definition> => ActionFn(68);`
-
+        -14,
         // State 22
-        -38,  // on EOF, reduce `Definition = Spanned<DefinitionFaction> => ActionFn(3);`
-
+        -38,
         // State 23
-        -37,  // on EOF, reduce `Definition = Spanned<DefinitionVariables> => ActionFn(2);`
-
+        -37,
         // State 24
-        0,  // on EOF, error
-
+        0,
         // State 25
-        -15,  // on EOF, reduce `(<Spanned<Definition>>)+ = (<Spanned<Definition>>)+, Spanned<Definition> => ActionFn(69);`
-
+        -15,
         // State 26
-        0,  // on EOF, error
-
+        0,
         // State 27
-        0,  // on EOF, error
-
+        0,
         // State 28
-        0,  // on EOF, error
-
+        0,
         // State 29
-        0,  // on EOF, error
-
+        0,
         // State 30
-        0,  // on EOF, error
-
+        0,
         // State 31
-        0,  // on EOF, error
-
+        0,
         // State 32
-        0,  // on EOF, error
-
+        0,
         // State 33
-        0,  // on EOF, error
-
+        0,
         // State 34
-        0,  // on EOF, error
-
+        0,
         // State 35
-        0,  // on EOF, error
-
+        0,
         // State 36
-        -43,  // on EOF, reduce `DefinitionVariables = KeywordVariables, "{", TrailingComma<DefinitionVariable>, "}" => ActionFn(4);`
-
+        -43,
         // State 37
-        0,  // on EOF, error
-
+        0,
         // State 38
-        0,  // on EOF, error
-
+        0,
         // State 39
-        0,  // on EOF, error
-
+        0,
         // State 40
-        0,  // on EOF, error
-
+        0,
         // State 41
-        0,  // on EOF, error
-
+        0,
         // State 42
-        0,  // on EOF, error
-
+        0,
         // State 43
-        0,  // on EOF, error
-
+        0,
         // State 44
-        0,  // on EOF, error
-
+        0,
         // State 45
-        0,  // on EOF, error
-
+        0,
         // State 46
-        0,  // on EOF, error
-
+        0,
         // State 47
-        0,  // on EOF, error
-
+        0,
         // State 48
-        0,  // on EOF, error
-
+        0,
         // State 49
-        0,  // on EOF, error
-
+        0,
         // State 50
-        0,  // on EOF, error
-
+        0,
         // State 51
-        0,  // on EOF, error
-
+        0,
         // State 52
-        0,  // on EOF, error
-
+        0,
         // State 53
-        0,  // on EOF, error
-
+        0,
         // State 54
-        0,  // on EOF, error
-
+        0,
         // State 55
-        0,  // on EOF, error
-
+        0,
         // State 56
-        0,  // on EOF, error
-
+        0,
         // State 57
-        0,  // on EOF, error
-
+        0,
         // State 58
-        0,  // on EOF, error
-
+        0,
         // State 59
-        0,  // on EOF, error
-
+        0,
         // State 60
-        0,  // on EOF, error
-
+        0,
         // State 61
-        0,  // on EOF, error
-
+        0,
         // State 62
-        0,  // on EOF, error
-
+        0,
         // State 63
-        0,  // on EOF, error
-
+        0,
         // State 64
-        0,  // on EOF, error
-
+        0,
         // State 65
-        0,  // on EOF, error
-
+        0,
         // State 66
-        0,  // on EOF, error
-
+        0,
         // State 67
-        0,  // on EOF, error
-
+        0,
         // State 68
-        0,  // on EOF, error
-
+        0,
         // State 69
-        0,  // on EOF, error
-
+        0,
         // State 70
-        0,  // on EOF, error
-
+        0,
         // State 71
-        0,  // on EOF, error
-
+        0,
         // State 72
-        0,  // on EOF, error
-
+        0,
         // State 73
-        -39,  // on EOF, reduce `DefinitionFaction = KeywordFaction, Spanned<Identifier>, "{", KeywordLeaders, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordHeroes, "{", Spanned<TrailingComma<CardEntry>>, "}", KeywordUnits, "{", Spanned<TrailingComma<CardEntry>>, "}", "}" => ActionFn(5);`
-
+        -39,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
@@ -2228,12 +370,10 @@ mod __parse__Program {
             5 => 4,
             8 => 1,
             13 => match state {
-                 // on CardEntry, goto 47
                 7 => 47,
                 _ => 41,
             },
             15 => match state {
-                 // on CardEntryDifficulty, goto 56
                 10 => 56,
                 _ => 51,
             },
@@ -2241,59 +381,46 @@ mod __parse__Program {
             20 => 17,
             21 => 18,
             22 => match state {
-                 // on DefinitionVariable, goto 34
                 4 => 34,
                 _ => 30,
             },
             24 => 19,
             26 => 26,
             27 => match state {
-                 // on Integer, goto 38
                 5 => 38,
-                 // on Integer, goto 57
                 11 | 14..=15 => 57,
                 _ => 42,
             },
             28 => match state {
-                 // on NumberOrVariable, goto 60
                 12 => 60,
                 _ => 43,
             },
             29 => match state {
-                 // on NumberOrVariableSigned, goto 63
                 14 => 63,
-                 // on NumberOrVariableSigned, goto 66
                 15 => 66,
                 _ => 58,
             },
             30 => 20,
             31 => 52,
             32 => match state {
-                 // on Spanned<Definition>, goto 25
                 1 => 25,
                 _ => 21,
             },
             33 => 22,
             34 => 23,
             35 => match state {
-                 // on Spanned<Identifier>, goto 27
                 2 => 27,
-                 // on Spanned<Identifier>, goto 31
                 3..=4 => 31,
-                 // on Spanned<Identifier>, goto 59
                 11 | 14..=15 => 59,
                 _ => 44,
             },
             36 => 39,
             37 => match state {
-                 // on Spanned<NumberOrVariable>, goto 9
                 8 => 9,
                 _ => 8,
             },
             38 => match state {
-                 // on Spanned<TrailingComma<CardEntry>>, goto 61
                 13 => 61,
-                 // on Spanned<TrailingComma<CardEntry>>, goto 71
                 16 => 71,
                 _ => 45,
             },
@@ -2302,36 +429,55 @@ mod __parse__Program {
             _ => 0,
         }
     }
+    const __TERMINAL: &[&str] = &[
+        r###""(""###,
+        r###"")""###,
+        r###"",""###,
+        r###""..""###,
+        r###""=""###,
+        r###""false""###,
+        r###""true""###,
+        r###""{""###,
+        r###""}""###,
+        r###"r#"\"[^\"]*\""#"###,
+        r###"r#"'[^']*'"#"###,
+        r###"r#"[0-9]+"#"###,
+        r###"r#"\\.[0-9]*"#"###,
+        r###"IdentifierRegex"###,
+        r###"KeywordDifficulty"###,
+        r###"KeywordFaction"###,
+        r###"KeywordHeroes"###,
+        r###"KeywordLeaders"###,
+        r###"KeywordPoints"###,
+        r###"KeywordUnits"###,
+        r###"KeywordVariables"###,
+    ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
-        const __TERMINAL: &[&str] = &[
-            r###""(""###,
-            r###"")""###,
-            r###"",""###,
-            r###""..""###,
-            r###""=""###,
-            r###""false""###,
-            r###""true""###,
-            r###""{""###,
-            r###""}""###,
-            r###"r#"\"[^\"]*\""#"###,
-            r###"r#"'[^']*'"#"###,
-            r###"r#"[0-9]+"#"###,
-            r###"r#"\\.[0-9]*"#"###,
-            r###"IdentifierRegex"###,
-            r###"KeywordDifficulty"###,
-            r###"KeywordFaction"###,
-            r###"KeywordHeroes"###,
-            r###"KeywordLeaders"###,
-            r###"KeywordPoints"###,
-            r###"KeywordUnits"###,
-            r###"KeywordVariables"###,
-        ];
         __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
             let next_state = __action(__state, index);
             if next_state == 0 {
                 None
             } else {
                 Some(alloc::string::ToString::to_string(terminal))
+            }
+        }).collect()
+    }
+    fn __expected_tokens_from_states<
+        'input,
+        '__1,
+        '__2,
+    >(
+        __states: &[i8],
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> alloc::vec::Vec<alloc::string::String>
+    where
+        'input: '__2,
+    {
+        __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
+            if __accepts(None, __states, Some(index), core::marker::PhantomData::<(&())>) {
+                Some(alloc::string::ToString::to_string(terminal))
+            } else {
+                None
             }
         }).collect()
     }
@@ -2400,6 +546,10 @@ mod __parse__Program {
             __expected_tokens(state)
         }
 
+        fn expected_tokens_from_states(&self, states: &[i8]) -> alloc::vec::Vec<alloc::string::String> {
+            __expected_tokens_from_states(states, core::marker::PhantomData::<(&())>)
+        }
+
         #[inline]
         fn uses_error_recovery(&self) -> bool {
             false
@@ -2433,7 +583,7 @@ mod __parse__Program {
         }
 
         fn simulate_reduce(&self, action: i8) -> __state_machine::SimulatedReduce<Self> {
-            panic!("error recovery not enabled for this grammar")
+            __simulate_reduce(action, core::marker::PhantomData::<(&())>)
         }
     }
     fn __token_to_integer<
@@ -2484,6 +634,436 @@ mod __parse__Program {
             _ => unreachable!(),
         }
     }
+    fn __simulate_reduce<
+        'input,
+        '__1,
+        '__2,
+    >(
+        __reduce_index: i8,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> __state_machine::SimulatedReduce<__StateMachine<'input, '__1, '__2>>
+    where
+        'input: '__2,
+    {
+        match __reduce_index {
+            0 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 0,
+                }
+            }
+            1 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 1,
+                }
+            }
+            2 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 1,
+                }
+            }
+            3 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 2,
+                }
+            }
+            4 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 2,
+                }
+            }
+            5 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 3,
+                }
+            }
+            6 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 4,
+                }
+            }
+            7 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 4,
+                }
+            }
+            8 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 5,
+                }
+            }
+            9 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 5,
+                }
+            }
+            10 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 6,
+                }
+            }
+            11 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 7,
+                }
+            }
+            12 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 7,
+                }
+            }
+            13 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 8,
+                }
+            }
+            14 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 8,
+                }
+            }
+            15 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 9,
+                }
+            }
+            16 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 10,
+                }
+            }
+            17 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 11,
+                }
+            }
+            18 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 12,
+                }
+            }
+            19 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 12,
+                }
+            }
+            20 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 13,
+                }
+            }
+            21 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
+                }
+            }
+            22 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
+                }
+            }
+            23 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 13,
+                }
+            }
+            24 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 14,
+                }
+            }
+            25 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 14,
+                }
+            }
+            26 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 15,
+                }
+            }
+            27 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 15,
+                }
+            }
+            28 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 15,
+                }
+            }
+            29 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 6,
+                    nonterminal_produced: 15,
+                }
+            }
+            30 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 16,
+                }
+            }
+            31 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 16,
+                }
+            }
+            32 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 17,
+                }
+            }
+            33 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 18,
+                }
+            }
+            34 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 18,
+                }
+            }
+            35 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 19,
+                }
+            }
+            36 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 20,
+                }
+            }
+            37 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 20,
+                }
+            }
+            38 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 16,
+                    nonterminal_produced: 21,
+                }
+            }
+            39 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 22,
+                }
+            }
+            40 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 23,
+                }
+            }
+            41 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 23,
+                }
+            }
+            42 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 24,
+                }
+            }
+            43 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 25,
+                }
+            }
+            44 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 26,
+                }
+            }
+            45 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 27,
+                }
+            }
+            46 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 28,
+                }
+            }
+            47 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 28,
+                }
+            }
+            48 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 29,
+                }
+            }
+            49 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 29,
+                }
+            }
+            50 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 30,
+                }
+            }
+            51 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
+                }
+            }
+            52 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 31,
+                }
+            }
+            53 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 32,
+                }
+            }
+            54 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
+                }
+            }
+            55 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 34,
+                }
+            }
+            56 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 35,
+                }
+            }
+            57 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 36,
+                }
+            }
+            58 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 37,
+                }
+            }
+            59 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 38,
+                }
+            }
+            60 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 39,
+                }
+            }
+            61 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
+                }
+            }
+            62 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 40,
+                }
+            }
+            63 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 40,
+                }
+            }
+            64 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
+                }
+            }
+            65 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 41,
+                }
+            }
+            66 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 0,
+                    nonterminal_produced: 41,
+                }
+            }
+            67 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 2,
+                    nonterminal_produced: 41,
+                }
+            }
+            68 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 41,
+                }
+            }
+            69 => __state_machine::SimulatedReduce::Accept,
+            _ => panic!("invalid reduction index {}", __reduce_index)
+        }
+    }
     pub struct ProgramParser {
         builder: __lalrpop_util::lexer::MatcherBuilder,
         _priv: (),
@@ -2518,6 +1098,43 @@ mod __parse__Program {
                 },
                 __tokens,
             )
+        }
+    }
+    fn __accepts<
+        'input,
+        '__1,
+        '__2,
+    >(
+        __error_state: Option<i8>,
+        __states: &[i8],
+        __opt_integer: Option<usize>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> bool
+    where
+        'input: '__2,
+    {
+        let mut __states = __states.to_vec();
+        __states.extend(__error_state);
+        loop {
+            let mut __states_len = __states.len();
+            let __top = __states[__states_len - 1];
+            let __action = match __opt_integer {
+                None => __EOF_ACTION[__top as usize],
+                Some(__integer) => __action(__top, __integer),
+            };
+            if __action == 0 { return false; }
+            if __action > 0 { return true; }
+            let (__to_pop, __nt) = match __simulate_reduce(-(__action + 1), core::marker::PhantomData::<(&())>) {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop, nonterminal_produced
+                } => (states_to_pop, nonterminal_produced),
+                __state_machine::SimulatedReduce::Accept => return true,
+            };
+            __states_len -= __to_pop;
+            __states.truncate(__states_len);
+            let __top = __states[__states_len - 1];
+            let __next_state = __goto(__top, __nt);
+            __states.push(__next_state);
         }
     }
     pub(crate) fn __reduce<
@@ -2630,8 +1247,8 @@ mod __parse__Program {
                 let __sym2 = __pop_Variant20(__symbols);
                 let __sym1 = __pop_Variant0(__symbols);
                 let __sym0 = __pop_Variant0(__symbols);
-                let __start = __sym0.0.clone();
-                let __end = __sym5.2.clone();
+                let __start = __sym0.0;
+                let __end = __sym5.2;
                 let __nt = match super::__action88::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3, __sym4, __sym5) {
                     Ok(v) => v,
                     Err(e) => return Some(Err(e)),
@@ -2682,8 +1299,8 @@ mod __parse__Program {
                 let __sym2 = __pop_Variant0(__symbols);
                 let __sym1 = __pop_Variant24(__symbols);
                 let __sym0 = __pop_Variant0(__symbols);
-                let __start = __sym0.0.clone();
-                let __end = __sym15.2.clone();
+                let __start = __sym0.0;
+                let __end = __sym15.2;
                 let __nt = match super::__action5::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3, __sym4, __sym5, __sym6, __sym7, __sym8, __sym9, __sym10, __sym11, __sym12, __sym13, __sym14, __sym15) {
                     Ok(v) => v,
                     Err(e) => return Some(Err(e)),
@@ -2718,8 +1335,8 @@ mod __parse__Program {
             47 => {
                 // NumberOrVariable = Spanned<Identifier> => ActionFn(13);
                 let __sym0 = __pop_Variant24(__symbols);
-                let __start = __sym0.0.clone();
-                let __end = __sym0.2.clone();
+                let __start = __sym0.0;
+                let __end = __sym0.2;
                 let __nt = match super::__action13::<>(program_information, span_maker, input, __sym0) {
                     Ok(v) => v,
                     Err(e) => return Some(Err(e)),
@@ -2733,8 +1350,8 @@ mod __parse__Program {
             49 => {
                 // NumberOrVariableSigned = Spanned<Identifier> => ActionFn(15);
                 let __sym0 = __pop_Variant24(__symbols);
-                let __start = __sym0.0.clone();
-                let __end = __sym0.2.clone();
+                let __start = __sym0.0;
+                let __end = __sym0.2;
                 let __nt = match super::__action15::<>(program_information, span_maker, input, __sym0) {
                     Ok(v) => v,
                     Err(e) => return Some(Err(e)),
@@ -2802,8 +1419,8 @@ mod __parse__Program {
             69 => {
                 // __Program = Program => ActionFn(0);
                 let __sym0 = __pop_Variant21(__symbols);
-                let __start = __sym0.0.clone();
-                let __end = __sym0.2.clone();
+                let __start = __sym0.0;
+                let __end = __sym0.2;
                 let __nt = super::__action0::<>(program_information, span_maker, input, __sym0);
                 return Some(Ok(__nt));
             }
@@ -3132,8 +1749,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action55::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (2, 0)
@@ -3169,8 +1786,8 @@ mod __parse__Program {
     {
         // (<CardEntry> ",")* = (<CardEntry> ",")+ => ActionFn(54);
         let __sym0 = __pop_Variant2(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action54::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 1)
@@ -3190,8 +1807,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action60::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (2, 2)
@@ -3212,8 +1829,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
         let __sym0 = __pop_Variant2(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym2.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym2.2;
         let __nt = super::__action61::<>(program_information, span_maker, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (3, 2)
@@ -3233,8 +1850,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant3(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action50::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (2, 3)
@@ -3270,8 +1887,8 @@ mod __parse__Program {
     {
         // (<DefinitionVariable> ",")* = (<DefinitionVariable> ",")+ => ActionFn(49);
         let __sym0 = __pop_Variant4(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action49::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 4)
@@ -3291,8 +1908,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant3(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action64::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (2, 5)
@@ -3313,8 +1930,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant4(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym2.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym2.2;
         let __nt = super::__action65::<>(program_information, span_maker, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 5)
@@ -3332,8 +1949,8 @@ mod __parse__Program {
     {
         // (<Spanned<Definition>>) = Spanned<Definition> => ActionFn(42);
         let __sym0 = __pop_Variant5(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action42::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 6)
@@ -3369,8 +1986,8 @@ mod __parse__Program {
     {
         // (<Spanned<Definition>>)* = (<Spanned<Definition>>)+ => ActionFn(41);
         let __sym0 = __pop_Variant6(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action41::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 7)
@@ -3388,8 +2005,8 @@ mod __parse__Program {
     {
         // (<Spanned<Definition>>)+ = Spanned<Definition> => ActionFn(68);
         let __sym0 = __pop_Variant5(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action68::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 8)
@@ -3409,8 +2026,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant5(__symbols);
         let __sym0 = __pop_Variant6(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action69::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (2, 8)
@@ -3432,8 +2049,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant7(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym3.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym3.2;
         let __nt = super::__action28::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3);
         __symbols.push((__start, __Symbol::Variant7(__nt), __end));
         (4, 9)
@@ -3487,8 +2104,8 @@ mod __parse__Program {
     {
         // Boolean = "true" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action19::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 12)
@@ -3506,8 +2123,8 @@ mod __parse__Program {
     {
         // Boolean = "false" => ActionFn(20);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action20::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 12)
@@ -3529,8 +2146,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant13(__symbols);
         let __sym1 = __pop_Variant13(__symbols);
         let __sym0 = __pop_Variant13(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym3.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym3.2;
         let __nt = super::__action103::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (4, 13)
@@ -3551,8 +2168,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant13(__symbols);
         let __sym0 = __pop_Variant13(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym2.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym2.2;
         let __nt = super::__action104::<>(program_information, span_maker, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (3, 13)
@@ -3573,8 +2190,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant13(__symbols);
         let __sym1 = __pop_Variant13(__symbols);
         let __sym0 = __pop_Variant13(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym2.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym2.2;
         let __nt = super::__action105::<>(program_information, span_maker, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (3, 13)
@@ -3594,8 +2211,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant13(__symbols);
         let __sym0 = __pop_Variant13(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action106::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (2, 13)
@@ -3613,8 +2230,8 @@ mod __parse__Program {
     {
         // CardEntry? = CardEntry => ActionFn(51);
         let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action51::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant10(__nt), __end));
         (1, 14)
@@ -3654,8 +2271,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant20(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym3.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym3.2;
         let __nt = super::__action85::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3);
         __symbols.push((__start, __Symbol::Variant11(__nt), __end));
         (4, 15)
@@ -3678,8 +2295,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant20(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym4.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym4.2;
         let __nt = super::__action86::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3, __sym4);
         __symbols.push((__start, __Symbol::Variant11(__nt), __end));
         (5, 15)
@@ -3702,8 +2319,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant0(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym4.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym4.2;
         let __nt = super::__action87::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3, __sym4);
         __symbols.push((__start, __Symbol::Variant11(__nt), __end));
         (5, 15)
@@ -3721,8 +2338,8 @@ mod __parse__Program {
     {
         // CardEntryDifficulty? = CardEntryDifficulty => ActionFn(29);
         let __sym0 = __pop_Variant11(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action29::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant12(__nt), __end));
         (1, 16)
@@ -3758,8 +2375,8 @@ mod __parse__Program {
     {
         // CardEntryPoints = Spanned<(KeywordPoints "(" <NumberOrVariable> ")")> => ActionFn(7);
         let __sym0 = __pop_Variant13(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action7::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant13(__nt), __end));
         (1, 17)
@@ -3777,8 +2394,8 @@ mod __parse__Program {
     {
         // CardEntryPoints? = CardEntryPoints => ActionFn(31);
         let __sym0 = __pop_Variant13(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action31::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant14(__nt), __end));
         (1, 18)
@@ -3814,8 +2431,8 @@ mod __parse__Program {
     {
         // CharLiteral = r#"'[^']*'"# => ActionFn(23);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action23::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant0(__nt), __end));
         (1, 19)
@@ -3833,8 +2450,8 @@ mod __parse__Program {
     {
         // Definition = Spanned<DefinitionVariables> => ActionFn(2);
         let __sym0 = __pop_Variant23(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action2::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant15(__nt), __end));
         (1, 20)
@@ -3852,8 +2469,8 @@ mod __parse__Program {
     {
         // Definition = Spanned<DefinitionFaction> => ActionFn(3);
         let __sym0 = __pop_Variant22(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action3::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant15(__nt), __end));
         (1, 20)
@@ -3874,8 +2491,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant13(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant24(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym2.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym2.2;
         let __nt = super::__action16::<>(program_information, span_maker, input, __sym0, __sym1, __sym2);
         __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (3, 22)
@@ -3893,8 +2510,8 @@ mod __parse__Program {
     {
         // DefinitionVariable? = DefinitionVariable => ActionFn(46);
         let __sym0 = __pop_Variant3(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action46::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant17(__nt), __end));
         (1, 23)
@@ -3934,8 +2551,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant18(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym3.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym3.2;
         let __nt = super::__action4::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3);
         __symbols.push((__start, __Symbol::Variant18(__nt), __end));
         (4, 24)
@@ -3955,8 +2572,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant7(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action17::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant19(__nt), __end));
         (2, 25)
@@ -3974,8 +2591,8 @@ mod __parse__Program {
     {
         // Identifier = IdentifierRegex => ActionFn(21);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action21::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant19(__nt), __end));
         (1, 26)
@@ -3993,8 +2610,8 @@ mod __parse__Program {
     {
         // Integer = r#"[0-9]+"# => ActionFn(18);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action18::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant7(__nt), __end));
         (1, 27)
@@ -4012,8 +2629,8 @@ mod __parse__Program {
     {
         // NumberOrVariable = Integer => ActionFn(12);
         let __sym0 = __pop_Variant7(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action12::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant7(__nt), __end));
         (1, 28)
@@ -4031,8 +2648,8 @@ mod __parse__Program {
     {
         // NumberOrVariableSigned = Integer => ActionFn(14);
         let __sym0 = __pop_Variant7(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action14::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant20(__nt), __end));
         (1, 29)
@@ -4068,8 +2685,8 @@ mod __parse__Program {
     {
         // Program = (<Spanned<Definition>>)+ => ActionFn(71);
         let __sym0 = __pop_Variant6(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action71::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant21(__nt), __end));
         (1, 30)
@@ -4091,8 +2708,8 @@ mod __parse__Program {
         let __sym2 = __pop_Variant7(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym3.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym3.2;
         let __nt = super::__action89::<>(program_information, span_maker, input, __sym0, __sym1, __sym2, __sym3);
         __symbols.push((__start, __Symbol::Variant13(__nt), __end));
         (4, 31)
@@ -4110,8 +2727,8 @@ mod __parse__Program {
     {
         // Spanned<Definition> = Definition => ActionFn(90);
         let __sym0 = __pop_Variant15(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action90::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (1, 32)
@@ -4129,8 +2746,8 @@ mod __parse__Program {
     {
         // Spanned<DefinitionFaction> = DefinitionFaction => ActionFn(91);
         let __sym0 = __pop_Variant16(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action91::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant22(__nt), __end));
         (1, 33)
@@ -4148,8 +2765,8 @@ mod __parse__Program {
     {
         // Spanned<DefinitionVariables> = DefinitionVariables => ActionFn(92);
         let __sym0 = __pop_Variant18(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action92::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant23(__nt), __end));
         (1, 34)
@@ -4167,8 +2784,8 @@ mod __parse__Program {
     {
         // Spanned<Identifier> = Identifier => ActionFn(93);
         let __sym0 = __pop_Variant19(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action93::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant24(__nt), __end));
         (1, 35)
@@ -4186,8 +2803,8 @@ mod __parse__Program {
     {
         // Spanned<Integer> = Integer => ActionFn(94);
         let __sym0 = __pop_Variant7(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action94::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant13(__nt), __end));
         (1, 36)
@@ -4205,8 +2822,8 @@ mod __parse__Program {
     {
         // Spanned<NumberOrVariable> = NumberOrVariable => ActionFn(95);
         let __sym0 = __pop_Variant7(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action95::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant13(__nt), __end));
         (1, 37)
@@ -4224,8 +2841,8 @@ mod __parse__Program {
     {
         // Spanned<TrailingComma<CardEntry>> = TrailingComma<CardEntry> => ActionFn(96);
         let __sym0 = __pop_Variant26(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action96::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant25(__nt), __end));
         (1, 38)
@@ -4243,8 +2860,8 @@ mod __parse__Program {
     {
         // StringLiteral = r#"\"[^\"]*\""# => ActionFn(22);
         let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action22::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant0(__nt), __end));
         (1, 39)
@@ -4262,8 +2879,8 @@ mod __parse__Program {
     {
         // TrailingComma<CardEntry> = CardEntry => ActionFn(97);
         let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action97::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant26(__nt), __end));
         (1, 40)
@@ -4301,8 +2918,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant1(__symbols);
         let __sym0 = __pop_Variant2(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action99::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant26(__nt), __end));
         (2, 40)
@@ -4320,8 +2937,8 @@ mod __parse__Program {
     {
         // TrailingComma<CardEntry> = (<CardEntry> ",")+ => ActionFn(100);
         let __sym0 = __pop_Variant2(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action100::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant26(__nt), __end));
         (1, 40)
@@ -4339,8 +2956,8 @@ mod __parse__Program {
     {
         // TrailingComma<DefinitionVariable> = DefinitionVariable => ActionFn(107);
         let __sym0 = __pop_Variant3(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action107::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant18(__nt), __end));
         (1, 41)
@@ -4378,8 +2995,8 @@ mod __parse__Program {
         assert!(__symbols.len() >= 2);
         let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant4(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym1.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym1.2;
         let __nt = super::__action109::<>(program_information, span_maker, input, __sym0, __sym1);
         __symbols.push((__start, __Symbol::Variant18(__nt), __end));
         (2, 41)
@@ -4397,8 +3014,8 @@ mod __parse__Program {
     {
         // TrailingComma<DefinitionVariable> = (<DefinitionVariable> ",")+ => ActionFn(110);
         let __sym0 = __pop_Variant4(__symbols);
-        let __start = __sym0.0.clone();
-        let __end = __sym0.2.clone();
+        let __start = __sym0.0;
+        let __end = __sym0.2;
         let __nt = super::__action110::<>(program_information, span_maker, input, __sym0);
         __symbols.push((__start, __Symbol::Variant18(__nt), __end));
         (1, 41)
@@ -4422,31 +3039,31 @@ mod __intern_token {
     extern crate alloc;
     pub fn new_builder() -> __lalrpop_util::lexer::MatcherBuilder {
         let __strs: &[(&str, bool)] = &[
-            ("^(\"[\0-!\\#-\u{10ffff}]*\")", false),
-            ("^('[\0-\\&\\(-\u{10ffff}]*')", false),
-            ("^(\\.[0-9]*)", false),
+            ("^((?:\"[\0-!\\#-\u{10ffff}]*\"))", false),
+            ("^((?:'[\0-\\&\\(-\u{10ffff}]*'))", false),
+            ("^((?:\\.[0-9]*))", false),
             ("^(\\()", false),
             ("^(\\))", false),
             ("^(,)", false),
-            ("^(\\.\\.)", false),
+            ("^((?:\\.\\.))", false),
             ("^(=)", false),
-            ("^(false)", false),
-            ("^(true)", false),
+            ("^((?:false))", false),
+            ("^((?:true))", false),
             ("^(\\{)", false),
             ("^(\\})", false),
-            ("^([\t-\r \u{85}\u{a0}\u{1680}\u{2000}-\u{200a}\u{2028}-\u{2029}\u{202f}\u{205f}\u{3000}]*)", true),
-            ("^([0-9A-Z_a-zªµºÀ-ÖØ-öø-ˁˆ-ˑˠ-ˤˬˮ\u{300}-ʹͶ-ͷͺ-ͽͿΆΈ-ΊΌΎ-ΡΣ-ϵϷ-ҁ\u{483}-ԯԱ-Ֆՙՠ-ֈ\u{591}-\u{5bd}\u{5bf}\u{5c1}-\u{5c2}\u{5c4}-\u{5c5}\u{5c7}א-תׯ-ײ\u{610}-\u{61a}ؠ-٩ٮ-ۓە-\u{6dc}\u{6df}-\u{6e8}\u{6ea}-ۼۿܐ-\u{74a}ݍ-ޱ߀-ߵߺ\u{7fd}ࠀ-\u{82d}ࡀ-\u{85b}ࡠ-ࡪࡰ-ࢇࢉ-ࢎ\u{898}-\u{8e1}\u{8e3}-\u{963}०-९ॱ-ঃঅ-ঌএ-ঐও-নপ-রলশ-হ\u{9bc}-\u{9c4}ে-ৈো-ৎ\u{9d7}ড়-ঢ়য়-\u{9e3}০-ৱৼ\u{9fe}\u{a01}-ਃਅ-ਊਏ-ਐਓ-ਨਪ-ਰਲ-ਲ਼ਵ-ਸ਼ਸ-ਹ\u{a3c}ਾ-\u{a42}\u{a47}-\u{a48}\u{a4b}-\u{a4d}\u{a51}ਖ਼-ੜਫ਼੦-\u{a75}\u{a81}-ઃઅ-ઍએ-ઑઓ-નપ-રલ-ળવ-હ\u{abc}-\u{ac5}\u{ac7}-ૉો-\u{acd}ૐૠ-\u{ae3}૦-૯ૹ-\u{aff}\u{b01}-ଃଅ-ଌଏ-ଐଓ-ନପ-ରଲ-ଳଵ-ହ\u{b3c}-\u{b44}େ-ୈୋ-\u{b4d}\u{b55}-\u{b57}ଡ଼-ଢ଼ୟ-\u{b63}୦-୯ୱ\u{b82}-ஃஅ-ஊஎ-ஐஒ-கங-சஜஞ-டண-தந-பம-ஹ\u{bbe}-ூெ-ைொ-\u{bcd}ௐ\u{bd7}௦-௯\u{c00}-ఌఎ-ఐఒ-నప-హ\u{c3c}-ౄ\u{c46}-\u{c48}\u{c4a}-\u{c4d}\u{c55}-\u{c56}ౘ-ౚౝౠ-\u{c63}౦-౯ಀ-ಃಅ-ಌಎ-ಐಒ-ನಪ-ಳವ-ಹ\u{cbc}-ೄ\u{cc6}-ೈೊ-\u{ccd}\u{cd5}-\u{cd6}ೝ-ೞೠ-\u{ce3}೦-೯ೱ-ೳ\u{d00}-ഌഎ-ഐഒ-\u{d44}െ-ൈൊ-ൎൔ-\u{d57}ൟ-\u{d63}൦-൯ൺ-ൿ\u{d81}-ඃඅ-ඖක-නඳ-රලව-ෆ\u{dca}\u{dcf}-\u{dd4}\u{dd6}ෘ-\u{ddf}෦-෯ෲ-ෳก-\u{e3a}เ-\u{e4e}๐-๙ກ-ຂຄຆ-ຊຌ-ຣລວ-ຽເ-ໄໆ\u{ec8}-\u{ece}໐-໙ໜ-ໟༀ\u{f18}-\u{f19}༠-༩\u{f35}\u{f37}\u{f39}༾-ཇཉ-ཬ\u{f71}-\u{f84}\u{f86}-\u{f97}\u{f99}-\u{fbc}\u{fc6}က-၉ၐ-\u{109d}Ⴀ-ჅჇჍა-ჺჼ-ቈቊ-ቍቐ-ቖቘቚ-ቝበ-ኈኊ-ኍነ-ኰኲ-ኵኸ-ኾዀዂ-ዅወ-ዖዘ-ጐጒ-ጕጘ-ፚ\u{135d}-\u{135f}ᎀ-ᎏᎠ-Ᏽᏸ-ᏽᐁ-ᙬᙯ-ᙿᚁ-ᚚᚠ-ᛪᛮ-ᛸᜀ-᜕ᜟ-᜴ᝀ-\u{1753}ᝠ-ᝬᝮ-ᝰ\u{1772}-\u{1773}ក-\u{17d3}ៗៜ-\u{17dd}០-៩\u{180b}-\u{180d}\u{180f}-᠙ᠠ-ᡸᢀ-ᢪᢰ-ᣵᤀ-ᤞ\u{1920}-ᤫᤰ-\u{193b}᥆-ᥭᥰ-ᥴᦀ-ᦫᦰ-ᧉ᧐-᧙ᨀ-\u{1a1b}ᨠ-\u{1a5e}\u{1a60}-\u{1a7c}\u{1a7f}-᪉᪐-᪙ᪧ\u{1ab0}-\u{1ace}\u{1b00}-ᭌ᭐-᭙\u{1b6b}-\u{1b73}\u{1b80}-᯳ᰀ-\u{1c37}᱀-᱉ᱍ-ᱽᲀ-ᲈᲐ-ᲺᲽ-Ჿ\u{1cd0}-\u{1cd2}\u{1cd4}-ᳺᴀ-ἕἘ-Ἕἠ-ὅὈ-Ὅὐ-ὗὙὛὝὟ-ώᾀ-ᾴᾶ-ᾼιῂ-ῄῆ-ῌῐ-ΐῖ-Ίῠ-Ῥῲ-ῴῶ-ῼ\u{200c}-\u{200d}‿-⁀⁔ⁱⁿₐ-ₜ\u{20d0}-\u{20f0}ℂℇℊ-ℓℕℙ-ℝℤΩℨK-ℭℯ-ℹℼ-ℿⅅ-ⅉⅎⅠ-ↈⒶ-ⓩⰀ-ⳤⳫ-ⳳⴀ-ⴥⴧⴭⴰ-ⵧⵯ\u{2d7f}-ⶖⶠ-ⶦⶨ-ⶮⶰ-ⶶⶸ-ⶾⷀ-ⷆⷈ-ⷎⷐ-ⷖⷘ-ⷞ\u{2de0}-\u{2dff}ⸯ々-〇〡-\u{302f}〱-〵〸-〼ぁ-ゖ\u{3099}-\u{309a}ゝ-ゟァ-ヺー-ヿㄅ-ㄯㄱ-ㆎㆠ-ㆿㇰ-ㇿ㐀-䶿一-ꒌꓐ-ꓽꔀ-ꘌꘐ-ꘫꙀ-\u{a672}\u{a674}-\u{a67d}ꙿ-\u{a6f1}ꜗ-ꜟꜢ-ꞈꞋ-ꟊꟐ-ꟑꟓꟕ-ꟙꟲ-ꠧ\u{a82c}ꡀ-ꡳꢀ-\u{a8c5}꣐-꣙\u{a8e0}-ꣷꣻꣽ-\u{a92d}ꤰ-꥓ꥠ-ꥼ\u{a980}-꧀ꧏ-꧙ꧠ-ꧾꨀ-\u{aa36}ꩀ-ꩍ꩐-꩙ꩠ-ꩶꩺ-ꫂꫛ-ꫝꫠ-ꫯꫲ-\u{aaf6}ꬁ-ꬆꬉ-ꬎꬑ-ꬖꬠ-ꬦꬨ-ꬮꬰ-ꭚꭜ-ꭩꭰ-ꯪ꯬-\u{abed}꯰-꯹가-힣ힰ-ퟆퟋ-ퟻ豈-舘並-龎ﬀ-ﬆﬓ-ﬗיִ-ﬨשׁ-זּטּ-לּמּנּ-סּףּ-פּצּ-ﮱﯓ-ﴽﵐ-ﶏﶒ-ﷇﷰ-ﷻ\u{fe00}-\u{fe0f}\u{fe20}-\u{fe2f}︳-︴﹍-﹏ﹰ-ﹴﹶ-ﻼ０-９Ａ-Ｚ＿ａ-ｚｦ-ﾾￂ-ￇￊ-ￏￒ-ￗￚ-ￜ𐀀-𐀋𐀍-𐀦𐀨-𐀺𐀼-𐀽𐀿-𐁍𐁐-𐁝𐂀-𐃺𐅀-𐅴\u{101fd}𐊀-𐊜𐊠-𐋐\u{102e0}𐌀-𐌟𐌭-𐍊𐍐-\u{1037a}𐎀-𐎝𐎠-𐏃𐏈-𐏏𐏑-𐏕𐐀-𐒝𐒠-𐒩𐒰-𐓓𐓘-𐓻𐔀-𐔧𐔰-𐕣𐕰-𐕺𐕼-𐖊𐖌-𐖒𐖔-𐖕𐖗-𐖡𐖣-𐖱𐖳-𐖹𐖻-𐖼𐘀-𐜶𐝀-𐝕𐝠-𐝧𐞀-𐞅𐞇-𐞰𐞲-𐞺𐠀-𐠅𐠈𐠊-𐠵𐠷-𐠸𐠼𐠿-𐡕𐡠-𐡶𐢀-𐢞𐣠-𐣲𐣴-𐣵𐤀-𐤕𐤠-𐤹𐦀-𐦷𐦾-𐦿𐨀-\u{10a03}\u{10a05}-\u{10a06}\u{10a0c}-𐨓𐨕-𐨗𐨙-𐨵\u{10a38}-\u{10a3a}\u{10a3f}𐩠-𐩼𐪀-𐪜𐫀-𐫇𐫉-\u{10ae6}𐬀-𐬵𐭀-𐭕𐭠-𐭲𐮀-𐮑𐰀-𐱈𐲀-𐲲𐳀-𐳲𐴀-\u{10d27}𐴰-𐴹𐺀-𐺩\u{10eab}-\u{10eac}𐺰-𐺱\u{10efd}-𐼜𐼧𐼰-\u{10f50}𐽰-\u{10f85}𐾰-𐿄𐿠-𐿶𑀀-\u{11046}𑁦-𑁵\u{1107f}-\u{110ba}\u{110c2}𑃐-𑃨𑃰-𑃹\u{11100}-\u{11134}𑄶-𑄿𑅄-𑅇𑅐-\u{11173}𑅶\u{11180}-𑇄\u{111c9}-\u{111cc}𑇎-𑇚𑇜𑈀-𑈑𑈓-\u{11237}\u{1123e}-\u{11241}𑊀-𑊆𑊈𑊊-𑊍𑊏-𑊝𑊟-𑊨𑊰-\u{112ea}𑋰-𑋹\u{11300}-𑌃𑌅-𑌌𑌏-𑌐𑌓-𑌨𑌪-𑌰𑌲-𑌳𑌵-𑌹\u{1133b}-𑍄𑍇-𑍈𑍋-𑍍𑍐\u{11357}𑍝-𑍣\u{11366}-\u{1136c}\u{11370}-\u{11374}𑐀-𑑊𑑐-𑑙\u{1145e}-𑑡𑒀-𑓅𑓇𑓐-𑓙𑖀-\u{115b5}𑖸-\u{115c0}𑗘-\u{115dd}𑘀-\u{11640}𑙄𑙐-𑙙𑚀-𑚸𑛀-𑛉𑜀-𑜚\u{1171d}-\u{1172b}𑜰-𑜹𑝀-𑝆𑠀-\u{1183a}𑢠-𑣩𑣿-𑤆𑤉𑤌-𑤓𑤕-𑤖𑤘-𑤵𑤷-𑤸\u{1193b}-\u{11943}𑥐-𑥙𑦠-𑦧𑦪-\u{119d7}\u{119da}-𑧡𑧣-𑧤𑨀-\u{11a3e}\u{11a47}𑩐-\u{11a99}𑪝𑪰-𑫸𑰀-𑰈𑰊-\u{11c36}\u{11c38}-𑱀𑱐-𑱙𑱲-𑲏\u{11c92}-\u{11ca7}𑲩-\u{11cb6}𑴀-𑴆𑴈-𑴉𑴋-\u{11d36}\u{11d3a}\u{11d3c}-\u{11d3d}\u{11d3f}-\u{11d47}𑵐-𑵙𑵠-𑵥𑵧-𑵨𑵪-𑶎\u{11d90}-\u{11d91}𑶓-𑶘𑶠-𑶩𑻠-𑻶\u{11f00}-𑼐𑼒-\u{11f3a}𑼾-\u{11f42}𑽐-𑽙𑾰𒀀-𒎙𒐀-𒑮𒒀-𒕃𒾐-𒿰𓀀-𓐯\u{13440}-\u{13455}𔐀-𔙆𖠀-𖨸𖩀-𖩞𖩠-𖩩𖩰-𖪾𖫀-𖫉𖫐-𖫭\u{16af0}-\u{16af4}𖬀-\u{16b36}𖭀-𖭃𖭐-𖭙𖭣-𖭷𖭽-𖮏𖹀-𖹿𖼀-𖽊\u{16f4f}-𖾇\u{16f8f}-𖾟𖿠-𖿡𖿣-\u{16fe4}𖿰-𖿱𗀀-𘟷𘠀-𘳕𘴀-𘴈𚿰-𚿳𚿵-𚿻𚿽-𚿾𛀀-𛄢𛄲𛅐-𛅒𛅕𛅤-𛅧𛅰-𛋻𛰀-𛱪𛱰-𛱼𛲀-𛲈𛲐-𛲙\u{1bc9d}-\u{1bc9e}\u{1cf00}-\u{1cf2d}\u{1cf30}-\u{1cf46}\u{1d165}-\u{1d169}𝅭-\u{1d172}\u{1d17b}-\u{1d182}\u{1d185}-\u{1d18b}\u{1d1aa}-\u{1d1ad}\u{1d242}-\u{1d244}𝐀-𝑔𝑖-𝒜𝒞-𝒟𝒢𝒥-𝒦𝒩-𝒬𝒮-𝒹𝒻𝒽-𝓃𝓅-𝔅𝔇-𝔊𝔍-𝔔𝔖-𝔜𝔞-𝔹𝔻-𝔾𝕀-𝕄𝕆𝕊-𝕐𝕒-𝚥𝚨-𝛀𝛂-𝛚𝛜-𝛺𝛼-𝜔𝜖-𝜴𝜶-𝝎𝝐-𝝮𝝰-𝞈𝞊-𝞨𝞪-𝟂𝟄-𝟋𝟎-𝟿\u{1da00}-\u{1da36}\u{1da3b}-\u{1da6c}\u{1da75}\u{1da84}\u{1da9b}-\u{1da9f}\u{1daa1}-\u{1daaf}𝼀-𝼞𝼥-𝼪\u{1e000}-\u{1e006}\u{1e008}-\u{1e018}\u{1e01b}-\u{1e021}\u{1e023}-\u{1e024}\u{1e026}-\u{1e02a}𞀰-𞁭\u{1e08f}𞄀-𞄬\u{1e130}-𞄽𞅀-𞅉𞅎𞊐-\u{1e2ae}𞋀-𞋹𞓐-𞓹𞟠-𞟦𞟨-𞟫𞟭-𞟮𞟰-𞟾𞠀-𞣄\u{1e8d0}-\u{1e8d6}𞤀-𞥋𞥐-𞥙𞸀-𞸃𞸅-𞸟𞸡-𞸢𞸤𞸧𞸩-𞸲𞸴-𞸷𞸹𞸻𞹂𞹇𞹉𞹋𞹍-𞹏𞹑-𞹒𞹔𞹗𞹙𞹛𞹝𞹟𞹡-𞹢𞹤𞹧-𞹪𞹬-𞹲𞹴-𞹷𞹹-𞹼𞹾𞺀-𞺉𞺋-𞺛𞺡-𞺣𞺥-𞺩𞺫-𞺻🄰-🅉🅐-🅩🅰-🆉🯰-🯹𠀀-𪛟𪜀-𫜹𫝀-𫠝𫠠-𬺡𬺰-𮯠丽-𪘀𰀀-𱍊𱍐-𲎯\u{e0100}-\u{e01ef}]+)", false),
-            ("^(\\#[\0-\t\u{b}-\u{c}\u{e}-\u{10ffff}]*[\n\r]*)", true),
-            ("^(//[\0-\t\u{b}-\u{c}\u{e}-\u{10ffff}]*[\n\r]*)", true),
-            ("^(/\\*[\0-\\)\\+-\u{10ffff}]*[\0-\\.0-\u{10ffff}]*(\\*/)[\n\r]*)", true),
+            ("^([\t-\r \u{85}\u{a0}\u{1680}\u{2000}-\u{200a}\u{2028}\u{2029}\u{202f}\u{205f}\u{3000}]*)", true),
+            ("^([0-9A-Z_a-zªµºÀ-ÖØ-öø-ˁˆ-ˑˠ-ˤˬˮ\u{300}-ʹͶͷͺ-ͽͿΆΈ-ΊΌΎ-ΡΣ-ϵϷ-ҁ\u{483}-ԯԱ-Ֆՙՠ-ֈ\u{591}-\u{5bd}\u{5bf}\u{5c1}\u{5c2}\u{5c4}\u{5c5}\u{5c7}א-תׯ-ײ\u{610}-\u{61a}ؠ-٩ٮ-ۓە-\u{6dc}\u{6df}-\u{6e8}\u{6ea}-ۼۿܐ-\u{74a}ݍ-ޱ߀-ߵߺ\u{7fd}ࠀ-\u{82d}ࡀ-\u{85b}ࡠ-ࡪࡰ-ࢇࢉ-ࢎ\u{898}-\u{8e1}\u{8e3}-\u{963}०-९ॱ-ঃঅ-ঌএঐও-নপ-রলশ-হ\u{9bc}-\u{9c4}েৈো-ৎ\u{9d7}ড়ঢ়য়-\u{9e3}০-ৱৼ\u{9fe}\u{a01}-ਃਅ-ਊਏਐਓ-ਨਪ-ਰਲਲ਼ਵਸ਼ਸਹ\u{a3c}ਾ-\u{a42}\u{a47}\u{a48}\u{a4b}-\u{a4d}\u{a51}ਖ਼-ੜਫ਼੦-\u{a75}\u{a81}-ઃઅ-ઍએ-ઑઓ-નપ-રલળવ-હ\u{abc}-\u{ac5}\u{ac7}-ૉો-\u{acd}ૐૠ-\u{ae3}૦-૯ૹ-\u{aff}\u{b01}-ଃଅ-ଌଏଐଓ-ନପ-ରଲଳଵ-ହ\u{b3c}-\u{b44}େୈୋ-\u{b4d}\u{b55}-\u{b57}ଡ଼ଢ଼ୟ-\u{b63}୦-୯ୱ\u{b82}ஃஅ-ஊஎ-ஐஒ-கஙசஜஞடணதந-பம-ஹ\u{bbe}-ூெ-ைொ-\u{bcd}ௐ\u{bd7}௦-௯\u{c00}-ఌఎ-ఐఒ-నప-హ\u{c3c}-ౄ\u{c46}-\u{c48}\u{c4a}-\u{c4d}\u{c55}\u{c56}ౘ-ౚౝౠ-\u{c63}౦-౯ಀ-ಃಅ-ಌಎ-ಐಒ-ನಪ-ಳವ-ಹ\u{cbc}-ೄ\u{cc6}-ೈೊ-\u{ccd}\u{cd5}\u{cd6}ೝೞೠ-\u{ce3}೦-೯ೱ-ೳ\u{d00}-ഌഎ-ഐഒ-\u{d44}െ-ൈൊ-ൎൔ-\u{d57}ൟ-\u{d63}൦-൯ൺ-ൿ\u{d81}-ඃඅ-ඖක-නඳ-රලව-ෆ\u{dca}\u{dcf}-\u{dd4}\u{dd6}ෘ-\u{ddf}෦-෯ෲෳก-\u{e3a}เ-\u{e4e}๐-๙ກຂຄຆ-ຊຌ-ຣລວ-ຽເ-ໄໆ\u{ec8}-\u{ece}໐-໙ໜ-ໟༀ\u{f18}\u{f19}༠-༩\u{f35}\u{f37}\u{f39}༾-ཇཉ-ཬ\u{f71}-\u{f84}\u{f86}-\u{f97}\u{f99}-\u{fbc}\u{fc6}က-၉ၐ-\u{109d}Ⴀ-ჅჇჍა-ჺჼ-ቈቊ-ቍቐ-ቖቘቚ-ቝበ-ኈኊ-ኍነ-ኰኲ-ኵኸ-ኾዀዂ-ዅወ-ዖዘ-ጐጒ-ጕጘ-ፚ\u{135d}-\u{135f}ᎀ-ᎏᎠ-Ᏽᏸ-ᏽᐁ-ᙬᙯ-ᙿᚁ-ᚚᚠ-ᛪᛮ-ᛸᜀ-᜕ᜟ-᜴ᝀ-\u{1753}ᝠ-ᝬᝮ-ᝰ\u{1772}\u{1773}ក-\u{17d3}ៗៜ\u{17dd}០-៩\u{180b}-\u{180d}\u{180f}-᠙ᠠ-ᡸᢀ-ᢪᢰ-ᣵᤀ-ᤞ\u{1920}-ᤫᤰ-\u{193b}᥆-ᥭᥰ-ᥴᦀ-ᦫᦰ-ᧉ᧐-᧙ᨀ-\u{1a1b}ᨠ-\u{1a5e}\u{1a60}-\u{1a7c}\u{1a7f}-᪉᪐-᪙ᪧ\u{1ab0}-\u{1ace}\u{1b00}-ᭌ᭐-᭙\u{1b6b}-\u{1b73}\u{1b80}-᯳ᰀ-\u{1c37}᱀-᱉ᱍ-ᱽᲀ-ᲈᲐ-ᲺᲽ-Ჿ\u{1cd0}-\u{1cd2}\u{1cd4}-ᳺᴀ-ἕἘ-Ἕἠ-ὅὈ-Ὅὐ-ὗὙὛὝὟ-ώᾀ-ᾴᾶ-ᾼιῂ-ῄῆ-ῌῐ-ΐῖ-Ίῠ-Ῥῲ-ῴῶ-ῼ\u{200c}\u{200d}‿⁀⁔ⁱⁿₐ-ₜ\u{20d0}-\u{20f0}ℂℇℊ-ℓℕℙ-ℝℤΩℨK-ℭℯ-ℹℼ-ℿⅅ-ⅉⅎⅠ-ↈⒶ-ⓩⰀ-ⳤⳫ-ⳳⴀ-ⴥⴧⴭⴰ-ⵧⵯ\u{2d7f}-ⶖⶠ-ⶦⶨ-ⶮⶰ-ⶶⶸ-ⶾⷀ-ⷆⷈ-ⷎⷐ-ⷖⷘ-ⷞ\u{2de0}-\u{2dff}ⸯ々-〇〡-\u{302f}〱-〵〸-〼ぁ-ゖ\u{3099}\u{309a}ゝ-ゟァ-ヺー-ヿㄅ-ㄯㄱ-ㆎㆠ-ㆿㇰ-ㇿ㐀-䶿一-ꒌꓐ-ꓽꔀ-ꘌꘐ-ꘫꙀ-\u{a672}\u{a674}-\u{a67d}ꙿ-\u{a6f1}ꜗ-ꜟꜢ-ꞈꞋ-ꟊꟐꟑꟓꟕ-ꟙꟲ-ꠧ\u{a82c}ꡀ-ꡳꢀ-\u{a8c5}꣐-꣙\u{a8e0}-ꣷꣻꣽ-\u{a92d}ꤰ-꥓ꥠ-ꥼ\u{a980}-꧀ꧏ-꧙ꧠ-ꧾꨀ-\u{aa36}ꩀ-ꩍ꩐-꩙ꩠ-ꩶꩺ-ꫂꫛ-ꫝꫠ-ꫯꫲ-\u{aaf6}ꬁ-ꬆꬉ-ꬎꬑ-ꬖꬠ-ꬦꬨ-ꬮꬰ-ꭚꭜ-ꭩꭰ-ꯪ꯬\u{abed}꯰-꯹가-힣ힰ-ퟆퟋ-ퟻ豈-舘並-龎ﬀ-ﬆﬓ-ﬗיִ-ﬨשׁ-זּטּ-לּמּנּסּףּפּצּ-ﮱﯓ-ﴽﵐ-ﶏﶒ-ﷇﷰ-ﷻ\u{fe00}-\u{fe0f}\u{fe20}-\u{fe2f}︳︴﹍-﹏ﹰ-ﹴﹶ-ﻼ０-９Ａ-Ｚ＿ａ-ｚｦ-ﾾￂ-ￇￊ-ￏￒ-ￗￚ-ￜ𐀀-𐀋𐀍-𐀦𐀨-𐀺𐀼𐀽𐀿-𐁍𐁐-𐁝𐂀-𐃺𐅀-𐅴\u{101fd}𐊀-𐊜𐊠-𐋐\u{102e0}𐌀-𐌟𐌭-𐍊𐍐-\u{1037a}𐎀-𐎝𐎠-𐏃𐏈-𐏏𐏑-𐏕𐐀-𐒝𐒠-𐒩𐒰-𐓓𐓘-𐓻𐔀-𐔧𐔰-𐕣𐕰-𐕺𐕼-𐖊𐖌-𐖒𐖔𐖕𐖗-𐖡𐖣-𐖱𐖳-𐖹𐖻𐖼𐘀-𐜶𐝀-𐝕𐝠-𐝧𐞀-𐞅𐞇-𐞰𐞲-𐞺𐠀-𐠅𐠈𐠊-𐠵𐠷𐠸𐠼𐠿-𐡕𐡠-𐡶𐢀-𐢞𐣠-𐣲𐣴𐣵𐤀-𐤕𐤠-𐤹𐦀-𐦷𐦾𐦿𐨀-\u{10a03}\u{10a05}\u{10a06}\u{10a0c}-𐨓𐨕-𐨗𐨙-𐨵\u{10a38}-\u{10a3a}\u{10a3f}𐩠-𐩼𐪀-𐪜𐫀-𐫇𐫉-\u{10ae6}𐬀-𐬵𐭀-𐭕𐭠-𐭲𐮀-𐮑𐰀-𐱈𐲀-𐲲𐳀-𐳲𐴀-\u{10d27}𐴰-𐴹𐺀-𐺩\u{10eab}\u{10eac}𐺰𐺱\u{10efd}-𐼜𐼧𐼰-\u{10f50}𐽰-\u{10f85}𐾰-𐿄𐿠-𐿶𑀀-\u{11046}𑁦-𑁵\u{1107f}-\u{110ba}\u{110c2}𑃐-𑃨𑃰-𑃹\u{11100}-\u{11134}𑄶-𑄿𑅄-𑅇𑅐-\u{11173}𑅶\u{11180}-𑇄\u{111c9}-\u{111cc}𑇎-𑇚𑇜𑈀-𑈑𑈓-\u{11237}\u{1123e}-\u{11241}𑊀-𑊆𑊈𑊊-𑊍𑊏-𑊝𑊟-𑊨𑊰-\u{112ea}𑋰-𑋹\u{11300}-𑌃𑌅-𑌌𑌏𑌐𑌓-𑌨𑌪-𑌰𑌲𑌳𑌵-𑌹\u{1133b}-𑍄𑍇𑍈𑍋-𑍍𑍐\u{11357}𑍝-𑍣\u{11366}-\u{1136c}\u{11370}-\u{11374}𑐀-𑑊𑑐-𑑙\u{1145e}-𑑡𑒀-𑓅𑓇𑓐-𑓙𑖀-\u{115b5}𑖸-\u{115c0}𑗘-\u{115dd}𑘀-\u{11640}𑙄𑙐-𑙙𑚀-𑚸𑛀-𑛉𑜀-𑜚\u{1171d}-\u{1172b}𑜰-𑜹𑝀-𑝆𑠀-\u{1183a}𑢠-𑣩𑣿-𑤆𑤉𑤌-𑤓𑤕𑤖𑤘-𑤵𑤷𑤸\u{1193b}-\u{11943}𑥐-𑥙𑦠-𑦧𑦪-\u{119d7}\u{119da}-𑧡𑧣𑧤𑨀-\u{11a3e}\u{11a47}𑩐-\u{11a99}𑪝𑪰-𑫸𑰀-𑰈𑰊-\u{11c36}\u{11c38}-𑱀𑱐-𑱙𑱲-𑲏\u{11c92}-\u{11ca7}𑲩-\u{11cb6}𑴀-𑴆𑴈𑴉𑴋-\u{11d36}\u{11d3a}\u{11d3c}\u{11d3d}\u{11d3f}-\u{11d47}𑵐-𑵙𑵠-𑵥𑵧𑵨𑵪-𑶎\u{11d90}\u{11d91}𑶓-𑶘𑶠-𑶩𑻠-𑻶\u{11f00}-𑼐𑼒-\u{11f3a}𑼾-\u{11f42}𑽐-𑽙𑾰𒀀-𒎙𒐀-𒑮𒒀-𒕃𒾐-𒿰𓀀-𓐯\u{13440}-\u{13455}𔐀-𔙆𖠀-𖨸𖩀-𖩞𖩠-𖩩𖩰-𖪾𖫀-𖫉𖫐-𖫭\u{16af0}-\u{16af4}𖬀-\u{16b36}𖭀-𖭃𖭐-𖭙𖭣-𖭷𖭽-𖮏𖹀-𖹿𖼀-𖽊\u{16f4f}-𖾇\u{16f8f}-𖾟𖿠𖿡𖿣\u{16fe4}𖿰𖿱𗀀-𘟷𘠀-𘳕𘴀-𘴈𚿰-𚿳𚿵-𚿻𚿽𚿾𛀀-𛄢𛄲𛅐-𛅒𛅕𛅤-𛅧𛅰-𛋻𛰀-𛱪𛱰-𛱼𛲀-𛲈𛲐-𛲙\u{1bc9d}\u{1bc9e}\u{1cf00}-\u{1cf2d}\u{1cf30}-\u{1cf46}\u{1d165}-\u{1d169}𝅭-\u{1d172}\u{1d17b}-\u{1d182}\u{1d185}-\u{1d18b}\u{1d1aa}-\u{1d1ad}\u{1d242}-\u{1d244}𝐀-𝑔𝑖-𝒜𝒞𝒟𝒢𝒥𝒦𝒩-𝒬𝒮-𝒹𝒻𝒽-𝓃𝓅-𝔅𝔇-𝔊𝔍-𝔔𝔖-𝔜𝔞-𝔹𝔻-𝔾𝕀-𝕄𝕆𝕊-𝕐𝕒-𝚥𝚨-𝛀𝛂-𝛚𝛜-𝛺𝛼-𝜔𝜖-𝜴𝜶-𝝎𝝐-𝝮𝝰-𝞈𝞊-𝞨𝞪-𝟂𝟄-𝟋𝟎-𝟿\u{1da00}-\u{1da36}\u{1da3b}-\u{1da6c}\u{1da75}\u{1da84}\u{1da9b}-\u{1da9f}\u{1daa1}-\u{1daaf}𝼀-𝼞𝼥-𝼪\u{1e000}-\u{1e006}\u{1e008}-\u{1e018}\u{1e01b}-\u{1e021}\u{1e023}\u{1e024}\u{1e026}-\u{1e02a}𞀰-𞁭\u{1e08f}𞄀-𞄬\u{1e130}-𞄽𞅀-𞅉𞅎𞊐-\u{1e2ae}𞋀-𞋹𞓐-𞓹𞟠-𞟦𞟨-𞟫𞟭𞟮𞟰-𞟾𞠀-𞣄\u{1e8d0}-\u{1e8d6}𞤀-𞥋𞥐-𞥙𞸀-𞸃𞸅-𞸟𞸡𞸢𞸤𞸧𞸩-𞸲𞸴-𞸷𞸹𞸻𞹂𞹇𞹉𞹋𞹍-𞹏𞹑𞹒𞹔𞹗𞹙𞹛𞹝𞹟𞹡𞹢𞹤𞹧-𞹪𞹬-𞹲𞹴-𞹷𞹹-𞹼𞹾𞺀-𞺉𞺋-𞺛𞺡-𞺣𞺥-𞺩𞺫-𞺻🄰-🅉🅐-🅩🅰-🆉🯰-🯹𠀀-𪛟𪜀-𫜹𫝀-𫠝𫠠-𬺡𬺰-𮯠丽-𪘀𰀀-𱍊𱍐-𲎯\u{e0100}-\u{e01ef}]+)", false),
+            ("^((?:\\#[\0-\t\u{b}\u{c}\u{e}-\u{10ffff}]*[\n\r]*))", true),
+            ("^((?:(?://)[\0-\t\u{b}\u{c}\u{e}-\u{10ffff}]*[\n\r]*))", true),
+            ("^((?:(?:/\\*)[\0-\\)\\+-\u{10ffff}]*[\0-\\.0-\u{10ffff}]*((?:\\*/))[\n\r]*))", true),
             ("^([0-9]+)", false),
-            ("^(difficulty)", false),
-            ("^(faction)", false),
-            ("^(heroes)", false),
-            ("^(leaders)", false),
-            ("^(points)", false),
-            ("^(units)", false),
-            ("^(variables)", false),
+            ("^((?:difficulty))", false),
+            ("^((?:faction))", false),
+            ("^((?:heroes))", false),
+            ("^((?:leaders))", false),
+            ("^((?:points))", false),
+            ("^((?:units))", false),
+            ("^((?:variables))", false),
         ];
         __lalrpop_util::lexer::MatcherBuilder::new(__strs.iter().copied()).unwrap()
     }
@@ -4454,6 +3071,7 @@ mod __intern_token {
 pub(crate) use self::__lalrpop_util::lexer::Token;
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action0<
     'input,
 >(
@@ -4467,6 +3085,7 @@ fn __action0<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action1<
     'input,
 >(
@@ -4480,6 +3099,7 @@ fn __action1<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action2<
     'input,
 >(
@@ -4493,6 +3113,7 @@ fn __action2<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action3<
     'input,
 >(
@@ -4506,6 +3127,7 @@ fn __action3<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action4<
     'input,
 >(
@@ -4522,6 +3144,7 @@ fn __action4<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action5<
     'input,
 >(
@@ -4554,6 +3177,7 @@ fn __action5<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action6<
     'input,
 >(
@@ -4570,6 +3194,7 @@ fn __action6<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action7<
     'input,
 >(
@@ -4583,6 +3208,7 @@ fn __action7<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action8<
     'input,
 >(
@@ -4601,6 +3227,7 @@ fn __action8<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action9<
     'input,
 >(
@@ -4620,6 +3247,7 @@ fn __action9<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action10<
     'input,
 >(
@@ -4639,6 +3267,7 @@ fn __action10<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action11<
     'input,
 >(
@@ -4663,6 +3292,7 @@ fn __action11<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action12<
     'input,
 >(
@@ -4676,6 +3306,7 @@ fn __action12<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action13<
     'input,
 >(
@@ -4692,6 +3323,7 @@ fn __action13<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action14<
     'input,
 >(
@@ -4705,6 +3337,7 @@ fn __action14<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action15<
     'input,
 >(
@@ -4721,6 +3354,7 @@ fn __action15<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action16<
     'input,
 >(
@@ -4736,6 +3370,7 @@ fn __action16<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action17<
     'input,
 >(
@@ -4750,6 +3385,7 @@ fn __action17<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action18<
     'input,
 >(
@@ -4763,6 +3399,7 @@ fn __action18<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action19<
     'input,
 >(
@@ -4776,6 +3413,7 @@ fn __action19<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action20<
     'input,
 >(
@@ -4789,6 +3427,7 @@ fn __action20<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action21<
     'input,
 >(
@@ -4802,6 +3441,7 @@ fn __action21<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action22<
     'input,
 >(
@@ -4815,6 +3455,7 @@ fn __action22<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action23<
     'input,
 >(
@@ -4828,6 +3469,7 @@ fn __action23<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action24<
     'input,
 >(
@@ -4853,7 +3495,7 @@ fn __action25<
     __lookahead: &usize,
 ) -> usize
 {
-    __lookbehind.clone()
+    *__lookbehind
 }
 
 #[allow(unused_variables)]
@@ -4867,10 +3509,11 @@ fn __action26<
     __lookahead: &usize,
 ) -> usize
 {
-    __lookahead.clone()
+    *__lookahead
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action27<
     'input,
 >(
@@ -4886,6 +3529,7 @@ fn __action27<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action28<
     'input,
 >(
@@ -4902,6 +3546,7 @@ fn __action28<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action29<
     'input,
 >(
@@ -4915,6 +3560,7 @@ fn __action29<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action30<
     'input,
 >(
@@ -4929,6 +3575,7 @@ fn __action30<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action31<
     'input,
 >(
@@ -4942,6 +3589,7 @@ fn __action31<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action32<
     'input,
 >(
@@ -4956,6 +3604,7 @@ fn __action32<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action33<
     'input,
 >(
@@ -4971,6 +3620,7 @@ fn __action33<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action34<
     'input,
 >(
@@ -4986,6 +3636,7 @@ fn __action34<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action35<
     'input,
 >(
@@ -5006,6 +3657,7 @@ fn __action35<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action36<
     'input,
 >(
@@ -5021,6 +3673,7 @@ fn __action36<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action37<
     'input,
 >(
@@ -5041,6 +3694,7 @@ fn __action37<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action38<
     'input,
 >(
@@ -5056,6 +3710,7 @@ fn __action38<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action39<
     'input,
 >(
@@ -5071,6 +3726,7 @@ fn __action39<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action40<
     'input,
 >(
@@ -5085,6 +3741,7 @@ fn __action40<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action41<
     'input,
 >(
@@ -5098,6 +3755,7 @@ fn __action41<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action42<
     'input,
 >(
@@ -5111,6 +3769,7 @@ fn __action42<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action43<
     'input,
 >(
@@ -5126,6 +3785,7 @@ fn __action43<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action44<
     'input,
 >(
@@ -5139,6 +3799,7 @@ fn __action44<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action45<
     'input,
 >(
@@ -5153,6 +3814,7 @@ fn __action45<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action46<
     'input,
 >(
@@ -5166,6 +3828,7 @@ fn __action46<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action47<
     'input,
 >(
@@ -5180,6 +3843,7 @@ fn __action47<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action48<
     'input,
 >(
@@ -5194,6 +3858,7 @@ fn __action48<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action49<
     'input,
 >(
@@ -5207,6 +3872,7 @@ fn __action49<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action50<
     'input,
 >(
@@ -5221,6 +3887,7 @@ fn __action50<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action51<
     'input,
 >(
@@ -5234,6 +3901,7 @@ fn __action51<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action52<
     'input,
 >(
@@ -5248,6 +3916,7 @@ fn __action52<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action53<
     'input,
 >(
@@ -5262,6 +3931,7 @@ fn __action53<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action54<
     'input,
 >(
@@ -5275,6 +3945,7 @@ fn __action54<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action55<
     'input,
 >(
@@ -5289,6 +3960,7 @@ fn __action55<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action56<
     'input,
 >(
@@ -5302,6 +3974,7 @@ fn __action56<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action57<
     'input,
 >(
@@ -5316,6 +3989,7 @@ fn __action57<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action58<
     'input,
 >(
@@ -5329,6 +4003,7 @@ fn __action58<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action59<
     'input,
 >(
@@ -5343,6 +4018,7 @@ fn __action59<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action60<
     'input,
 >(
@@ -5353,8 +4029,8 @@ fn __action60<
     __1: (usize, &'input str, usize),
 ) -> alloc::vec::Vec<CardEntry>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __1.2.clone();
+    let __start0 = __0.0;
+    let __end0 = __1.2;
     let __temp0 = __action55(
         program_information,
         span_maker,
@@ -5372,6 +4048,7 @@ fn __action60<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action61<
     'input,
 >(
@@ -5383,8 +4060,8 @@ fn __action61<
     __2: (usize, &'input str, usize),
 ) -> alloc::vec::Vec<CardEntry>
 {
-    let __start0 = __1.0.clone();
-    let __end0 = __2.2.clone();
+    let __start0 = __1.0;
+    let __end0 = __2.2;
     let __temp0 = __action55(
         program_information,
         span_maker,
@@ -5403,6 +4080,7 @@ fn __action61<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action62<
     'input,
 >(
@@ -5412,8 +4090,8 @@ fn __action62<
     __0: (usize, core::option::Option<CardEntry>, usize),
 ) -> Vec<CardEntry>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action53(
         program_information,
         span_maker,
@@ -5432,6 +4110,7 @@ fn __action62<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action63<
     'input,
 >(
@@ -5442,8 +4121,8 @@ fn __action63<
     __1: (usize, core::option::Option<CardEntry>, usize),
 ) -> Vec<CardEntry>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.2;
     let __temp0 = __action54(
         program_information,
         span_maker,
@@ -5461,6 +4140,7 @@ fn __action63<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action64<
     'input,
 >(
@@ -5471,8 +4151,8 @@ fn __action64<
     __1: (usize, &'input str, usize),
 ) -> alloc::vec::Vec<DefinitionVariable>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __1.2.clone();
+    let __start0 = __0.0;
+    let __end0 = __1.2;
     let __temp0 = __action50(
         program_information,
         span_maker,
@@ -5490,6 +4170,7 @@ fn __action64<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action65<
     'input,
 >(
@@ -5501,8 +4182,8 @@ fn __action65<
     __2: (usize, &'input str, usize),
 ) -> alloc::vec::Vec<DefinitionVariable>
 {
-    let __start0 = __1.0.clone();
-    let __end0 = __2.2.clone();
+    let __start0 = __1.0;
+    let __end0 = __2.2;
     let __temp0 = __action50(
         program_information,
         span_maker,
@@ -5521,6 +4202,7 @@ fn __action65<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action66<
     'input,
 >(
@@ -5530,8 +4212,8 @@ fn __action66<
     __0: (usize, core::option::Option<DefinitionVariable>, usize),
 ) -> Vec<DefinitionVariable>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action48(
         program_information,
         span_maker,
@@ -5550,6 +4232,7 @@ fn __action66<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action67<
     'input,
 >(
@@ -5560,8 +4243,8 @@ fn __action67<
     __1: (usize, core::option::Option<DefinitionVariable>, usize),
 ) -> Vec<DefinitionVariable>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.2;
     let __temp0 = __action49(
         program_information,
         span_maker,
@@ -5579,6 +4262,7 @@ fn __action67<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action68<
     'input,
 >(
@@ -5588,8 +4272,8 @@ fn __action68<
     __0: (usize, SpannedNode<Definition>, usize),
 ) -> alloc::vec::Vec<SpannedNode<Definition>>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.2;
     let __temp0 = __action42(
         program_information,
         span_maker,
@@ -5606,6 +4290,7 @@ fn __action68<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action69<
     'input,
 >(
@@ -5616,8 +4301,8 @@ fn __action69<
     __1: (usize, SpannedNode<Definition>, usize),
 ) -> alloc::vec::Vec<SpannedNode<Definition>>
 {
-    let __start0 = __1.0.clone();
-    let __end0 = __1.2.clone();
+    let __start0 = __1.0;
+    let __end0 = __1.2;
     let __temp0 = __action42(
         program_information,
         span_maker,
@@ -5635,6 +4320,7 @@ fn __action69<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action70<
     'input,
 >(
@@ -5645,8 +4331,8 @@ fn __action70<
     __lookahead: &usize,
 ) -> Program
 {
-    let __start0 = __lookbehind.clone();
-    let __end0 = __lookahead.clone();
+    let __start0 = *__lookbehind;
+    let __end0 = *__lookahead;
     let __temp0 = __action40(
         program_information,
         span_maker,
@@ -5664,6 +4350,7 @@ fn __action70<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action71<
     'input,
 >(
@@ -5673,8 +4360,8 @@ fn __action71<
     __0: (usize, alloc::vec::Vec<SpannedNode<Definition>>, usize),
 ) -> Program
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.2;
     let __temp0 = __action41(
         program_information,
         span_maker,
@@ -5691,6 +4378,7 @@ fn __action71<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action72<
     'input,
 >(
@@ -5705,8 +4393,8 @@ fn __action72<
     __5: (usize, usize, usize),
 ) -> SpannedNode<u64>
 {
-    let __start0 = __1.0.clone();
-    let __end0 = __4.2.clone();
+    let __start0 = __1.0;
+    let __end0 = __4.2;
     let __temp0 = __action28(
         program_information,
         span_maker,
@@ -5728,6 +4416,7 @@ fn __action72<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action73<
     'input,
 >(
@@ -5741,8 +4430,8 @@ fn __action73<
     __4: (usize, &'input str, usize),
 ) -> SpannedNode<(i64, i64)>
 {
-    let __start0 = __1.2.clone();
-    let __end0 = __2.0.clone();
+    let __start0 = __1.2;
+    let __end0 = __2.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -5765,6 +4454,7 @@ fn __action73<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action74<
     'input,
 >(
@@ -5779,8 +4469,8 @@ fn __action74<
     __5: (usize, &'input str, usize),
 ) -> SpannedNode<(i64, i64)>
 {
-    let __start0 = __1.2.clone();
-    let __end0 = __2.0.clone();
+    let __start0 = __1.2;
+    let __end0 = __2.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -5804,6 +4494,7 @@ fn __action74<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action75<
     'input,
 >(
@@ -5818,8 +4509,8 @@ fn __action75<
     __5: (usize, &'input str, usize),
 ) -> SpannedNode<(i64, i64)>
 {
-    let __start0 = __2.2.clone();
-    let __end0 = __3.0.clone();
+    let __start0 = __2.2;
+    let __end0 = __3.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -5843,6 +4534,7 @@ fn __action75<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action76<
     'input,
 >(
@@ -5858,8 +4550,8 @@ fn __action76<
     __6: (usize, &'input str, usize),
 ) -> Result<SpannedNode<(i64, i64)>,__lalrpop_util::ParseError<usize,Token<'input>,DictionaryError>>
 {
-    let __start0 = __1.2.clone();
-    let __end0 = __2.0.clone();
+    let __start0 = __1.2;
+    let __end0 = __2.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -5884,6 +4576,7 @@ fn __action76<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action77<
     'input,
 >(
@@ -5897,8 +4590,8 @@ fn __action77<
     __4: (usize, usize, usize),
 ) -> SpannedNode<u64>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -5921,6 +4614,7 @@ fn __action77<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action78<
     'input,
 >(
@@ -5931,8 +4625,8 @@ fn __action78<
     __1: (usize, usize, usize),
 ) -> SpannedNode<Definition>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -5952,6 +4646,7 @@ fn __action78<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action79<
     'input,
 >(
@@ -5962,8 +4657,8 @@ fn __action79<
     __1: (usize, usize, usize),
 ) -> SpannedNode<DefinitionFaction>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -5983,6 +4678,7 @@ fn __action79<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action80<
     'input,
 >(
@@ -5993,8 +4689,8 @@ fn __action80<
     __1: (usize, usize, usize),
 ) -> SpannedNode<Vec<DefinitionVariable>>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -6014,6 +4710,7 @@ fn __action80<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action81<
     'input,
 >(
@@ -6024,8 +4721,8 @@ fn __action81<
     __1: (usize, usize, usize),
 ) -> SpannedNode<String>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -6045,6 +4742,7 @@ fn __action81<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action82<
     'input,
 >(
@@ -6055,8 +4753,8 @@ fn __action82<
     __1: (usize, usize, usize),
 ) -> SpannedNode<u64>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -6076,6 +4774,7 @@ fn __action82<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action83<
     'input,
 >(
@@ -6086,8 +4785,8 @@ fn __action83<
     __1: (usize, usize, usize),
 ) -> SpannedNode<u64>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -6107,6 +4806,7 @@ fn __action83<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action84<
     'input,
 >(
@@ -6117,8 +4817,8 @@ fn __action84<
     __1: (usize, usize, usize),
 ) -> SpannedNode<Vec<CardEntry>>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.0.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.0;
     let __temp0 = __action26(
         program_information,
         span_maker,
@@ -6138,6 +4838,7 @@ fn __action84<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action85<
     'input,
 >(
@@ -6150,8 +4851,8 @@ fn __action85<
     __3: (usize, &'input str, usize),
 ) -> SpannedNode<(i64, i64)>
 {
-    let __start0 = __2.2.clone();
-    let __end0 = __3.0.clone();
+    let __start0 = __2.2;
+    let __end0 = __3.0;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6173,6 +4874,7 @@ fn __action85<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action86<
     'input,
 >(
@@ -6186,8 +4888,8 @@ fn __action86<
     __4: (usize, &'input str, usize),
 ) -> SpannedNode<(i64, i64)>
 {
-    let __start0 = __2.2.clone();
-    let __end0 = __3.0.clone();
+    let __start0 = __2.2;
+    let __end0 = __3.0;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6210,6 +4912,7 @@ fn __action86<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action87<
     'input,
 >(
@@ -6223,8 +4926,8 @@ fn __action87<
     __4: (usize, &'input str, usize),
 ) -> SpannedNode<(i64, i64)>
 {
-    let __start0 = __3.2.clone();
-    let __end0 = __4.0.clone();
+    let __start0 = __3.2;
+    let __end0 = __4.0;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6247,6 +4950,7 @@ fn __action87<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action88<
     'input,
 >(
@@ -6261,8 +4965,8 @@ fn __action88<
     __5: (usize, &'input str, usize),
 ) -> Result<SpannedNode<(i64, i64)>,__lalrpop_util::ParseError<usize,Token<'input>,DictionaryError>>
 {
-    let __start0 = __4.2.clone();
-    let __end0 = __5.0.clone();
+    let __start0 = __4.2;
+    let __end0 = __5.0;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6286,6 +4990,7 @@ fn __action88<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action89<
     'input,
 >(
@@ -6298,8 +5003,8 @@ fn __action89<
     __3: (usize, &'input str, usize),
 ) -> SpannedNode<u64>
 {
-    let __start0 = __3.2.clone();
-    let __end0 = __3.2.clone();
+    let __start0 = __3.2;
+    let __end0 = __3.2;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6321,6 +5026,7 @@ fn __action89<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action90<
     'input,
 >(
@@ -6330,8 +5036,8 @@ fn __action90<
     __0: (usize, Definition, usize),
 ) -> SpannedNode<Definition>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6350,6 +5056,7 @@ fn __action90<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action91<
     'input,
 >(
@@ -6359,8 +5066,8 @@ fn __action91<
     __0: (usize, DefinitionFaction, usize),
 ) -> SpannedNode<DefinitionFaction>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6379,6 +5086,7 @@ fn __action91<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action92<
     'input,
 >(
@@ -6388,8 +5096,8 @@ fn __action92<
     __0: (usize, Vec<DefinitionVariable>, usize),
 ) -> SpannedNode<Vec<DefinitionVariable>>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6408,6 +5116,7 @@ fn __action92<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action93<
     'input,
 >(
@@ -6417,8 +5126,8 @@ fn __action93<
     __0: (usize, String, usize),
 ) -> SpannedNode<String>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6437,6 +5146,7 @@ fn __action93<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action94<
     'input,
 >(
@@ -6446,8 +5156,8 @@ fn __action94<
     __0: (usize, u64, usize),
 ) -> SpannedNode<u64>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6466,6 +5176,7 @@ fn __action94<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action95<
     'input,
 >(
@@ -6475,8 +5186,8 @@ fn __action95<
     __0: (usize, u64, usize),
 ) -> SpannedNode<u64>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6495,6 +5206,7 @@ fn __action95<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action96<
     'input,
 >(
@@ -6504,8 +5216,8 @@ fn __action96<
     __0: (usize, Vec<CardEntry>, usize),
 ) -> SpannedNode<Vec<CardEntry>>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action25(
         program_information,
         span_maker,
@@ -6524,6 +5236,7 @@ fn __action96<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action97<
     'input,
 >(
@@ -6533,8 +5246,8 @@ fn __action97<
     __0: (usize, CardEntry, usize),
 ) -> Vec<CardEntry>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.2;
     let __temp0 = __action51(
         program_information,
         span_maker,
@@ -6551,6 +5264,7 @@ fn __action97<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action98<
     'input,
 >(
@@ -6561,8 +5275,8 @@ fn __action98<
     __lookahead: &usize,
 ) -> Vec<CardEntry>
 {
-    let __start0 = __lookbehind.clone();
-    let __end0 = __lookahead.clone();
+    let __start0 = *__lookbehind;
+    let __end0 = *__lookahead;
     let __temp0 = __action52(
         program_information,
         span_maker,
@@ -6580,6 +5294,7 @@ fn __action98<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action99<
     'input,
 >(
@@ -6590,8 +5305,8 @@ fn __action99<
     __1: (usize, CardEntry, usize),
 ) -> Vec<CardEntry>
 {
-    let __start0 = __1.0.clone();
-    let __end0 = __1.2.clone();
+    let __start0 = __1.0;
+    let __end0 = __1.2;
     let __temp0 = __action51(
         program_information,
         span_maker,
@@ -6609,6 +5324,7 @@ fn __action99<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action100<
     'input,
 >(
@@ -6618,8 +5334,8 @@ fn __action100<
     __0: (usize, alloc::vec::Vec<CardEntry>, usize),
 ) -> Vec<CardEntry>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action52(
         program_information,
         span_maker,
@@ -6638,6 +5354,7 @@ fn __action100<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action101<
     'input,
 >(
@@ -6650,8 +5367,8 @@ fn __action101<
     __3: (usize, SpannedNode<(i64, i64)>, usize),
 ) -> CardEntry
 {
-    let __start0 = __3.0.clone();
-    let __end0 = __3.2.clone();
+    let __start0 = __3.0;
+    let __end0 = __3.2;
     let __temp0 = __action29(
         program_information,
         span_maker,
@@ -6671,6 +5388,7 @@ fn __action101<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action102<
     'input,
 >(
@@ -6682,8 +5400,8 @@ fn __action102<
     __2: (usize, core::option::Option<SpannedNode<u64>>, usize),
 ) -> CardEntry
 {
-    let __start0 = __2.2.clone();
-    let __end0 = __2.2.clone();
+    let __start0 = __2.2;
+    let __end0 = __2.2;
     let __temp0 = __action30(
         program_information,
         span_maker,
@@ -6704,6 +5422,7 @@ fn __action102<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action103<
     'input,
 >(
@@ -6716,8 +5435,8 @@ fn __action103<
     __3: (usize, SpannedNode<(i64, i64)>, usize),
 ) -> CardEntry
 {
-    let __start0 = __2.0.clone();
-    let __end0 = __2.2.clone();
+    let __start0 = __2.0;
+    let __end0 = __2.2;
     let __temp0 = __action31(
         program_information,
         span_maker,
@@ -6737,6 +5456,7 @@ fn __action103<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action104<
     'input,
 >(
@@ -6748,8 +5468,8 @@ fn __action104<
     __2: (usize, SpannedNode<(i64, i64)>, usize),
 ) -> CardEntry
 {
-    let __start0 = __1.2.clone();
-    let __end0 = __2.0.clone();
+    let __start0 = __1.2;
+    let __end0 = __2.0;
     let __temp0 = __action32(
         program_information,
         span_maker,
@@ -6770,6 +5490,7 @@ fn __action104<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action105<
     'input,
 >(
@@ -6781,8 +5502,8 @@ fn __action105<
     __2: (usize, SpannedNode<u64>, usize),
 ) -> CardEntry
 {
-    let __start0 = __2.0.clone();
-    let __end0 = __2.2.clone();
+    let __start0 = __2.0;
+    let __end0 = __2.2;
     let __temp0 = __action31(
         program_information,
         span_maker,
@@ -6801,6 +5522,7 @@ fn __action105<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action106<
     'input,
 >(
@@ -6811,8 +5533,8 @@ fn __action106<
     __1: (usize, SpannedNode<u64>, usize),
 ) -> CardEntry
 {
-    let __start0 = __1.2.clone();
-    let __end0 = __1.2.clone();
+    let __start0 = __1.2;
+    let __end0 = __1.2;
     let __temp0 = __action32(
         program_information,
         span_maker,
@@ -6832,6 +5554,7 @@ fn __action106<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action107<
     'input,
 >(
@@ -6841,8 +5564,8 @@ fn __action107<
     __0: (usize, DefinitionVariable, usize),
 ) -> Vec<DefinitionVariable>
 {
-    let __start0 = __0.0.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.0;
+    let __end0 = __0.2;
     let __temp0 = __action46(
         program_information,
         span_maker,
@@ -6859,6 +5582,7 @@ fn __action107<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action108<
     'input,
 >(
@@ -6869,8 +5593,8 @@ fn __action108<
     __lookahead: &usize,
 ) -> Vec<DefinitionVariable>
 {
-    let __start0 = __lookbehind.clone();
-    let __end0 = __lookahead.clone();
+    let __start0 = *__lookbehind;
+    let __end0 = *__lookahead;
     let __temp0 = __action47(
         program_information,
         span_maker,
@@ -6888,6 +5612,7 @@ fn __action108<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action109<
     'input,
 >(
@@ -6898,8 +5623,8 @@ fn __action109<
     __1: (usize, DefinitionVariable, usize),
 ) -> Vec<DefinitionVariable>
 {
-    let __start0 = __1.0.clone();
-    let __end0 = __1.2.clone();
+    let __start0 = __1.0;
+    let __end0 = __1.2;
     let __temp0 = __action46(
         program_information,
         span_maker,
@@ -6917,6 +5642,7 @@ fn __action109<
 }
 
 #[allow(unused_variables)]
+#[allow(clippy::too_many_arguments)]
 fn __action110<
     'input,
 >(
@@ -6926,8 +5652,8 @@ fn __action110<
     __0: (usize, alloc::vec::Vec<DefinitionVariable>, usize),
 ) -> Vec<DefinitionVariable>
 {
-    let __start0 = __0.2.clone();
-    let __end0 = __0.2.clone();
+    let __start0 = __0.2;
+    let __end0 = __0.2;
     let __temp0 = __action47(
         program_information,
         span_maker,
@@ -6944,6 +5670,7 @@ fn __action110<
         __temp0,
     )
 }
+#[allow(clippy::type_complexity)]
 
 pub trait __ToTriple<'input, >
 {
